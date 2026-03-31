@@ -1,14 +1,192 @@
-/project
-   index.html
-   /images
-      logo.png
-      banner.jpg
-      facebook.png
-      instagram.png
-      tiktok.png
-      youtube.png
-      automation.png
-      smm.png
-      shopify.png
-      thumbnail.png
-      banner.png
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MetaSpark Agency</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #0a0a0a;
+  color: white;
+}
+
+/* NAV */
+nav {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  background: #111;
+}
+nav img { width: 110px; }
+
+/* HERO */
+.hero {
+  text-align: center;
+  padding: 60px 20px;
+  animation: fadeIn 1.5s ease;
+}
+.hero h1 {
+  font-size: 38px;
+  color: #ffcc00;
+}
+.hero p { color: #ccc; }
+
+.btn {
+  background: #ffcc00;
+  padding: 12px 25px;
+  border-radius: 6px;
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-block;
+  margin-top: 15px;
+  transition: 0.3s;
+}
+.btn:hover { transform: scale(1.1); }
+
+/* SERVICES */
+.services {
+  padding: 40px 20px;
+  text-align: center;
+}
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.card {
+  background: #111;
+  margin: 10px;
+  padding: 20px;
+  border-radius: 10px;
+  width: 130px;
+  transition: 0.3s;
+}
+.card:hover {
+  transform: translateY(-8px);
+}
+.card img { width: 50px; }
+
+/* RESULTS */
+.results {
+  text-align: center;
+  padding: 40px 20px;
+}
+.results img {
+  width: 90%;
+  max-width: 300px;
+  border-radius: 10px;
+}
+
+/* CONTACT */
+.contact {
+  text-align: center;
+  padding: 40px;
+}
+
+/* WHATSAPP */
+.whatsapp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25D366;
+  padding: 12px 16px;
+  border-radius: 50px;
+  color: white;
+  text-decoration: none;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 20px;
+  color: #777;
+}
+
+/* ANIMATION */
+@keyframes fadeIn {
+  from {opacity:0; transform: translateY(20px);}
+  to {opacity:1;}
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav>
+  <img src="images/logo.png">
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <h1>We Bring You Clients 🚀</h1>
+  <p>Meta Ads | TikTok Ads | Shopify Growth</p>
+  <a href="https://wa.me/923030607545?text=Hi%20I%20want%20clients" class="btn">Get Clients Now</a>
+</section>
+
+<!-- SERVICES -->
+<section class="services">
+  <h2>Our Services</h2>
+  <div class="cards">
+
+    <div class="card">
+      <img src="images/facebook.png">
+      <p>Facebook Ads</p>
+    </div>
+
+    <div class="card">
+      <img src="images/instagram.png">
+      <p>Instagram Growth</p>
+    </div>
+
+    <div class="card">
+      <img src="images/tiktok.png">
+      <p>TikTok Ads</p>
+    </div>
+
+    <div class="card">
+      <img src="images/youtube.png">
+      <p>YouTube Ads</p>
+    </div>
+
+    <div class="card">
+      <img src="images/shopify.png">
+      <p>Shopify Store</p>
+    </div>
+
+    <div class="card">
+      <img src="images/automation.png">
+      <p>Automation</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- RESULTS -->
+<section class="results">
+  <h2>Our Results 🔥</h2>
+  <p>Real ad performance</p>
+  <img src="images/banner.png">
+</section>
+
+<!-- CONTACT -->
+<section class="contact">
+  <h2>Start Today</h2>
+  <p>Message us now and get your first clients</p>
+  <a href="https://wa.me/923030607545?text=I%20need%20marketing" class="btn">Chat on WhatsApp</a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  © 2026 MetaSpark Agency
+</footer>
+
+<!-- FLOAT BUTTON -->
+<a class="whatsapp" href="https://wa.me/923030607545">WhatsApp</a>
+
+</body>
+   </html>
