@@ -3,10 +3,57 @@
 <head>
   <title>MetaSpark Agency</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
   <style>
     body {font-family: Arial; margin:0; padding:0; text-align:center;}
-    header {background:#000; color:#fff; padding:20px;}
+
+    header {
+      background: url('images/banner.jpg') no-repeat center/cover;
+      color:#fff;
+      padding:60px 20px;
+    }
+
+    header h1 {
+      font-size:32px;
+      margin-bottom:10px;
+    }
+
+    header p {
+      font-size:18px;
+    }
+
+    .logo {
+      width:100px;
+      border-radius:50%;
+      margin:10px 0;
+    }
+
     section {padding:40px;}
+
+    .services {
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+      gap:15px;
+    }
+
+    .box {
+      border:1px solid #ddd;
+      padding:20px;
+      border-radius:10px;
+      transition:0.3s;
+    }
+
+    .box img {
+      width:60px;
+      margin-bottom:10px;
+    }
+
+    .box:hover {
+      background:#000;
+      color:#fff;
+      transform:scale(1.05);
+    }
+
     .btn {
       display:inline-block;
       padding:12px 20px;
@@ -15,33 +62,66 @@
       text-decoration:none;
       border-radius:5px;
     }
-    .services {display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:15px;}
-    .box {border:1px solid #ddd; padding:20px; border-radius:10px;}
   </style>
 </head>
 
 <body>
 
 <header>
-  <h1>MetaSpark Agency ??</h1>
+  <h1>MetaSpark Agency</h1>
+  <img src="images/logo.png" class="logo">
   <p>Grow Your Business Online</p>
 </header>
 
 <section>
   <h2>Our Services</h2>
   <div class="services">
-    <div class="box">Facebook Ads</div>
-    <div class="box">Instagram Ads</div>
-    <div class="box">TikTok Ads</div>
-    <div class="box">YouTube SEO</div>
-    <div class="box">YouTube Automation</div>
-    <div class="box">Social Media Management</div>
-    <div class="box">Website Development</div>
-    <div class="box">Shopify Store</div>
-    <div class="box">Logo Design</div>
-    <div class="box">Banner Design</div>
-    <div class="box">Thumbnail Design</div>
-    <div class="box">Animation</div>
+
+    <div class="box">
+      <img src="images/facebook.png">
+      <p>Facebook Ads</p>
+    </div>
+
+    <div class="box">
+      <img src="images/instagram.png">
+      <p>Instagram Ads</p>
+    </div>
+
+    <div class="box">
+      <img src="images/tiktok.png">
+      <p>TikTok Ads</p>
+    </div>
+
+    <div class="box">
+      <img src="images/youtube.png">
+      <p>YouTube SEO</p>
+    </div>
+
+    <div class="box">
+      <img src="images/automation.png">
+      <p>YouTube Automation</p>
+    </div>
+
+    <div class="box">
+      <img src="images/smm.png">
+      <p>Social Media Management</p>
+    </div>
+
+    <div class="box">
+      <img src="images/shopify.png">
+      <p>Shopify Store</p>
+    </div>
+
+    <div class="box">
+      <img src="images/thumbnail.png">
+      <p>YouTube Thumbnail</p>
+    </div>
+
+    <div class="box">
+      <img src="images/banner.png">
+      <p>YouTube Banner</p>
+    </div>
+
   </div>
 </section>
 
@@ -52,4 +132,4 @@
 </section>
 
 </body>
-</html>
+        </html>
