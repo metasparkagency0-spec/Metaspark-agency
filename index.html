@@ -1,210 +1,287 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MetaSpark Agency</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MetaSpark Agency | Scale Your Business</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-<style>
+    <style>
+        :root {
+            --primary: #ffcc00;
+            --secondary: #ff8800;
+            --dark: #0a0a0a;
+            --card-bg: #151515;
+            --text-gray: #b0b0b0;
+        }
 
-*{margin:0;padding:0;box-sizing:border-box;}
-body{
-  font-family:'Inter',sans-serif;
-  background:#0a0a0a;
-  color:#fff;
-}
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--dark);
+            color: #fff;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
 
-/* TOP BAR */
-.top-bar{
-  background:#000;
-  color:#ffcc00;
-  text-align:center;
-  padding:8px;
-}
+        /* TOP BAR */
+        .top-bar {
+            background: linear-gradient(90deg, #000, #222);
+            color: var(--primary);
+            text-align: center;
+            padding: 10px;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
 
-/* NAVBAR */
-.navbar{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:15px 20px;
-  background:#111;
-}
+        /* NAVBAR */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 5%;
+            background: rgba(17, 17, 17, 0.95);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #222;
+        }
 
-.logo{
-  height:50px;
-}
+        .logo { height: 45px; transition: transform 0.3s; }
+        .logo:hover { transform: scale(1.05); }
 
-/* HERO */
-.hero{
-  text-align:center;
-  padding:80px 20px;
-  background:linear-gradient(135deg,#ffcc00,#ff8800);
-  color:#111;
-}
+        /* HERO SECTION */
+        .hero {
+            text-align: center;
+            padding: 120px 20px;
+            background: radial-gradient(circle at center, #332200 0%, #0a0a0a 100%);
+            position: relative;
+        }
 
-.hero img{
-  width:220px;
-  margin-bottom:20px;
-}
+        .hero h1 {
+            font-size: clamp(40px, 8vw, 70px);
+            font-weight: 800;
+            background: linear-gradient(to right, #fff, var(--primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 20px;
+        }
 
-.hero h1{font-size:40px;}
+        .hero p {
+            color: var(--text-gray);
+            font-size: 18px;
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
 
-.btn{
-  padding:14px 30px;
-  background:#111;
-  color:#ffcc00;
-  border-radius:30px;
-  text-decoration:none;
-  display:inline-block;
-  margin-top:15px;
-}
+        .btn {
+            padding: 16px 40px;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            color: #000;
+            font-weight: 700;
+            border-radius: 50px;
+            text-decoration: none;
+            display: inline-block;
+            transition: 0.3s;
+            box-shadow: 0 10px 20px rgba(255, 204, 0, 0.2);
+        }
 
-/* SERVICES */
-.cards{
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
-  gap:20px;
-  padding:40px 20px;
-}
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(255, 204, 0, 0.4);
+        }
 
-.card{
-  background:#111;
-  padding:20px;
-  border-radius:15px;
-  width:170px;
-  text-align:center;
-}
+        /* SERVICES */
+        section { padding: 80px 5%; }
+        h2 { text-align: center; font-size: 36px; margin-bottom: 50px; }
+        h2 span { color: var(--primary); }
 
-.card img{
-  width:50px;
-  margin-bottom:10px;
-}
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 25px;
+            max-width: 1100px;
+            margin: auto;
+        }
 
-/* RESULTS IMAGE */
-.results img{
-  width:100%;
-  max-width:400px;
-  border-radius:15px;
-  margin-top:20px;
-}
+        .card {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+            border: 1px solid #222;
+            transition: 0.4s;
+        }
 
-/* TESTIMONIAL */
-.testimonial{
-  background:#111;
-  margin:10px auto;
-  padding:20px;
-  max-width:400px;
-  border-radius:10px;
-}
+        .card:hover {
+            border-color: var(--primary);
+            background: #1a1a1a;
+            transform: translateY(-10px);
+        }
 
-/* FORM */
-form{
-  max-width:400px;
-  margin:auto;
-}
+        .card img { width: 60px; margin-bottom: 20px; filter: grayscale(0.5); transition: 0.3s; }
+        .card:hover img { filter: grayscale(0); transform: rotate(10deg); }
 
-input,textarea{
-  width:100%;
-  padding:10px;
-  margin:10px 0;
-  border:none;
-  border-radius:8px;
-}
+        /* RESULTS */
+        .results-img {
+            width: 100%;
+            max-width: 800px;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+            margin-top: 30px;
+        }
 
-/* WHATSAPP */
-.whatsapp{
-  position:fixed;
-  bottom:20px;
-  right:20px;
-  background:#25D366;
-  padding:15px;
-  border-radius:50px;
-  color:#fff;
-  text-decoration:none;
-}
+        /* TESTIMONIALS */
+        .testimonial-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
 
-</style>
+        .testimonial {
+            background: #111;
+            padding: 25px;
+            border-left: 4px solid var(--primary);
+            border-radius: 10px;
+            font-style: italic;
+            width: 300px;
+        }
+
+        /* FORM */
+        form {
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 20px;
+            max-width: 500px;
+            margin: auto;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 15px;
+            background: #0a0a0a;
+            border: 1px solid #333;
+            border-radius: 10px;
+            color: #fff;
+            outline: none;
+        }
+
+        input:focus { border-color: var(--primary); }
+
+        .submit-btn {
+            width: 100%;
+            padding: 15px;
+            background: var(--primary);
+            border: none;
+            border-radius: 10px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        /* WHATSAPP FLOAT */
+        .whatsapp {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25D366;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+            z-index: 9999;
+            transition: 0.3s;
+        }
+
+        .whatsapp:hover { transform: scale(1.1); }
+
+    </style>
 </head>
-
 <body>
 
-<div class="top-bar">
-🚀 Get 20–50 Clients Every Month
-</div>
+    <div class="top-bar">🚀 20–50 Clients Guaranteed Every Month</div>
 
-<!-- NAVBAR -->
-<div class="navbar">
-  <div>☰</div>
-  <img src="images/logo.png" class="logo">
-  <div>⚙️</div>
-</div>
+    <nav class="navbar">
+        <div style="font-size: 24px; cursor: pointer;">☰</div>
+        <img src="images/logo.png" class="logo" alt="Logo">
+        <div style="color: var(--primary); font-weight: 600;">EN</div>
+    </nav>
 
-<!-- HERO -->
-<section class="hero">
-  <img src="images/banner.png" alt="">
-  <h1>We Bring You Clients</h1>
-  <p>Grow your business with ads & automation</p>
-  <a href="https://wa.me/923030607545" class="btn">Get Clients</a>
-</section>
+    <header class="hero">
+        <div data-aos="fade-up" data-aos-duration="1000">
+            <h1>Scale Your Business<br><span>Faster Than Ever</span></h1>
+            <p>We combine high-performing ads with smart automation to flood your business with ready-to-buy clients.</p>
+            <a href="https://wa.me/923030607545" class="btn">Get Started Now</a>
+        </div>
+    </header>
 
-<!-- SERVICES -->
-<section>
-  <h2 style="text-align:center;">Our Services</h2>
+    <section id="services">
+        <h2 data-aos="fade-down">Our <span>Premium</span> Services</h2>
+        <div class="cards">
+            <div class="card" data-aos="zoom-in" data-aos-delay="100">
+                <img src="images/facebook.png">
+                <h3>Facebook Ads</h3>
+            </div>
+            <div class="card" data-aos="zoom-in" data-aos-delay="200">
+                <img src="images/instagram.png">
+                <h3>Instagram Growth</h3>
+            </div>
+            <div class="card" data-aos="zoom-in" data-aos-delay="300">
+                <img src="images/tiktok.png">
+                <h3>TikTok Marketing</h3>
+            </div>
+            <div class="card" data-aos="zoom-in" data-aos-delay="400">
+                <img src="images/youtube.png">
+                <h3>YouTube Ads</h3>
+            </div>
+        </div>
+    </section>
 
-  <div class="cards">
-    <div class="card">
-      <img src="images/facebook.png">
-      Facebook Ads
-    </div>
+    <section style="background: #050505; text-align: center;">
+        <h2 data-aos="fade-up">Proven <span>Results</span></h2>
+        <img src="images/banner.png" class="results-img" data-aos="flip-left">
+    </section>
 
-    <div class="card">
-      <img src="images/instagram.png">
-      Instagram Growth
-    </div>
+    <section>
+        <h2 data-aos="fade-up">Client <span>Success</span></h2>
+        <div class="testimonial-container">
+            <div class="testimonial" data-aos="fade-right">“Got 50+ leads in just 10 days! The automation setup is a game changer. 🔥”</div>
+            <div class="testimonial" data-aos="fade-left">“Best agency I've worked with. They actually understand ROI. 💯”</div>
+        </div>
+    </section>
 
-    <div class="card">
-      <img src="images/tiktok.png">
-      TikTok Ads
-    </div>
+    <section>
+        <div data-aos="zoom-out">
+            <h2>Claim Your <span>Free Audit</span></h2>
+            <form action="#">
+                <input type="text" placeholder="Full Name" required>
+                <input type="text" placeholder="Business Name" required>
+                <textarea rows="4" placeholder="What is your monthly goal?"></textarea>
+                <button type="submit" class="submit-btn">Send My Strategy</button>
+            </form>
+        </div>
+    </section>
 
-    <div class="card">
-      <img src="images/youtube.png">
-      YouTube Ads
-    </div>
-  </div>
-</section>
+    <a href="https://wa.me/923030607545" class="whatsapp">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="35" alt="WA">
+    </a>
 
-<!-- RESULTS -->
-<section class="results" style="text-align:center;padding:40px;">
-  <h2>Our Results</h2>
-  <img src="images/banner.png">
-</section>
-
-<!-- TESTIMONIAL -->
-<section>
-  <h2 style="text-align:center;">Clients Say</h2>
-
-  <div class="testimonial">“Got 50+ leads in 10 days 🔥”</div>
-  <div class="testimonial">“Best agency 💯”</div>
-</section>
-
-<!-- FORM -->
-<section style="text-align:center;padding:40px;">
-  <h2>Free Audit</h2>
-
-  <form>
-    <input placeholder="Your Name">
-    <input placeholder="Your Business">
-    <textarea placeholder="Your Goal"></textarea>
-    <button style="padding:10px;background:#25D366;color:#fff;border:none;border-radius:8px;">Submit</button>
-  </form>
-</section>
-
-<a href="https://wa.me/923030607545" class="whatsapp">WhatsApp</a>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            once: true, // Animation sirf ek baar hogi jab user scroll karega
+            duration: 800
+        });
+    </script>
 
 </body>
-        </html>
+  </html>
