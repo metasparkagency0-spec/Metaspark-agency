@@ -5,320 +5,153 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>MetaSpark Agency</title>
 
-<!-- GOOGLE FONTS -->
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-
 <style>
-/* RESET & BODY */
+
+/* RESET */
 body {
   margin: 0;
-  font-family: 'Inter', sans-serif;
-  background: #0a0a0a;
-  color: #fff;
-  line-height: 1.6;
-  scroll-behavior: smooth;
+  font-family: Arial, sans-serif;
+}
+
+/* 🔥 TOP BAR (LEADS LINE) */
+.top-bar {
+  background: #000;
+  color: #ffcc00;
+  text-align: center;
+  padding: 8px;
+  font-size: 13px;
+  font-weight: bold;
 }
 
 /* NAVBAR */
-nav {
+.navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 50px;
-  background: #111;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+  padding: 15px 20px;
+  background: #fff;
 }
-nav img { width: 140px; transition: transform 0.3s ease; }
-nav img:hover { transform: scale(1.05); }
-nav .email { color: #ccc; font-size: 14px; }
 
-/* HERO SECTION WITH PARALLAX */
+.nav-left {
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.nav-center {
+  text-align: center;
+}
+
+.nav-center img {
+  width: 80px;
+}
+
+.tagline {
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: #999;
+}
+
+.nav-right {
+  font-size: 18px;
+}
+
+/* HERO */
 .hero {
   text-align: center;
-  padding: 120px 20px;
-  background: linear-gradient(135deg, #ffcc00 0%, #ff9900 100%);
-  color: #111;
-  border-bottom-left-radius: 50px;
-  border-bottom-right-radius: 50px;
-  background-attachment: fixed;
+  padding: 60px 20px;
+  background: #f5f5f5;
 }
-.hero h1, .hero p, .hero .btn {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 1s ease-out;
-}
-.hero h1.visible, .hero p.visible, .hero .btn.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-.hero h1 {
-  font-size: 52px;
-  font-weight: 700;
+
+.mini-title {
+  border: 1px solid #ccc;
+  display: inline-block;
+  padding: 6px 15px;
+  border-radius: 20px;
+  font-size: 12px;
   margin-bottom: 20px;
 }
-.hero p {
-  font-size: 20px;
-  margin-bottom: 30px;
-}
-.hero .btn {
-  background: #111;
-  color: #ffcc00;
-  padding: 15px 35px;
-  border-radius: 10px;
-  font-weight: 700;
-  text-decoration: none;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.hero .btn:hover {
-  transform: scale(1.1);
-  box-shadow: 0 10px 25px rgba(255,204,0,0.6);
+
+.hero h1 {
+  font-size: 38px;
+  margin: 10px 0;
 }
 
-/* SERVICES SECTION */
-.services {
-  padding: 60px 20px;
-  text-align: center;
-  background: #0a0a0a;
-}
-.services h2 {
-  font-size: 40px;
-  color: #ffcc00;
-  margin-bottom: 30px;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 1s ease-out;
-}
-.services h2.visible { opacity: 1; transform: translateY(0);}
-.cards {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 25px;
-}
-.card {
-  background: #111;
-  padding: 30px 20px;
-  border-radius: 15px;
-  width: 160px;
-  transition: transform 0.5s ease, box-shadow 0.5s ease, opacity 1s ease-out;
-  text-align: center;
-  cursor: pointer;
-  opacity: 0;
-  transform: translateY(20px);
-}
-.card.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-.card:hover {
-  transform: translateY(-15px) scale(1.05);
-  box-shadow: 0 15px 30px rgba(255,204,0,0.4);
-}
-.card img {
-  width: 60px;
-  margin-bottom: 15px;
-  transition: transform 0.5s ease;
-}
-.card:hover img {
-  transform: rotate(15deg) scale(1.1);
-}
-.card p {
-  font-weight: 600;
-  color: #ccc;
-  font-size: 14px;
-}
-
-/* RESULTS SECTION */
-.results {
-  text-align: center;
-  padding: 60px 20px;
-  background: #111;
-}
-.results h2, .results p, .results img {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 1s ease-out;
-}
-.results h2.visible, .results p.visible, .results img.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-.results h2 {
-  font-size: 40px;
-  color: #ffcc00;
-  margin-bottom: 15px;
-}
-.results p {
-  color: #ccc;
-  font-size: 18px;
+.sub-text {
+  color: #555;
   margin-bottom: 25px;
 }
-.results img {
-  width: 100%;
-  max-width: 450px;
-  border-radius: 15px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+
+/* BUTTONS */
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
 }
 
-/* CONTACT SECTION */
-.contact {
-  text-align: center;
-  padding: 60px 20px;
-  background: #0a0a0a;
-}
-.contact h2, .contact p, .contact .btn {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 1s ease-out;
-}
-.contact h2.visible, .contact p.visible, .contact .btn.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-.contact h2 {
-  font-size: 40px;
-  color: #ffcc00;
-  margin-bottom: 15px;
-}
-.contact p {
-  color: #ccc;
-  font-size: 18px;
-  margin-bottom: 20px;
-}
-.contact .btn {
-  background: #25D366;
-  color: #fff;
-  padding: 15px 35px;
-  border-radius: 10px;
-  text-decoration: none;
-  font-weight: 700;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.contact .btn:hover {
-  transform: scale(1.1);
-  box-shadow: 0 10px 25px rgba(37,211,102,0.5);
-}
-
-/* FLOATING WHATSAPP BUTTON */
-.whatsapp {
-  position: fixed;
-  bottom: 25px;
-  right: 25px;
-  background: #25D366;
-  color: white;
-  padding: 16px 20px;
-  border-radius: 50px;
+.btn {
+  padding: 14px 25px;
+  border-radius: 30px;
   text-decoration: none;
   font-weight: bold;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.5);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.whatsapp:hover {
-  transform: scale(1.1);
-  box-shadow: 0 12px 30px rgba(0,0,0,0.6);
 }
 
-/* FOOTER */
-footer {
-  text-align: center;
-  padding: 25px;
-  color: #777;
-  border-top: 1px solid #222;
+.primary {
+  background: #000;
+  color: #fff;
 }
 
-/* RESPONSIVE */
-@media(max-width:768px){
-  nav { flex-direction: column; gap: 10px; padding: 15px 20px;}
-  .cards { flex-direction: column; align-items: center;}
-  .card { width: 70%;}
-  .hero h1 { font-size: 36px;}
-  .services h2, .results h2, .contact h2 { font-size: 28px;}
+.secondary {
+  border: 2px solid #000;
+  color: #000;
 }
+
+/* CONTACT */
+.contact-info {
+  margin-top: 25px;
+  font-size: 14px;
+  color: #666;
+}
+
 </style>
 </head>
 
 <body>
 
-<!-- NAVIGATION -->
-<nav>
-  <img src="images/logo.png" alt="MetaSpark Agency Logo">
-  <div class="email">📧 metasparkagency0@gmail.com</div>
-</nav>
+<!-- 🔥 TOP BAR -->
+<a href="https://wa.me/923030607545" class="top-bar">
+  🚀 Get 20–50 Clients Every Month | Limited Slots Available
+</a>
 
-<!-- HERO SECTION -->
+<!-- NAVBAR -->
+<header class="navbar">
+  <div class="nav-left">☰</div>
+
+  <div class="nav-center">
+    <img src="images/logo.png" alt="Agency Logo">
+    <p class="tagline">PERFORMANCE MARKETING AGENCY</p>
+  </div>
+
+  <div class="nav-right">🔍 🛒 👤</div>
+</header>
+
+<!-- HERO -->
 <section class="hero">
-  <h1>We Bring You Clients 🚀</h1>
-  <p>Meta Ads | TikTok Ads | Shopify Growth | Marketing Automation</p>
-  <a href="https://wa.me/923030607545?text=Hi%20I%20want%20clients" class="btn">Get Clients Now</a>
-</section>
+  <p class="mini-title">META ADS • TIKTOK • SHOPIFY</p>
 
-<!-- SERVICES SECTION -->
-<section class="services">
-  <h2>Our Services</h2>
-  <div class="cards">
-    <div class="card">
-      <img src="images/facebook.png" alt="Facebook Ads Icon">
-      <p>Facebook Ads<br><small>Targeted campaigns to grow your client base</small></p>
-    </div>
-    <div class="card">
-      <img src="images/instagram.png" alt="Instagram Growth Icon">
-      <p>Instagram Growth<br><small>Organic growth and paid promotions</small></p>
-    </div>
-    <div class="card">
-      <img src="images/tiktok.png" alt="TikTok Ads Icon">
-      <p>TikTok Ads<br><small>Engaging content to attract clients</small></p>
-    </div>
-    <div class="card">
-      <img src="images/youtube.png" alt="YouTube Ads Icon">
-      <p>YouTube Ads<br><small>High-converting video campaigns</small></p>
-    </div>
-    <div class="card">
-      <img src="images/shopify.png" alt="Shopify Store Icon">
-      <p>Shopify Store<br><small>Setup & optimization for maximum sales</small></p>
-    </div>
-    <div class="card">
-      <img src="images/automation.png" alt="Marketing Automation Icon">
-      <p>Marketing Automation<br><small>Automate workflows & client outreach</small></p>
-    </div>
+  <h1>We Bring You Clients.</h1>
+  <p class="sub-text">High-converting ads & automation to grow your business fast.</p>
+
+  <div class="hero-buttons">
+    <a href="https://wa.me/923030607545" class="btn primary">Get Clients →</a>
+    <a href="#" class="btn secondary">View Services</a>
+  </div>
+
+  <!-- CONTACT -->
+  <div class="contact-info">
+    <p>📧 metasparkagency0@gmail.com</p>
+    <p>📱 WhatsApp: +92 303 0607545</p>
   </div>
 </section>
 
-<!-- RESULTS SECTION -->
-<section class="results">
-  <h2>Our Results 🔥</h2>
-  <p>Real ad performance driving real clients to our customers. Check out our campaigns and success stories.</p>
-  <img src="images/banner.png" alt="MetaSpark Ads Campaign Performance">
-</section>
-
-<!-- CONTACT SECTION -->
-<section class="contact">
-  <h2>Start Today</h2>
-  <p>Message us now and get your first clients quickly and easily.</p>
-  <a href="https://wa.me/923030607545?text=I%20need%20marketing" class="btn">Chat on WhatsApp</a>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  © 2026 MetaSpark Agency | 📧 metasparkagency0@gmail.com
-</footer>
-
-<!-- FLOATING WHATSAPP BUTTON -->
-<a class="whatsapp" href="https://wa.me/923030607545">WhatsApp</a>
-
-<!-- SCROLL ANIMATION SCRIPT -->
-<script>
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if(entry.isIntersecting){
-      entry.target.classList.add('visible');
-    }
-  });
-}, { threshold: 0.2 });
-
-document.querySelectorAll('h1, h2, p, .btn, .card, .results img').forEach(el => observer.observe(el));
-</script>
-
 </body>
-    </html>
+  </html>
