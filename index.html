@@ -4,11 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>MetaSpark Agency</title>
-
-<!-- GOOGLE FONTS -->
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-
 <style>
+/* BODY */
 body {
   margin: 0;
   font-family: 'Inter', sans-serif;
@@ -30,18 +28,13 @@ nav {
   z-index: 1000;
 }
 .nav-left {
-  text-align: center;
+  display: flex;
+  align-items: center;
+  gap: 15px;
 }
-.nav-left img { width: 100px; display:block; margin: 0 auto;}
-.nav-left h1 {
-  font-size: 18px;
-  color: #ffcc00;
-  margin: 5px 0 0 0;
-}
-.nav-right .email {
-  color: #ccc;
-  font-size: 14px;
-}
+.nav-left img { width: 80px; }
+.nav-left h1 { color: #ffcc00; font-size: 22px; margin: 0; font-weight: 700; }
+.nav-right .email { color: #ccc; font-size: 14px; }
 
 /* HERO */
 .hero {
@@ -49,43 +42,26 @@ nav {
   padding: 120px 20px;
   background: linear-gradient(135deg, #ffcc00 0%, #ff9900 100%);
   color: #111;
-  border-bottom-left-radius: 50px;
-  border-bottom-right-radius: 50px;
-  background-attachment: fixed;
+  position: relative;
+  overflow: hidden;
 }
 .hero h1, .hero p, .hero .btn { opacity: 0; transform: translateY(20px); transition: all 1s ease-out;}
 .hero h1.visible, .hero p.visible, .hero .btn.visible { opacity: 1; transform: translateY(0);}
 .hero h1 { font-size: 52px; font-weight: 700; margin-bottom: 20px;}
 .hero p { font-size: 20px; margin-bottom: 30px;}
-.hero .btn {
-  background: #111;
-  color: #ffcc00;
-  padding: 15px 35px;
-  border-radius: 10px;
-  font-weight: 700;
-  text-decoration: none;
-}
-.hero .btn:hover { transform: scale(1.1); box-shadow: 0 10px 25px rgba(255,204,0,0.6);}
+.hero .btn { background: #111; color: #ffcc00; padding: 15px 35px; border-radius: 10px; font-weight: 700; text-decoration: none; transition: transform 0.3s ease;}
+.hero .btn:hover { transform: scale(1.1); box-shadow: 0 10px 25px rgba(255,204,0,0.6); }
 
 /* SERVICES */
-.services {
-  padding: 60px 20px;
-  text-align: center;
-  background: #0a0a0a;
-}
+.services { padding: 60px 20px; text-align: center; background: #0a0a0a; }
 .services h2 { font-size: 40px; color: #ffcc00; margin-bottom: 30px; opacity:0; transform:translateY(20px); transition: all 1s ease-out;}
 .services h2.visible {opacity:1; transform:translateY(0);}
-.cards {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 25px;
-}
+.cards { display: flex; flex-wrap: wrap; justify-content: center; gap: 25px; }
 .card {
   background: #111;
   padding: 30px 20px;
   border-radius: 15px;
-  width: 160px;
+  width: 180px;
   opacity:0; transform:translateY(20px);
   transition: all 0.5s ease-out;
   text-align: center;
@@ -95,7 +71,7 @@ nav {
 .card img { width: 60px; margin-bottom: 15px; transition: transform 0.5s ease;}
 .card:hover img { transform: rotate(15deg) scale(1.1);}
 .card:hover { transform: translateY(-15px) scale(1.05); box-shadow: 0 15px 30px rgba(255,204,0,0.4);}
-.card p { font-weight:600; color:#ccc; font-size:14px;}
+.card p { font-weight:600; color:#ccc; font-size:14px; }
 
 /* RESULTS */
 .results { text-align:center; padding:60px 20px; background:#111;}
@@ -103,7 +79,7 @@ nav {
 .results h2.visible, .results p.visible, .results img.visible {opacity:1; transform:translateY(0);}
 .results h2 { font-size:40px; color:#ffcc00; margin-bottom:15px;}
 .results p { color:#ccc; font-size:18px; margin-bottom:25px;}
-.results img { width:100%; max-width:450px; border-radius:15px; box-shadow:0 10px 30px rgba(0,0,0,0.5);}
+.results img { width:100%; max-width:500px; border-radius:15px; box-shadow:0 10px 30px rgba(0,0,0,0.5); }
 
 /* CONTACT */
 .contact { text-align:center; padding:60px 20px; background:#0a0a0a;}
@@ -112,14 +88,14 @@ nav {
 .contact h2 { font-size:40px; color:#ffcc00; margin-bottom:15px;}
 .contact p { color:#ccc; font-size:18px; margin-bottom:20px;}
 .contact .btn { background:#25D366; color:#fff; padding:15px 35px; border-radius:10px; font-weight:700; text-decoration:none;}
-.contact .btn:hover { transform:scale(1.1); box-shadow:0 10px 25px rgba(37,211,102,0.5);}
+.contact .btn:hover { transform:scale(1.1); box-shadow:0 10px 25px rgba(37,211,102,0.5); }
 
 /* FLOATING WHATSAPP BUTTON */
 .whatsapp { position: fixed; bottom:25px; right:25px; background:#25D366; color:white; padding:16px 20px; border-radius:50px; text-decoration:none; font-weight:bold; box-shadow:0 8px 25px rgba(0,0,0,0.5);}
-.whatsapp:hover { transform:scale(1.1); box-shadow:0 12px 30px rgba(0,0,0,0.6);}
+.whatsapp:hover { transform:scale(1.1); box-shadow:0 12px 30px rgba(0,0,0,0.6); }
 
 /* FOOTER */
-footer { text-align:center; padding:25px; color:#777; border-top:1px solid #222;}
+footer { text-align:center; padding:25px; color:#777; border-top:1px solid #222; }
 
 /* RESPONSIVE */
 @media(max-width:768px){
@@ -193,9 +169,9 @@ const observer = new IntersectionObserver((entries)=>{
   entries.forEach(entry=>{
     if(entry.isIntersecting){ entry.target.classList.add('visible'); }
   });
-}, {threshold:0.2});
+},{threshold:0.2});
 document.querySelectorAll('h1,h2,p,.btn,.card,.results img').forEach(el=>observer.observe(el));
 </script>
 
 </body>
-    </html>
+                        </html>
