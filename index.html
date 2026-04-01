@@ -9,7 +9,7 @@
 body { margin:0; font-family:'Inter', sans-serif; background:#0a0a0a; color:#fff; line-height:1.6; scroll-behavior:smooth; }
 
 /* LOGO + NAME */
-.logo-name { display:flex; align-items:center; gap:15px; position:fixed; top:15px; left:20px; z-index:1000; animation:fadeUp 1s ease forwards; }
+.logo-name { display:flex; align-items:center; gap:15px; position:fixed; top:15px; left:20px; z-index:1000; }
 .logo-name div { width:120px; height:60px; overflow:hidden; }
 .logo-name img { width:100%; height:100%; object-fit:contain; }
 .logo-name h1 { color:black; font-size:22px; margin:0; font-weight:700; }
@@ -23,30 +23,22 @@ nav { position:fixed; top:15px; right:20px; z-index:1000; display:flex; flex-dir
 #services-dropdown a:hover { background:#222; color:#ffcc00; }
 
 /* HERO */
-.hero { text-align:center; padding:120px 20px; background:linear-gradient(135deg,#ffcc00 0%,#ff9900 100%); color:#111; animation:fadeUp 1.2s ease forwards;}
+.hero { text-align:center; padding:120px 20px; background:linear-gradient(135deg,#ffcc00 0%,#ff9900 100%); color:#111; }
 .hero h1 { font-size:52px; font-weight:700; margin-bottom:20px; }
 .hero p { font-size:16px; margin-bottom:30px; line-height:1.6; }
 .hero .btn { background:#111; color:#ffcc00; padding:15px 35px; border-radius:10px; font-weight:700; text-decoration:none; transition:transform 0.3s ease; }
-.hero .btn:hover { transform:scale(1.1); box-shadow:0 15px 35px rgba(0,0,0,0.5); }
+.hero .btn:hover { transform:scale(1.1); box-shadow:0 10px 25px rgba(255,204,0,0.6); }
 
 /* SERVICES */
 .services { padding:60px 20px; text-align:center; background:#0a0a0a; }
 .services h2 { font-size:40px; color:#ffcc00; margin-bottom:20px; }
 .services p { color:#ccc; font-size:16px; margin-bottom:30px; }
 .cards { display:flex; flex-wrap:wrap; justify-content:center; gap:25px; }
-.card { background:#111; padding:30px 20px; border-radius:15px; width:180px; text-align:center; cursor:pointer; opacity:0; transform:translateY(40px); animation:fadeUp 1s ease forwards; transition:0.3s; }
+.card { background:#111; padding:30px 20px; border-radius:15px; width:180px; text-align:center; cursor:pointer; transition:0.3s; }
 .card img { width:100%; height:120px; object-fit:cover; margin-bottom:15px; transition: transform 0.5s ease; }
 .card:hover img { transform:rotate(15deg) scale(1.1); }
 .card:hover { transform:translateY(-15px) scale(1.05); box-shadow:0 15px 30px rgba(255,204,0,0.4); }
 .card p { font-weight:600; color:#ccc; font-size:14px; }
-
-/* Delay for each card */
-.card:nth-child(1){animation-delay:0.2s;}
-.card:nth-child(2){animation-delay:0.4s;}
-.card:nth-child(3){animation-delay:0.6s;}
-.card:nth-child(4){animation-delay:0.8s;}
-.card:nth-child(5){animation-delay:1s;}
-.card:nth-child(6){animation-delay:1.2s;}
 
 /* RESULTS / LEADS */
 #stats { text-align:center; margin:30px 0; font-size:18px; }
@@ -58,22 +50,10 @@ nav { position:fixed; top:15px; right:20px; z-index:1000; display:flex; flex-dir
 
 /* WhatsApp button */
 #whatsapp-wrapper { position:fixed; bottom:25px; right:25px; z-index:1000; }
-#whatsapp { background:#25D366; color:black; padding:16px 20px; border-radius:50px; text-decoration:none; font-weight:bold; box-shadow:0 8px 25px rgba(0,0,0,0.5); display:inline-block; position:relative; animation:pulse 3s infinite; }
+#whatsapp { background:#25D366; color:black; padding:16px 20px; border-radius:50px; text-decoration:none; font-weight:bold; box-shadow:0 8px 25px rgba(0,0,0,0.5); display:inline-block; position:relative; }
 #whatsapp-badge { position:absolute; top:-8px; right:-8px; background:red; color:white; width:24px; height:24px; font-size:14px; font-weight:bold; border-radius:50%; display:flex; align-items:center; justify-content:center; }
 
-/* FOOTER */
 footer { text-align:center; padding:25px; color:#777; border-top:1px solid #222; }
-
-/* ANIMATIONS */
-@keyframes fadeUp {
-  0% {opacity:0; transform:translateY(40px);}
-  100% {opacity:1; transform:translateY(0);}
-}
-@keyframes pulse {
-  0% {transform:scale(1);}
-  50% {transform:scale(1.15);}
-  100% {transform:scale(1);}
-}
 
 /* RESPONSIVE */
 @media(max-width:768px){ 
@@ -120,7 +100,7 @@ footer { text-align:center; padding:25px; color:#777; border-top:1px solid #222;
 <!-- SERVICES -->
 <section id="services" class="services">
   <h2>Our Services</h2>
-  <p>We help you grow your business with targeted ads, organic growth, video campaigns, Shopify store setup, and YouTube automation. Each service is designed to deliver real clients and measurable results.</p>
+  <p>We help you grow your business with targeted ads, organic growth, video campaigns, Shopify store setup, eBay service, and YouTube automation. Each service is designed to deliver real clients and measurable results.</p>
   <div class="cards">
     <div class="card"><img src="images/Facebook.png" alt="Facebook"><p>Facebook Ads<br><small>Targeted Audience</small></p></div>
     <div class="card"><img src="images/Instagram.png" alt="Instagram"><p>Instagram Growth<br><small>Organic & Paid Promotions</small></p></div>
@@ -128,6 +108,7 @@ footer { text-align:center; padding:25px; color:#777; border-top:1px solid #222;
     <div class="card"><img src="images/YouTube.png" alt="YouTube"><p>YouTube SEO<br><small>Grow Channel & Earn Money</small></p></div>
     <div class="card"><img src="images/Shopify.png" alt="Shopify"><p>Shopify Store<br><small>Setup & Optimize Online Store</small></p></div>
     <div class="card"><img src="images/Automation.png" alt="Automation"><p>YouTube Automation<br><small>Faceless YouTube Channel</small></p></div>
+    <div class="card"><img src="images/eBay.png" alt="eBay"><p>eBay Service<br><small>MC011, MC999, MC081, MC099</small></p></div>
   </div>
 </section>
 
@@ -151,9 +132,9 @@ document.querySelectorAll(".counter").forEach(counter => {
   const updateCount = () => {
     const target = +counter.getAttribute('data-target');
     const count = +counter.innerText;
-    const increment = target/1000;
-    if(count<target){ counter.innerText=Math.ceil(count+increment); setTimeout(updateCount,999);}
-    else{ counter.innerText=target; }
+    const increment = target / 100;
+    if(count < target){ counter.innerText = Math.ceil(count + increment); setTimeout(updateCount,20); }
+    else { counter.innerText = target; }
   }
   updateCount();
 });
@@ -164,6 +145,15 @@ document.getElementById("email").style.animation="slideInLeft 2s forwards";
 document.getElementById("phone").style.position="relative";
 document.getElementById("phone").style.animation="slideInRight 2s forwards";
 
+// WhatsApp pulse
+setInterval(()=>{
+  const btn = document.getElementById("whatsapp");
+  btn.style.transition="all 0.5s ease";
+  btn.style.transform="scale(1.2)";
+  btn.style.boxShadow="0 12px 30px rgba(37,211,102,0.7)";
+  setTimeout(()=>{ btn.style.transform="scale(1)"; btn.style.boxShadow="0 8px 25px rgba(0,0,0,0.5)"; },1000);
+},10000);
+
 // Hamburger toggle
 const hamburger = document.getElementById("hamburger");
 const dropdown = document.getElementById("services-dropdown");
@@ -172,5 +162,6 @@ hamburger.addEventListener("click", ()=>{
   dropdown.style.flexDirection = "column";
 });
 </script>
+
 </body>
-                                     </html>
+      </html>
