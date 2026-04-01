@@ -3,285 +3,475 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MetaSpark Agency | Scale Your Business</title>
+    <title>MetaSpark Agency | Scale Your Business Faster</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <style>
         :root {
-            --primary: #ffcc00;
-            --secondary: #ff8800;
-            --dark: #0a0a0a;
-            --card-bg: #151515;
-            --text-gray: #b0b0b0;
+            --primary: #FFD700; /* Richer Gold */
+            --secondary: #FF8C00; /* Dark Orange */
+            --dark-bg: #0A0A0A;
+            --card-bg: #1A1A1A;
+            --text-main: #FFFFFF;
+            --text-muted: #B0B0B0;
+            --nav-bg: rgba(10, 10, 10, 0.95);
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth; /* Make scrolling professional */
+        }
+
         body {
             font-family: 'Inter', sans-serif;
-            background: var(--dark);
-            color: #fff;
+            background-color: var(--dark-bg);
+            color: var(--text-main);
             overflow-x: hidden;
-            scroll-behavior: smooth;
         }
 
-        /* TOP BAR */
+        /* --- Updated Top Announcement Bar --- */
         .top-bar {
-            background: linear-gradient(90deg, #000, #222);
+            background-color: #000;
             color: var(--primary);
             text-align: center;
-            padding: 10px;
+            padding: 12px 20px;
             font-size: 14px;
             font-weight: 600;
-            letter-spacing: 1px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
         }
 
-        /* NAVBAR */
+        /* --- Updated Professional Header --- */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background-color: var(--nav-bg);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #222;
+        }
+
         .navbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 15px 5%;
-            background: rgba(17, 17, 17, 0.95);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid #222;
+            max-width: 1400px;
+            margin: 0 auto;
         }
 
-        .logo { height: 45px; transition: transform 0.3s; }
-        .logo:hover { transform: scale(1.05); }
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: var(--text-main);
+        }
 
-        /* HERO SECTION */
+        .brand-logo {
+            height: 30px;
+            width: auto;
+        }
+
+        .brand-name {
+            font-size: 22px;
+            font-weight: 800;
+            letter-spacing: -1px;
+        }
+
+        .brand-name span {
+            color: var(--primary);
+        }
+
+        /* Desktop Menu */
+        .nav-menu {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--text-muted);
+            font-size: 15px;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--primary);
+        }
+
+        .lang-switch {
+            color: var(--primary);
+            font-weight: 700;
+            cursor: pointer;
+            margin-left: 20px;
+        }
+
+        /* Mobile Menu Button */
+        .menu-toggle {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--text-main);
+        }
+
+        /* --- Hero Section (Increased Size for Impact) --- */
         .hero {
             text-align: center;
-            padding: 120px 20px;
-            background: radial-gradient(circle at center, #332200 0%, #0a0a0a 100%);
+            padding: 150px 20px 100px;
+            background: radial-gradient(circle at center, #111 0%, #000 100%);
             position: relative;
         }
 
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: url('path/to/noise.png') opacity 0.03; /* Add a subtle noise texture */
+            pointer-events: none;
+        }
+
         .hero h1 {
-            font-size: clamp(40px, 8vw, 70px);
+            font-size: clamp(40px, 7vw, 75px);
             font-weight: 800;
-            background: linear-gradient(to right, #fff, var(--primary));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 20px;
+            line-height: 1.1;
+            margin-bottom: 25px;
+            letter-spacing: -2px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .hero p {
-            color: var(--text-gray);
-            font-size: 18px;
-            max-width: 600px;
-            margin: 0 auto 30px;
+            font-size: 19px;
+            color: var(--text-muted);
+            max-width: 650px;
+            margin: 0 auto 50px;
+            line-height: 1.6;
+            font-weight: 400;
         }
 
-        .btn {
-            padding: 16px 40px;
-            background: linear-gradient(45deg, var(--primary), var(--secondary));
-            color: #000;
-            font-weight: 700;
-            border-radius: 50px;
-            text-decoration: none;
+        .btn-large {
             display: inline-block;
-            transition: 0.3s;
-            box-shadow: 0 10px 20px rgba(255, 204, 0, 0.2);
-        }
-
-        .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 30px rgba(255, 204, 0, 0.4);
-        }
-
-        /* SERVICES */
-        section { padding: 80px 5%; }
-        h2 { text-align: center; font-size: 36px; margin-bottom: 50px; }
-        h2 span { color: var(--primary); }
-
-        .cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 25px;
-            max-width: 1100px;
-            margin: auto;
-        }
-
-        .card {
-            background: var(--card-bg);
-            padding: 30px;
-            border-radius: 20px;
-            text-align: center;
-            border: 1px solid #222;
-            transition: 0.4s;
-        }
-
-        .card:hover {
-            border-color: var(--primary);
-            background: #1a1a1a;
-            transform: translateY(-10px);
-        }
-
-        .card img { width: 60px; margin-bottom: 20px; filter: grayscale(0.5); transition: 0.3s; }
-        .card:hover img { filter: grayscale(0); transform: rotate(10deg); }
-
-        /* RESULTS */
-        .results-img {
-            width: 100%;
-            max-width: 800px;
-            border-radius: 20px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
-            margin-top: 30px;
-        }
-
-        /* TESTIMONIALS */
-        .testimonial-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-        }
-
-        .testimonial {
-            background: #111;
-            padding: 25px;
-            border-left: 4px solid var(--primary);
-            border-radius: 10px;
-            font-style: italic;
-            width: 300px;
-        }
-
-        /* FORM */
-        form {
-            background: var(--card-bg);
-            padding: 40px;
-            border-radius: 20px;
-            max-width: 500px;
-            margin: auto;
-        }
-
-        input, textarea {
-            width: 100%;
-            padding: 15px;
-            margin-bottom: 15px;
-            background: #0a0a0a;
-            border: 1px solid #333;
-            border-radius: 10px;
-            color: #fff;
-            outline: none;
-        }
-
-        input:focus { border-color: var(--primary); }
-
-        .submit-btn {
-            width: 100%;
-            padding: 15px;
-            background: var(--primary);
-            border: none;
-            border-radius: 10px;
+            padding: 20px 50px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: #000;
+            text-decoration: none;
+            border-radius: 50px;
             font-weight: 700;
-            cursor: pointer;
+            font-size: 17px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.2);
         }
 
-        /* WHATSAPP FLOAT */
-        .whatsapp {
+        .btn-large:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(255, 215, 0, 0.4);
+        }
+
+        /* --- Services Section (Dynamic Filter) --- */
+        .services {
+            padding: 100px 5% 50px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title {
+            font-size: 40px;
+            font-weight: 800;
+            letter-spacing: -1.5px;
+        }
+
+        .section-title span {
+            color: var(--primary);
+        }
+
+        /* Dynamic Filter Tabs */
+        .filter-controls {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 50px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            background: transparent;
+            border: 1px solid #333;
+            color: var(--text-muted);
+            padding: 12px 25px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .filter-btn.active, .filter-btn:hover {
+            background-color: #222;
+            color: var(--primary);
+            border-color: var(--primary);
+        }
+
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .service-card {
+            background-color: var(--card-bg);
+            border-radius: 20px;
+            padding: 35px;
+            border: 1px solid #222;
+            transition: transform 0.4s ease, border-color 0.4s ease;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .service-card.hidden {
+            display: none;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            border-color: #333;
+            background-color: #1c1c1c;
+        }
+
+        .service-icon {
+            font-size: 30px;
+            color: var(--primary);
+            margin-bottom: 25px;
+        }
+
+        .service-title {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .service-desc {
+            color: var(--text-muted);
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        /* --- Other Professional Elements --- */
+        .results-section, .testimonial-section, .contact-section {
+            padding: 100px 5%;
+            text-align: center;
+        }
+
+        .results-image {
+            max-width: 800px;
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+        }
+
+        /* --- WhatsApp Float --- */
+        .whatsapp-float {
             position: fixed;
             bottom: 30px;
             right: 30px;
-            background: #25D366;
-            width: 60px;
-            height: 60px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            background-color: #25D366;
+            color: #FFF;
             border-radius: 50%;
+            width: 60px; height: 60px;
+            display: flex; align-items: center; justify-content: center;
             box-shadow: 0 10px 20px rgba(0,0,0,0.3);
-            z-index: 9999;
-            transition: 0.3s;
+            z-index: 1000;
+            transition: transform 0.3s ease;
+            text-decoration: none;
         }
 
-        .whatsapp:hover { transform: scale(1.1); }
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+        }
 
+        /* --- Footer --- */
+        footer {
+            padding: 50px 5%;
+            background-color: #000;
+            border-top: 1px solid #222;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 14px;
+        }
+
+        /* --- Responsive Design Media Queries --- */
+        @media (max-width: 992px) {
+            .nav-menu { display: none; }
+            .menu-toggle { display: block; }
+            
+            /* Add basic mobile menu style if needed */
+            .nav-menu.active {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 70px; left: 0; width: 100%;
+                background-color: var(--nav-bg);
+                padding: 20px 5%;
+                border-bottom: 1px solid #222;
+            }
+        }
     </style>
 </head>
 <body>
 
-    <div class="top-bar">🚀 20–50 Clients Guaranteed Every Month</div>
+    <div class="top-bar">
+        🚀 MetaSpark Agency: Verified Success – 20–50 Clients Guaranteed
+    </div>
 
-    <nav class="navbar">
-        <div style="font-size: 24px; cursor: pointer;">☰</div>
-        <img src="images/logo.png" class="logo" alt="Logo">
-        <div style="color: var(--primary); font-weight: 600;">EN</div>
-    </nav>
+    <header>
+        <nav class="navbar">
+            <a href="#" class="brand">
+                <img src="images/logo.png" class="brand-logo" alt="MetaSpark Logo">
+                <div class="brand-name">MetaSpark <span>Agency</span></div>
+            </a>
+            
+            <div class="menu-controls">
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="#services" class="nav-link">Our Services</a></li>
+                    <li><a href="#results" class="nav-link">Proven Results</a></li>
+                    <li><a href="#contact" class="nav-link">Get Audit</a></li>
+                    <li><a href="https://wa.me/923030607545" class="nav-link">WhatsApp</a></li>
+                </ul>
+                <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+            </div>
 
-    <header class="hero">
-        <div data-aos="fade-up" data-aos-duration="1000">
-            <h1>Scale Your Business<br><span>Faster Than Ever</span></h1>
-            <p>We combine high-performing ads with smart automation to flood your business with ready-to-buy clients.</p>
-            <a href="https://wa.me/923030607545" class="btn">Get Started Now</a>
-        </div>
+            <div class="lang-switch">EN</div>
+        </nav>
     </header>
 
-    <section id="services">
-        <h2 data-aos="fade-down">Our <span>Premium</span> Services</h2>
-        <div class="cards">
-            <div class="card" data-aos="zoom-in" data-aos-delay="100">
-                <img src="images/facebook.png">
-                <h3>Facebook Ads</h3>
+    <section class="hero">
+        <div data-aos="fade-up" data-aos-duration="1000">
+            <h1>We Scale Your Business<br><span>Faster & Smarter</span></h1>
+            <p>Our expert team combines high-performing paid ads with intelligent automation to flood your pipeline with motivated, ready-to-buy clients. No excuses, just results.</p>
+            <a href="https://wa.me/923030607545" class="btn-large">Claim Your Growth Strategy</a>
+        </div>
+    </section>
+
+    <section class="services" id="services">
+        <div class="section-header">
+            <h2 class="section-title">High-Performance <span>Services</span></h2>
+        </div>
+
+        <div class="filter-controls">
+            <button class="filter-btn active" onclick="filterServices('all')">All Services</button>
+            <button class="filter-btn" onclick="filterServices('ads')">Paid Ads</button>
+            <button class="filter-btn" onclick="filterServices('content')">Content & Growth</button>
+            <button class="filter-btn" onclick="filterServices('funnels')">Funnel Building</button>
+        </div>
+
+        <div class="services-grid">
+            <div class="service-card" data-category="ads" data-aos="fade-up" data-aos-delay="100">
+                <div class="service-icon">FB</div>
+                <h3 class="service-title">Facebook Advertising</h3>
+                <p class="service-desc">Hyper-targeted campaigns to drive leads & sales efficiently. Focus on clear ROI.</p>
             </div>
-            <div class="card" data-aos="zoom-in" data-aos-delay="200">
-                <img src="images/instagram.png">
-                <h3>Instagram Growth</h3>
+            <div class="service-card" data-category="content" data-aos="fade-up" data-aos-delay="200">
+                <div class="service-icon">IG</div>
+                <h3 class="service-title">Instagram Growth</h3>
+                <p class="service-desc">Strategic content & community building to scale your influence and sales naturally.</p>
             </div>
-            <div class="card" data-aos="zoom-in" data-aos-delay="300">
-                <img src="images/tiktok.png">
-                <h3>TikTok Marketing</h3>
+            <div class="service-card" data-category="ads" data-aos="fade-up" data-aos-delay="300">
+                <div class="service-icon">TK</div>
+                <h3 class="service-title">TikTok Marketing</h3>
+                <p class="service-desc">Tap into viral trends & dynamic short-form video ads to reach new audiences quickly.</p>
             </div>
-            <div class="card" data-aos="zoom-in" data-aos-delay="400">
-                <img src="images/youtube.png">
-                <h3>YouTube Ads</h3>
+            <div class="service-card" data-category="ads" data-aos="fade-up" data-aos-delay="400">
+                <div class="service-icon">YT</div>
+                <h3 class="service-title">YouTube Advertising</h3>
+                <p class="service-desc">In-depth video ads targeting buyers at every stage of their purchasing journey.</p>
+            </div>
+            <div class="service-card" data-category="funnels" data-aos="fade-up" data-aos-delay="500">
+                <div class="service-icon">⚙️</div>
+                <h3 class="service-title">Sales Funnels</h3>
+                <p class="service-desc">High-converting funnel systems that automatically turn visitors into long-term clients.</p>
             </div>
         </div>
     </section>
 
-    <section style="background: #050505; text-align: center;">
-        <h2 data-aos="fade-up">Proven <span>Results</span></h2>
-        <img src="images/banner.png" class="results-img" data-aos="flip-left">
-    </section>
-
-    <section>
-        <h2 data-aos="fade-up">Client <span>Success</span></h2>
-        <div class="testimonial-container">
-            <div class="testimonial" data-aos="fade-right">“Got 50+ leads in just 10 days! The automation setup is a game changer. 🔥”</div>
-            <div class="testimonial" data-aos="fade-left">“Best agency I've worked with. They actually understand ROI. 💯”</div>
+    <section class="results-section" id="results">
+        <h2 class="section-title">Verified client <span>Success</span></h2>
+        <div data-aos="fade-left">
+            <img src="images/banner.png" class="results-image" alt="Proof of Results">
         </div>
     </section>
 
-    <section>
-        <div data-aos="zoom-out">
-            <h2>Claim Your <span>Free Audit</span></h2>
-            <form action="#">
-                <input type="text" placeholder="Full Name" required>
-                <input type="text" placeholder="Business Name" required>
-                <textarea rows="4" placeholder="What is your monthly goal?"></textarea>
-                <button type="submit" class="submit-btn">Send My Strategy</button>
-            </form>
-        </div>
+    <section class="testimonial-section">
+        <h2 class="section-title">Why Clients <span>Love Us</span></h2>
+        <div style="margin: 20px; font-style: italic;">"Got 50+ leads in 10 days! The automation is insane." - Client A</div>
+        <div style="margin: 20px; font-style: italic;">"Best ROI agency I've worked with." - Client B</div>
     </section>
 
-    <a href="https://wa.me/923030607545" class="whatsapp">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="35" alt="WA">
+    <section class="contact-section" id="contact">
+        <h2 class="section-title">Get your free <span>Audit</span></h2>
+        <p style="margin-bottom: 40px; color: var(--text-muted);">See exactly how we can scale *your* specific business.</p>
+        <form style="max-width: 500px; margin: 0 auto; background: var(--card-bg); padding: 40px; border-radius: 20px; text-align: left;">
+            <input type="text" placeholder="Your Name" required style="width: 100%; padding: 15px; margin-bottom: 20px; background: #222; border: 1px solid #333; color: white; border-radius: 10px;">
+            <input type="text" placeholder="Your Business" required style="width: 100%; padding: 15px; margin-bottom: 20px; background: #222; border: 1px solid #333; color: white; border-radius: 10px;">
+            <textarea placeholder="Your Main Goal" rows="4" style="width: 100%; padding: 15px; margin-bottom: 20px; background: #222; border: 1px solid #333; color: white; border-radius: 10px;"></textarea>
+            <button type="submit" class="btn-large" style="width: 100%;">Schedule My Free Session</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 MetaSpark Agency. All Rights Reserved. We Scale Your Business, Fast.</p>
+    </footer>
+
+    <a href="https://wa.me/923030607545" class="whatsapp-float" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WA" width="35">
     </a>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        AOS.init({
-            once: true, // Animation sirf ek baar hogi jab user scroll karega
-            duration: 800
-        });
+        // Initialize Animations
+        AOS.init({ once: true, duration: 800 });
+
+        // Mobile Menu Toggle
+        function toggleMenu() {
+            const menu = document.getElementById('nav-menu');
+            menu.classList.toggle('active');
+        }
+
+        // --- Dynamic Service Filtering Logic ---
+        function filterServices(category) {
+            const cards = document.querySelectorAll('.service-card');
+            const buttons = document.querySelectorAll('.filter-btn');
+
+            // Update button active state
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            // Show/Hide cards with animation
+            cards.forEach(card => {
+                if (category === 'all' || card.getAttribute('data-category') === category) {
+                    card.style.display = 'block';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                } else {
+                    card.style.opacity = '0';
+                    card.style.transform = 'translateY(15px)';
+                    setTimeout(() => card.style.display = 'none', 300); // Small delay before hiding
+                }
+            });
+        }
     </script>
 
 </body>
-  </html>
+    </html>
