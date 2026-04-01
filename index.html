@@ -9,13 +9,11 @@
 
 <style>
 
-/* RESET */
 *{margin:0;padding:0;box-sizing:border-box;}
 body{
   font-family:'Inter',sans-serif;
   background:#0a0a0a;
   color:#fff;
-  scroll-behavior:smooth;
 }
 
 /* TOP BAR */
@@ -24,126 +22,82 @@ body{
   color:#ffcc00;
   text-align:center;
   padding:8px;
-  font-size:13px;
-  font-weight:600;
 }
 
-/* NAVBAR (GLASS) */
+/* NAVBAR */
 .navbar{
-  position:sticky;
-  top:0;
-  backdrop-filter:blur(12px);
-  background:rgba(0,0,0,0.6);
   display:flex;
   justify-content:space-between;
+  align-items:center;
   padding:15px 20px;
-  z-index:1000;
-}
-
-/* MENU */
-.menu{
-  position:fixed;
-  top:0;
-  left:-100%;
-  width:75%;
-  height:100%;
   background:#111;
-  padding:30px;
-  transition:0.4s;
 }
 
-.menu.active{ left:0; }
-
-.menu a{
-  display:block;
-  margin:15px 0;
-  color:#fff;
-  text-decoration:none;
-  font-size:18px;
+.logo{
+  height:50px;
 }
 
 /* HERO */
 .hero{
   text-align:center;
-  padding:110px 20px;
+  padding:80px 20px;
   background:linear-gradient(135deg,#ffcc00,#ff8800);
   color:#111;
 }
 
-.hero h1{
-  font-size:50px;
-  animation:fadeUp 1s ease;
+.hero img{
+  width:220px;
+  margin-bottom:20px;
 }
 
-.hero p{
-  margin:15px 0;
-  font-size:18px;
-  animation:fadeUp 1.4s ease;
-}
+.hero h1{font-size:40px;}
 
-@keyframes fadeUp{
-  from{opacity:0;transform:translateY(30px);}
-  to{opacity:1;transform:translateY(0);}
-}
-
-/* BUTTON */
 .btn{
-  padding:15px 30px;
-  border-radius:30px;
+  padding:14px 30px;
   background:#111;
   color:#ffcc00;
+  border-radius:30px;
   text-decoration:none;
   display:inline-block;
   margin-top:15px;
-  font-weight:600;
-  transition:0.3s;
 }
 
-.btn:hover{
-  transform:scale(1.1);
-  box-shadow:0 10px 30px rgba(0,0,0,0.4);
-}
-
-/* SECTION */
-section{
-  padding:80px 20px;
-  text-align:center;
-}
-
-/* CARDS */
+/* SERVICES */
 .cards{
   display:flex;
   flex-wrap:wrap;
   justify-content:center;
   gap:20px;
+  padding:40px 20px;
 }
 
 .card{
-  background:rgba(255,255,255,0.05);
-  backdrop-filter:blur(10px);
-  padding:25px;
+  background:#111;
+  padding:20px;
   border-radius:15px;
-  width:180px;
-  transition:0.3s;
+  width:170px;
+  text-align:center;
 }
 
-.card:hover{
-  transform:translateY(-10px);
-  box-shadow:0 10px 30px rgba(255,204,0,0.2);
+.card img{
+  width:50px;
+  margin-bottom:10px;
 }
 
-/* COUNTER */
-.counter{
-  font-size:45px;
-  color:#ffcc00;
+/* RESULTS IMAGE */
+.results img{
+  width:100%;
+  max-width:400px;
+  border-radius:15px;
+  margin-top:20px;
 }
 
 /* TESTIMONIAL */
 .testimonial{
-  max-width:400px;
-  margin:20px auto;
   background:#111;
+  margin:10px auto;
   padding:20px;
+  max-width:400px;
   border-radius:10px;
 }
 
@@ -155,20 +109,10 @@ form{
 
 input,textarea{
   width:100%;
-  padding:12px;
+  padding:10px;
   margin:10px 0;
   border:none;
   border-radius:8px;
-}
-
-form button{
-  width:100%;
-  background:#25D366;
-  color:#fff;
-  padding:12px;
-  border:none;
-  border-radius:8px;
-  font-weight:600;
 }
 
 /* WHATSAPP */
@@ -183,110 +127,84 @@ form button{
   text-decoration:none;
 }
 
-/* MOBILE */
-@media(max-width:768px){
-  .cards{flex-direction:column;align-items:center;}
-  .hero h1{font-size:32px;}
-}
-
 </style>
 </head>
 
 <body>
 
-<!-- TOP BAR -->
 <div class="top-bar">
-🚀 Get 20–50 Clients Every Month | Limited Slots Available
+🚀 Get 20–50 Clients Every Month
 </div>
 
 <!-- NAVBAR -->
 <div class="navbar">
-  <div onclick="toggleMenu()">☰</div>
-  <div><b>MetaSpark</b></div>
+  <div>☰</div>
+  <img src="images/logo.png" class="logo">
   <div>⚙️</div>
-</div>
-
-<!-- MENU -->
-<div class="menu" id="menu">
-  <a href="#">Home</a>
-  <a href="#">Services</a>
-  <a href="#">Results</a>
-  <a href="#">Contact</a>
 </div>
 
 <!-- HERO -->
 <section class="hero">
+  <img src="images/banner.png" alt="">
   <h1>We Bring You Clients</h1>
-  <p>Performance marketing that grows your business fast.</p>
+  <p>Grow your business with ads & automation</p>
   <a href="https://wa.me/923030607545" class="btn">Get Clients</a>
 </section>
 
 <!-- SERVICES -->
 <section>
-  <h2>Our Services</h2>
+  <h2 style="text-align:center;">Our Services</h2>
+
   <div class="cards">
-    <div class="card">Facebook Ads</div>
-    <div class="card">Instagram Growth</div>
-    <div class="card">TikTok Ads</div>
-    <div class="card">Shopify</div>
+    <div class="card">
+      <img src="images/facebook.png">
+      Facebook Ads
+    </div>
+
+    <div class="card">
+      <img src="images/instagram.png">
+      Instagram Growth
+    </div>
+
+    <div class="card">
+      <img src="images/tiktok.png">
+      TikTok Ads
+    </div>
+
+    <div class="card">
+      <img src="images/youtube.png">
+      YouTube Ads
+    </div>
   </div>
 </section>
 
 <!-- RESULTS -->
-<section>
+<section class="results" style="text-align:center;padding:40px;">
   <h2>Our Results</h2>
-  <div class="counter" id="counter">0</div>
-  <p>Leads Generated</p>
+  <img src="images/banner.png">
 </section>
 
-<!-- TESTIMONIALS -->
+<!-- TESTIMONIAL -->
 <section>
-  <h2>Clients Say</h2>
-  <div class="testimonial">“Got 60+ leads in 7 days 🔥”</div>
-  <div class="testimonial">“Best decision ever 💯”</div>
+  <h2 style="text-align:center;">Clients Say</h2>
+
+  <div class="testimonial">“Got 50+ leads in 10 days 🔥”</div>
+  <div class="testimonial">“Best agency 💯”</div>
 </section>
 
-<!-- LEAD FORM -->
-<section>
-  <h2>Get Free Audit</h2>
+<!-- FORM -->
+<section style="text-align:center;padding:40px;">
+  <h2>Free Audit</h2>
+
   <form>
-    <input type="text" placeholder="Your Name">
-    <input type="text" placeholder="Your Business">
-    <textarea placeholder="Tell us your goal"></textarea>
-    <button type="submit">Submit</button>
+    <input placeholder="Your Name">
+    <input placeholder="Your Business">
+    <textarea placeholder="Your Goal"></textarea>
+    <button style="padding:10px;background:#25D366;color:#fff;border:none;border-radius:8px;">Submit</button>
   </form>
 </section>
 
-<!-- CTA -->
-<section>
-  <h2>Start Today</h2>
-  <a href="https://wa.me/923030607545" class="btn">Chat on WhatsApp</a>
-</section>
-
-<footer style="text-align:center;padding:20px;color:#777;">
-© 2026 MetaSpark Agency
-</footer>
-
 <a href="https://wa.me/923030607545" class="whatsapp">WhatsApp</a>
 
-<script>
-
-/* MENU */
-function toggleMenu(){
-  document.getElementById("menu").classList.toggle("active");
-}
-
-/* COUNTER */
-let count=0;
-let target=1500;
-
-let c=setInterval(()=>{
-  count+=25;
-  document.getElementById("counter").innerText=count+"+";
-  if(count>=target) clearInterval(c);
-},20);
-
-</script>
-
 </body>
-  </html>
+        </html>
