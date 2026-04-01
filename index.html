@@ -1,230 +1,55 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
+  <title>MetaSpark Agency</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="MetaSpark Agency - Premium Digital Marketing Agency in Pakistan. Facebook Ads, Instagram Ads, TikTok Ads, YouTube SEO, Shopify & Creative Design.">
-  <title>MetaSpark Agency | Black & Gold</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
-    
-    body {
-      font-family: 'Inter', system-ui, sans-serif;
-      background: #0a0a0a;
-      color: #f5f5f5;
+    body {font-family: Arial; margin:0; padding:0; text-align:center;}
+    header {background:#000; color:#fff; padding:20px;}
+    section {padding:40px;}
+    .btn {
+      display:inline-block;
+      padding:12px 20px;
+      background:#25D366;
+      color:#fff;
+      text-decoration:none;
+      border-radius:5px;
     }
-
-    .gold { color: #d4af37; }
-    .gold-bg { background: #d4af37; color: #0a0a0a; }
-    .gold-border { border-color: #d4af37; }
-
-    .service-card {
-      transition: all 0.4s ease;
-    }
-    .service-card:hover {
-      transform: translateY(-8px);
-      border-color: #d4af37;
-    }
-
-    .hero-bg {
-      background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
-    }
-
-    .section-title {
-      position: relative;
-      display: inline-block;
-    }
-    .section-title:after {
-      content: '';
-      position: absolute;
-      width: 60px;
-      height: 2px;
-      background: #d4af37;
-      bottom: -8px;
-      left: 50%;
-      transform: translateX(-50%);
-    }
+    .services {display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:15px;}
+    .box {border:1px solid #ddd; padding:20px; border-radius:10px;}
   </style>
 </head>
+
 <body>
 
-  <!-- NAVBAR -->
-  <nav class="fixed top-0 left-0 right-0 z-50 bg-black/90 backdrop-blur-md border-b border-white/10">
-    <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
-      <div class="flex items-center gap-3">
-        <div class="w-9 h-9 bg-[#d4af37] text-black rounded-2xl flex items-center justify-center text-2xl font-bold">MS</div>
-        <h1 class="text-3xl font-bold tracking-tight">MetaSpark</h1>
-      </div>
-      <a href="https://wa.me/923030607545" 
-         class="flex items-center gap-2 bg-[#d4af37] hover:bg-amber-300 text-black font-semibold px-6 py-3 rounded-3xl transition-all">
-        <i class="fab fa-whatsapp text-xl"></i>
-        WhatsApp
-      </a>
-    </div>
-  </nav>
+<header>
+  <h1>MetaSpark Agency ??</h1>
+  <p>Grow Your Business Online</p>
+</header>
 
-  <!-- HERO -->
-  <header class="hero-bg pt-28 pb-20 text-center">
-    <div class="max-w-5xl mx-auto px-6">
-      <h1 class="text-6xl md:text-7xl font-bold tracking-tighter leading-none mb-6">
-        GROW WITH <span class="gold">CONFIDENCE</span>
-      </h1>
-      <p class="text-2xl text-zinc-300 max-w-2xl mx-auto mb-10">
-        Premium Digital Marketing Agency<br>
-        Facebook • Instagram • TikTok • YouTube • Shopify • Creative Design
-      </p>
-      <a href="https://wa.me/923030607545" 
-         class="inline-flex items-center gap-3 gold-bg hover:bg-amber-300 text-xl font-semibold px-10 py-5 rounded-3xl transition-all">
-        <i class="fab fa-whatsapp text-3xl"></i>
-        Free Strategy Call on WhatsApp
-      </a>
-    </div>
-  </header>
+<section>
+  <h2>Our Services</h2>
+  <div class="services">
+    <div class="box">Facebook Ads</div>
+    <div class="box">Instagram Ads</div>
+    <div class="box">TikTok Ads</div>
+    <div class="box">YouTube SEO</div>
+    <div class="box">YouTube Automation</div>
+    <div class="box">Social Media Management</div>
+    <div class="box">Website Development</div>
+    <div class="box">Shopify Store</div>
+    <div class="box">Logo Design</div>
+    <div class="box">Banner Design</div>
+    <div class="box">Thumbnail Design</div>
+    <div class="box">Animation</div>
+  </div>
+</section>
 
-  <!-- SERVICES -->
-  <section id="services" class="py-20">
-    <div class="max-w-7xl mx-auto px-6">
-      <h2 class="section-title text-5xl font-bold text-center mb-16">Our Services</h2>
-      
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        
-        <div class="service-card bg-zinc-900 border border-zinc-800 rounded-3xl overflow-hidden">
-          <img src="https://picsum.photos/id/1015/800/500" alt="Facebook Ads" class="w-full h-56 object-cover">
-          <div class="p-7">
-            <h3 class="text-2xl font-semibold mb-2">Facebook Ads</h3>
-            <p class="text-zinc-400">High-converting campaigns with precise targeting and ROI tracking.</p>
-          </div>
-        </div>
+<section>
+  <h2>Contact Us</h2>
+  <p>WhatsApp: 03030607545</p>
+  <a class="btn" href="https://wa.me/923030607545">Chat on WhatsApp</a>
+</section>
 
-        <div class="service-card bg-zinc-900 border border-zinc-800 rounded-3xl overflow-hidden">
-          <img src="https://picsum.photos/id/1005/800/500" alt="Instagram Ads" class="w-full h-56 object-cover">
-          <div class="p-7">
-            <h3 class="text-2xl font-semibold mb-2">Instagram Ads</h3>
-            <p class="text-zinc-400">Visual storytelling and shoppable ads that drive direct sales.</p>
-          </div>
-        </div>
-
-        <div class="service-card bg-zinc-900 border border-zinc-800 rounded-3xl overflow-hidden">
-          <img src="https://picsum.photos/id/1016/800/500" alt="TikTok Ads" class="w-full h-56 object-cover">
-          <div class="p-7">
-            <h3 class="text-2xl font-semibold mb-2">TikTok Ads</h3>
-            <p class="text-zinc-400">Viral creatives and performance campaigns for maximum reach.</p>
-          </div>
-        </div>
-
-        <div class="service-card bg-zinc-900 border border-zinc-800 rounded-3xl overflow-hidden">
-          <img src="https://picsum.photos/id/133/800/500" alt="YouTube SEO" class="w-full h-56 object-cover">
-          <div class="p-7">
-            <h3 class="text-2xl font-semibold mb-2">YouTube SEO</h3>
-            <p class="text-zinc-400">Channel optimization and ranking strategies for long-term growth.</p>
-          </div>
-        </div>
-
-        <div class="service-card bg-zinc-900 border border-zinc-800 rounded-3xl overflow-hidden">
-          <img src="https://picsum.photos/id/201/800/500" alt="YouTube Automation" class="w-full h-56 object-cover">
-          <div class="p-7">
-            <h3 class="text-2xl font-semibold mb-2">YouTube Automation</h3>
-            <p class="text-zinc-400">Fully automated faceless channels with consistent revenue.</p>
-          </div>
-        </div>
-
-        <div class="service-card bg-zinc-900 border border-zinc-800 rounded-3xl overflow-hidden">
-          <img src="https://picsum.photos/id/251/800/500" alt="Social Media Management" class="w-full h-56 object-cover">
-          <div class="p-7">
-            <h3 class="text-2xl font-semibold mb-2">Social Media Management</h3>
-            <p class="text-zinc-400">Daily content, engagement and community building across platforms.</p>
-          </div>
-        </div>
-
-        <div class="service-card bg-zinc-900 border border-zinc-800 rounded-3xl overflow-hidden">
-          <img src="https://picsum.photos/id/1009/800/500" alt="Shopify Store" class="w-full h-56 object-cover">
-          <div class="p-7">
-            <h3 class="text-2xl font-semibold mb-2">Shopify Store Development</h3>
-            <p class="text-zinc-400">Professional, high-converting e-commerce stores with automation.</p>
-          </div>
-        </div>
-
-        <div class="service-card bg-zinc-900 border border-zinc-800 rounded-3xl overflow-hidden">
-          <img src="https://picsum.photos/id/1003/800/500" alt="Logo Design" class="w-full h-56 object-cover">
-          <div class="p-7">
-            <h3 class="text-2xl font-semibold mb-2">Logo & Brand Design</h3>
-            <p class="text-zinc-400">Premium logo and complete brand identity design.</p>
-          </div>
-        </div>
-
-        <div class="service-card bg-zinc-900 border border-zinc-800 rounded-3xl overflow-hidden">
-          <img src="https://picsum.photos/id/1018/800/500" alt="Banner Design" class="w-full h-56 object-cover">
-          <div class="p-7">
-            <h3 class="text-2xl font-semibold mb-2">Banner & Graphic Design</h3>
-            <p class="text-zinc-400">Eye-catching banners, posters and marketing creatives.</p>
-          </div>
-        </div>
-
-        <div class="service-card bg-zinc-900 border border-zinc-800 rounded-3xl overflow-hidden">
-          <img src="https://picsum.photos/id/133/800/500" alt="Thumbnail Design" class="w-full h-56 object-cover">
-          <div class="p-7">
-            <h3 class="text-2xl font-semibold mb-2">YouTube Thumbnail Design</h3>
-            <p class="text-zinc-400">High-CTR thumbnails designed to boost video clicks.</p>
-          </div>
-        </div>
-
-        <div class="service-card bg-zinc-900 border border-zinc-800 rounded-3xl overflow-hidden">
-          <img src="https://picsum.photos/id/160/800/500" alt="Animation" class="w-full h-56 object-cover">
-          <div class="p-7">
-            <h3 class="text-2xl font-semibold mb-2">Video Animation</h3>
-            <p class="text-zinc-400">Professional explainer videos and motion graphics.</p>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- FINAL CTA -->
-  <section class="py-20 bg-zinc-900 border-t border-b border-zinc-800">
-    <div class="max-w-4xl mx-auto px-6 text-center">
-      <h2 class="text-5xl font-bold mb-6">Ready to Scale Your Business?</h2>
-      <p class="text-xl text-zinc-400 mb-10">Get a free consultation and custom growth strategy today.</p>
-      <a href="https://wa.me/923030607545" 
-         class="inline-flex items-center gap-4 gold-bg hover:bg-amber-300 text-2xl font-semibold px-14 py-7 rounded-3xl transition-all">
-        <i class="fab fa-whatsapp text-4xl"></i>
-        <span>0303 0607545 — Message on WhatsApp</span>
-      </a>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="bg-black py-12 text-center text-zinc-500">
-    <div class="max-w-7xl mx-auto px-6">
-      <div class="flex justify-center items-center gap-3 mb-6">
-        <div class="w-8 h-8 bg-[#d4af37] text-black rounded-2xl flex items-center justify-center text-xl font-bold">MS</div>
-        <span class="text-2xl font-semibold text-white">MetaSpark Agency</span>
-      </div>
-      <p>Premium Digital Marketing & Creative Solutions • Multan, Pakistan</p>
-      <p class="text-sm mt-4">© 2026 MetaSpark Agency. All Rights Reserved.</p>
-    </div>
-  </footer>
-
-  <!-- Floating WhatsApp -->
-  <a href="https://wa.me/923030607545" 
-     class="fixed bottom-8 right-8 w-16 h-16 bg-[#d4af37] text-black rounded-3xl flex items-center justify-center text-4xl shadow-2xl hover:scale-110 transition-transform z-50">
-    <i class="fab fa-whatsapp"></i>
-  </a>
-
-  <script>
-    // Simple scroll effect for navbar
-    window.addEventListener('scroll', () => {
-      const nav = document.querySelector('nav');
-      if (window.scrollY > 100) {
-        nav.style.background = 'rgba(10,10,10,0.98)';
-      } else {
-        nav.style.background = 'rgba(10,10,10,0.9)';
-      }
-    });
-
-    console.log('%c✅ MetaSpark Agency Black & Gold version loaded successfully!', 'color:#d4af37; font-size:16px');
-  </script>
 </body>
-        </html>
+</html>
