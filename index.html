@@ -9,12 +9,7 @@
 body { margin:0; font-family:'Inter', sans-serif; background:#0a0a0a; color:#fff; line-height:1.6; scroll-behavior:smooth; }
 
 /* LOGO + NAME */
-.logo-name {
-  display:flex;
-  align-items:center;
-  gap:15px;
-  position:fixed; top:15px; left:20px; z-index:1000;
-}
+.logo-name { display:flex; align-items:center; gap:15px; position:fixed; top:15px; left:20px; z-index:1000; }
 .logo-name div { width:120px; height:60px; overflow:hidden; }
 .logo-name img { width:100%; height:100%; object-fit:contain; }
 .logo-name h1 { color:black; font-size:22px; margin:0; font-weight:700; }
@@ -40,18 +35,16 @@ nav { position:fixed; top:15px; right:20px; z-index:1000; display:flex; flex-dir
 .services p { color:#ccc; font-size:16px; margin-bottom:30px; }
 .cards { display:flex; flex-wrap:wrap; justify-content:center; gap:25px; }
 .card { background:#111; padding:30px 20px; border-radius:15px; width:180px; text-align:center; cursor:pointer; transition:0.3s; }
-.card img { width:100%; height:100px; object-fit:contain; margin-bottom:15px; transition: transform 0.5s ease; }
+.card img { width:100%; height:120px; object-fit:contain; margin-bottom:15px; transition: transform 0.5s ease; }
 .card:hover img { transform:rotate(15deg) scale(1.1); }
 .card:hover { transform:translateY(-15px) scale(1.05); box-shadow:0 15px 30px rgba(255,204,0,0.4); }
 .card p { font-weight:600; color:#ccc; font-size:14px; }
 
-/* RESULTS / LEADS */
+/* LEADS */
 #stats { text-align:center; margin:30px 0; font-size:18px; }
 
 /* CONTACT INFO */
 #email, #phone { font-size:16px; color:#ccc; margin-bottom:10px; text-align:center; position:relative; }
-
-/* EMAIL & PHONE SLIDE IN */
 @keyframes slideInLeft { 0% {left:-200px; opacity:0;} 100% {left:0; opacity:1;} }
 @keyframes slideInRight { 0% {left:200px; opacity:0;} 100% {left:0; opacity:1;} }
 
@@ -76,19 +69,13 @@ footer { text-align:center; padding:25px; color:#777; border-top:1px solid #222;
 
 <!-- Logo + Name -->
 <div class="logo-name">
-  <div>
-    <img src="images/logo.png" alt="MetaSpark Logo">
-  </div>
+  <div><img src="images/logo.png" alt="MetaSpark Logo"></div>
   <h1>MetaSpark Agency</h1>
 </div>
 
 <!-- Hamburger Menu -->
 <nav>
-  <div id="hamburger">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
+  <div id="hamburger"><span></span><span></span><span></span></div>
   <div id="services-dropdown">
     <a href="#services">Facebook Complete Service</a>
     <a href="#services">YouTube Complete Service</a>
@@ -105,7 +92,7 @@ footer { text-align:center; padding:25px; color:#777; border-top:1px solid #222;
 <section class="hero">
   <h1>We Bring You Clients 🚀</h1>
   <p>
-    Facebook Ads, YouTube(Banner, Logo, Thumbnail), Instagram Ads (Organic & Non-Organic Followers), Social Media Management, Leads Generation, eBay Service, Shopify Complete Setup, YouTube Automation
+    Facebook Ads, YouTube (Banner, Logo, Thumbnail), Instagram Ads (Organic & Non-Organic Followers), Social Media Management, Leads Generation, eBay Service, Shopify Complete Setup, YouTube Automation
   </p>
   <a href="https://wa.me/923030607545?text=Hi%20I%20want%20clients" class="btn">Get Clients Now</a>
   <div id="stats">🔥 Leads Daily <span class="counter" data-target="200">0</span>+</div>
@@ -116,10 +103,10 @@ footer { text-align:center; padding:25px; color:#777; border-top:1px solid #222;
   <h2>Our Services</h2>
   <p>We help you grow your business with targeted ads, organic growth, video campaigns, Shopify store setup, and YouTube automation. Each service is designed to deliver real clients and measurable results.</p>
   <div class="cards">
-    <div class="card"><img src="images/Facebook.png" alt="Facebook Ads"><p>Facebook Ads<br><small>Targeted Audience to your goals</small></p></div>
+    <div class="card"><img src="images/Facebook.png" alt="Facebook Ads"><p>Facebook Ads<br><small>Targeted Audience to your goals & increase sales</small></p></div>
     <div class="card"><img src="images/Instagram.png" alt="Instagram Growth"><p>Instagram Growth<br><small>Organic & paid promotions</small></p></div>
-    <div class="card"><img src="images/TikTok.png" alt="TikTok "><p>TikTok Ads<br><small>Engaging short video campaigns</small></p></div>
-    <div class="card"><img src="images/YouTube.png" alt="YouTube "><p>YouTube SEO<br><small>Grow Channel & Earn Money</small></p></div>
+    <div class="card"><img src="images/TikTok.png" alt="TikTok Ads"><p>TikTok Ads<br><small>Engaging short video campaigns</small></p></div>
+    <div class="card"><img src="images/YouTube.png" alt="YouTube SEO"><p>YouTube SEO<br><small>Grow Channel & Earn Money</small></p></div>
     <div class="card"><img src="images/Shopify.png" alt="Shopify Store"><p>Shopify Store<br><small>Setup & optimize online store</small></p></div>
     <div class="card"><img src="images/Automation.png" alt="YouTube Automation"><p>YouTube Automation<br><small>Faceless YouTube Channel</small></p></div>
   </div>
@@ -179,5 +166,5 @@ hamburger.addEventListener("click", ()=>{
 });
 </script>
 
-</body>
-                                                                                   </html>
+  </body>
+                                  
