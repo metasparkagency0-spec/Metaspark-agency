@@ -2,31 +2,37 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-  <!-- Agency Logo & Name -->
-<div style="display:flex; align-items:center; gap:15px; padding:15px;">
-  <img src="images/logo.png" alt="MetaSpark Logo" style="width:80px;">
-  <h1 style="color:#ffcc00; font-size:22px; margin:0; font-weight:700;">MetaSpark Agency</h1>
-</div>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>MetaSpark Agency</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
 body { margin:0; font-family:'Inter', sans-serif; background:#0a0a0a; color:#fff; line-height:1.6; scroll-behavior:smooth; }
+
 /* NAVIGATION */
 nav { position:fixed; top:15px; right:20px; z-index:1000; display:flex; flex-direction:column; align-items:flex-end; }
+
 /* Hamburger */
 #hamburger { display:flex; flex-direction:column; gap:5px; cursor:pointer; }
 #hamburger span { width:30px; height:3px; background:#fff; border-radius:2px; }
+
 /* Dropdown */
 #services-dropdown { display:none; background:#111; padding:10px; border-radius:8px; min-width:220px; flex-direction:column; margin-top:10px; }
 #services-dropdown a { color:#fff; text-decoration:none; padding:8px 12px; display:block; transition:0.3s; }
 #services-dropdown a:hover { background:#222; color:#ffcc00; }
+
+/* LOGO & NAME */
+.logo-name { display:flex; align-items:center; gap:15px; position:fixed; top:15px; left:20px; z-index:1000; }
+.logo-name div { width:120px; height:60px; overflow:hidden; }
+.logo-name img { width:100%; height:100%; object-fit:contain; }
+.logo-name h1 { color:#ffcc00; font-size:22px; margin:0; font-weight:700; }
+
 /* HERO */
 .hero { text-align:center; padding:120px 20px; background:linear-gradient(135deg,#ffcc00 0%,#ff9900 100%); color:#111; }
 .hero h1 { font-size:52px; font-weight:700; margin-bottom:20px; }
 .hero p { font-size:16px; margin-bottom:30px; line-height:1.6; }
 .hero .btn { background:#111; color:#ffcc00; padding:15px 35px; border-radius:10px; font-weight:700; text-decoration:none; transition:transform 0.3s ease; }
 .hero .btn:hover { transform:scale(1.1); box-shadow:0 10px 25px rgba(255,204,0,0.6); }
+
 /* SERVICES */
 .services { padding:60px 20px; text-align:center; background:#0a0a0a; }
 .services h2 { font-size:40px; color:#ffcc00; margin-bottom:20px; }
@@ -37,26 +43,45 @@ nav { position:fixed; top:15px; right:20px; z-index:1000; display:flex; flex-dir
 .card:hover img { transform:rotate(15deg) scale(1.1); }
 .card:hover { transform:translateY(-15px) scale(1.05); box-shadow:0 15px 30px rgba(255,204,0,0.4); }
 .card p { font-weight:600; color:#ccc; font-size:14px; }
+
 /* RESULTS / LEADS */
 #stats { text-align:center; margin:30px 0; font-size:18px; }
+
 /* CONTACT INFO */
 #email, #phone { font-size:16px; color:#ccc; margin-bottom:10px; text-align:center; position:relative; }
+
 /* EMAIL & PHONE SLIDE IN */
 @keyframes slideInLeft { 0% {left:-200px; opacity:0;} 100% {left:0; opacity:1;} }
 @keyframes slideInRight { 0% {left:200px; opacity:0;} 100% {left:0; opacity:1;} }
+
 /* WhatsApp button */
 #whatsapp-wrapper { position:fixed; bottom:25px; right:25px; z-index:1000; }
 #whatsapp { background:#25D366; color:black; padding:16px 20px; border-radius:50px; text-decoration:none; font-weight:bold; box-shadow:0 8px 25px rgba(0,0,0,0.5); display:inline-block; position:relative; }
 #whatsapp-badge { position:absolute; top:-8px; right:-8px; background:red; color:white; width:24px; height:24px; font-size:14px; font-weight:bold; border-radius:50%; display:flex; align-items:center; justify-content:center; }
+
 /* FOOTER */
 footer { text-align:center; padding:25px; color:#777; border-top:1px solid #222; }
+
 /* RESPONSIVE */
-@media(max-width:768px){ .cards { flex-direction:column; align-items:center; } .card { width:70%; } .hero h1 { font-size:36px; } .services h2 { font-size:28px; } }
+@media(max-width:768px){ 
+  .cards { flex-direction:column; align-items:center; } 
+  .card { width:70%; } 
+  .hero h1 { font-size:36px; } 
+  .services h2 { font-size:28px; } 
+}
 </style>
 </head>
 <body>
 
-<!-- Hamburger Menu with Services -->
+<!-- Logo + Name -->
+<div class="logo-name">
+  <div>
+    <img src="images/logo.png" alt="MetaSpark Logo">
+  </div>
+  <h1>MetaSpark Agency</h1>
+</div>
+
+<!-- Hamburger Menu -->
 <nav>
   <div id="hamburger">
     <span></span>
@@ -64,13 +89,13 @@ footer { text-align:center; padding:25px; color:#777; border-top:1px solid #222;
     <span></span>
   </div>
   <div id="services-dropdown">
-    <a href="#services">Facebook Ads </a>
-    <a href="#services">YouTube SEO (Banner-Logo-Thumbnail-Keyword-Hashtags) </a>
-    <a href="#services">Instagram Ads (Organic & Non-Organic Followers) </a>
+    <a href="#services">Facebook Complete Service</a>
+    <a href="#services">YouTube Complete Service</a>
+    <a href="#services">Instagram Complete Service</a>
     <a href="#services">Social Media Management</a>
     <a href="#services">Leads Generation</a>
     <a href="#services">eBay Service</a>
-    <a href="#services">Shopify Complete Setup</a>
+    <a href="#services">Shopify Complete Service</a>
     <a href="#services">YouTube Automation</a>
   </div>
 </nav>
@@ -79,7 +104,7 @@ footer { text-align:center; padding:25px; color:#777; border-top:1px solid #222;
 <section class="hero">
   <h1>We Bring You Clients 🚀</h1>
   <p>
-    Facebook Ads, YouTube, Instagram , Social Media Management, Leads Generation, eBay Service, Shopify Complete Setup, YouTube Automation
+    Facebook Ads, YouTube(Banner, Logo, Thumbnail), Instagram Ads (Organic & Non-Organic Followers), Social Media Management, Leads Generation, eBay Service, Shopify Complete Setup, YouTube Automation
   </p>
   <a href="https://wa.me/923030607545?text=Hi%20I%20want%20clients" class="btn">Get Clients Now</a>
   <div id="stats">🔥 Leads Daily <span class="counter" data-target="200">0</span>+</div>
@@ -90,7 +115,7 @@ footer { text-align:center; padding:25px; color:#777; border-top:1px solid #222;
   <h2>Our Services</h2>
   <p>We help you grow your business with targeted ads, organic growth, video campaigns, Shopify store setup, and YouTube automation. Each service is designed to deliver real clients and measurable results.</p>
   <div class="cards">
-    <div class="card"><img src="images/facebook.png" alt="Facebook Ads"><p>Facebook Ads<br><small>Targeted Audience to reach your goals & increase sales</small></p></div>
+    <div class="card"><img src="images/facebook.png" alt="Facebook Ads"><p>Facebook Ads<br><small>Targeted Audience to your goals & increase sales </small></p></div>
     <div class="card"><img src="images/instagram.png" alt="Instagram Growth"><p>Instagram Growth<br><small>Organic & paid promotions</small></p></div>
     <div class="card"><img src="images/tiktok.png" alt="TikTok Ads"><p>TikTok Ads<br><small>Engaging short video campaigns</small></p></div>
     <div class="card"><img src="images/youtube.png" alt="YouTube SEO"><p>YouTube SEO<br><small>Grow Channel & Earn Money</small></p></div>
