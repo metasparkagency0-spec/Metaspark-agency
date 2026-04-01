@@ -8,17 +8,14 @@
 <style>
 body { margin:0; font-family:'Inter', sans-serif; background:#0a0a0a; color:#fff; line-height:1.6; scroll-behavior:smooth; }
 /* NAVIGATION */
-nav { display:flex; justify-content:space-between; align-items:center; padding:15px 50px; background:#111; position:sticky; top:0; z-index:1000; }
-nav img { width:80px; }
-nav h1 { color:#ffcc00; font-size:22px; margin:0; font-weight:700; }
-/* MENU */
-nav ul { list-style:none; display:flex; gap:25px; margin:0; padding:0; align-items:center; }
-nav ul li { position:relative; }
-nav ul li a { color:#fff; text-decoration:none; font-weight:600; transition:0.3s; }
-nav ul li a:hover { color:#ffcc00; }
-nav ul li ul { position:absolute; top:35px; left:0; background:#111; padding:10px 0; border-radius:8px; display:none; flex-direction:column; min-width:200px; }
-nav ul li ul li { padding:5px 20px; }
-nav ul li ul li a { color:#ccc; }
+nav { position:fixed; top:15px; right:20px; z-index:1000; display:flex; flex-direction:column; align-items:flex-end; }
+/* Hamburger */
+#hamburger { display:flex; flex-direction:column; gap:5px; cursor:pointer; }
+#hamburger span { width:30px; height:3px; background:#fff; border-radius:2px; }
+/* Dropdown */
+#services-dropdown { display:none; background:#111; padding:10px; border-radius:8px; min-width:220px; flex-direction:column; margin-top:10px; }
+#services-dropdown a { color:#fff; text-decoration:none; padding:8px 12px; display:block; transition:0.3s; }
+#services-dropdown a:hover { background:#222; color:#ffcc00; }
 /* HERO */
 .hero { text-align:center; padding:120px 20px; background:linear-gradient(135deg,#ffcc00 0%,#ff9900 100%); color:#111; }
 .hero h1 { font-size:52px; font-weight:700; margin-bottom:20px; }
@@ -49,57 +46,51 @@ nav ul li ul li a { color:#ccc; }
 /* FOOTER */
 footer { text-align:center; padding:25px; color:#777; border-top:1px solid #222; }
 /* RESPONSIVE */
-@media(max-width:768px){ nav { flex-direction:column; gap:10px; text-align:center; } nav ul { flex-direction:column; gap:10px; } .cards { flex-direction:column; align-items:center; } .card { width:70%; } .hero h1 { font-size:36px; } .services h2 { font-size:28px; } }
+@media(max-width:768px){ .cards { flex-direction:column; align-items:center; } .card { width:70%; } .hero h1 { font-size:36px; } .services h2 { font-size:28px; } }
 </style>
 </head>
 <body>
 
-<!-- NAVIGATION -->
+<!-- Hamburger Menu with Services -->
 <nav>
-  <div style="display:flex;align-items:center;gap:15px;">
-    <img src="images/logo.png" alt="MetaSpark Logo">
-    <h1>MetaSpark Agency</h1>
+  <div id="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
   </div>
-  <ul>
-    <li><a href="#hero">Home</a></li>
-    <li>
-      <a href="javascript:void(0)" id="services-toggle">Services ▼</a>
-      <ul id="services-dropdown">
-        <li><a href="#services">Facebook Complete Service</a></li>
-        <li><a href="#services">YouTube Complete Service</a></li>
-        <li><a href="#services">Instagram Complete Service</a></li>
-        <li><a href="#services">Social Media Management</a></li>
-        <li><a href="#services">Leads Generation</a></li>
-        <li><a href="#services">eBay Service</a></li>
-        <li><a href="#services">Shopify Complete Service</a></li>
-        <li><a href="#services">YouTube Automation</a></li>
-      </ul>
-    </li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
+  <div id="services-dropdown">
+    <a href="#services">Facebook Ads </a>
+    <a href="#services">YouTube SEO (Banner-Logo-Thumbnail-Keyword-Hashtags) </a>
+    <a href="#services">Instagram Ads (Organic & Non-Organic Followers) </a>
+    <a href="#services">Social Media Management</a>
+    <a href="#services">Leads Generation</a>
+    <a href="#services">eBay Service</a>
+    <a href="#services">Shopify Complete Setup</a>
+    <a href="#services">YouTube Automation</a>
+  </div>
 </nav>
 
 <!-- HERO -->
-<section id="hero" class="hero">
+<section class="hero">
   <h1>We Bring You Clients 🚀</h1>
   <p>
-    Facebook Ads, YouTube(Banner, Logo, Thumbnail), Instagram (Ads, Followers), Social Media Management, Leads Generation, eBay Service, Shopify Complete Setup, YouTube Automation
+    Facebook Ads, YouTube, Instagram , Social Media Management, Leads Generation, eBay Service, Shopify Complete Setup, YouTube Automation
   </p>
   <a href="https://wa.me/923030607545?text=Hi%20I%20want%20clients" class="btn">Get Clients Now</a>
   <div id="stats">🔥 Leads Daily <span class="counter" data-target="200">0</span>+</div>
 </section>
 
-<!-- SERVICES -->
+<!-- SERVICES SECTION -->
 <section id="services" class="services">
   <h2>Our Services</h2>
   <p>We help you grow your business with targeted ads, organic growth, video campaigns, Shopify store setup, and YouTube automation. Each service is designed to deliver real clients and measurable results.</p>
   <div class="cards">
-    <div class="card"><img src="images/facebook.png" alt="Facebook Ads"><p>Facebook Ads<br><small>Targeted Audience to reach your goals & Increase Sales </small></p></div>
-    <div class="card"><img src="images/instagram.png" alt="Instagram Growth"><p>Instagram Growth<br><small>Organic & paid promotions for real followers</small></p></div>
-    <div class="card"><img src="images/tiktok.png" alt="TikTok Ads"><p>TikTok Ads<br><small>Engaging short video campaigns for conversions</small></p></div>
-    <div class="card"><img src="images/youtube.png" alt="YouTube SEO"><p>YouTube SEO<br><small>Grow YouTube Channel & Earn Money</small></p></div>
-    <div class="card"><img src="images/shopify.png" alt="Shopify Store"><p>Shopify Store<br><small>Setup, optimize, and scale your online store</small></p></div>
-    <div class="card"><img src="images/automation.png" alt="Automation"><p>YouTube Automation<br><small>Faceless YouTube Channel</small></p></div>
+    <div class="card"><img src="images/facebook.png" alt="Facebook Ads"><p>Facebook Ads<br><small>Targeted Audience to reach your goals & increase sales</small></p></div>
+    <div class="card"><img src="images/instagram.png" alt="Instagram Growth"><p>Instagram Growth<br><small>Organic & paid promotions</small></p></div>
+    <div class="card"><img src="images/tiktok.png" alt="TikTok Ads"><p>TikTok Ads<br><small>Engaging short video campaigns</small></p></div>
+    <div class="card"><img src="images/youtube.png" alt="YouTube SEO"><p>YouTube SEO<br><small>Grow Channel & Earn Money</small></p></div>
+    <div class="card"><img src="images/shopify.png" alt="Shopify Store"><p>Shopify Store<br><small>Setup & optimize online store</small></p></div>
+    <div class="card"><img src="images/automation.png" alt="YouTube Automation"><p>YouTube Automation<br><small>Faceless YouTube Channel</small></p></div>
   </div>
 </section>
 
@@ -133,33 +124,29 @@ counters.forEach(counter => {
   updateCount();
 });
 
-// Email & Phone Slide-In once
+// Email & Phone Slide-In
 document.getElementById("email").style.position="relative";
 document.getElementById("email").style.animation="slideInLeft 2s forwards";
 document.getElementById("phone").style.position="relative";
 document.getElementById("phone").style.animation="slideInRight 2s forwards";
 
-// WhatsApp pulse every 10 sec
+// WhatsApp pulse
 setInterval(()=>{
   const btn = document.getElementById("whatsapp");
-  btn.style.transition = "all 0.5s ease";
-  btn.style.transform = "scale(1.2)";
-  btn.style.boxShadow = "0 12px 30px rgba(37,211,102,0.7)";
-  setTimeout(()=>{
-    btn.style.transform = "scale(1)";
-    btn.style.boxShadow = "0 8px 25px rgba(0,0,0,0.5)";
-  },1000);
+  btn.style.transition="all 0.5s ease";
+  btn.style.transform="scale(1.2)";
+  btn.style.boxShadow="0 12px 30px rgba(37,211,102,0.7)";
+  setTimeout(()=>{ btn.style.transform="scale(1)"; btn.style.boxShadow="0 8px 25px rgba(0,0,0,0.5)"; },1000);
 },10000);
 
-// Services dropdown toggle
-const toggleBtn = document.getElementById("services-toggle");
+// Hamburger toggle
+const hamburger = document.getElementById("hamburger");
 const dropdown = document.getElementById("services-dropdown");
-toggleBtn.addEventListener("click", function(e){
-  e.preventDefault();
+hamburger.addEventListener("click", ()=>{
   dropdown.style.display = dropdown.style.display === "flex" ? "none" : "flex";
   dropdown.style.flexDirection = "column";
 });
 </script>
 
 </body>
-              </html>
+  </html>
