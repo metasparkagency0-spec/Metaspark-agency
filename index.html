@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,8 +31,14 @@ nav h1 { color:#ffcc00; font-size:22px; margin:0; font-weight:700; }
 /* RESULTS / LEADS */
 #stats { text-align:center; margin:30px 0; font-size:18px; }
 /* CONTACT INFO */
-#email, #phone { font-size:16px; color:#ccc; margin-bottom:10px; text-align:center; }
-#whatsapp { position:fixed; bottom:25px; right:25px; background:#25D366; color:white; padding:16px 20px; border-radius:50px; text-decoration:none; font-weight:bold; box-shadow:0 8px 25px rgba(0,0,0,0.5); }
+#email, #phone { font-size:16px; color:#ccc; margin-bottom:10px; text-align:center; position:relative; }
+/* EMAIL & PHONE SLIDE ANIMATION */
+@keyframes slideEmail { 0% {left:-100px;} 50% {left:100px;} 100% {left:-100px;} }
+@keyframes slidePhone { 0% {left:100px;} 50% {left:-100px;} 100% {left:100px;} }
+/* WhatsApp button */
+#whatsapp-wrapper { position:fixed; bottom:25px; right:25px; z-index:1000; }
+#whatsapp { background:#25D366; color:black; padding:16px 20px; border-radius:50px; text-decoration:none; font-weight:bold; box-shadow:0 8px 25px rgba(0,0,0,0.5); display:inline-block; position:relative; }
+#whatsapp-badge { position:absolute; top:-8px; right:-8px; background:red; color:white; width:24px; height:24px; font-size:14px; font-weight:bold; border-radius:50%; display:flex; align-items:center; justify-content:center; }
 /* FOOTER */
 footer { text-align:center; padding:25px; color:#777; border-top:1px solid #222; }
 /* RESPONSIVE */
@@ -61,12 +68,12 @@ footer { text-align:center; padding:25px; color:#777; border-top:1px solid #222;
 <!-- SERVICES -->
 <section class="services">
   <h2>Our Services</h2>
-  <p>We help you grow your business with targeted ads, organic growth, video campaigns, Shopify store setup, and YouTube automation. Each service is designed to deliver real clients and measurable results.</p>
+  <p>We help you grow your business with targeted ads, organic growth, video campaigns, Shopify store setup, and marketing automation. Each service is designed to deliver real clients and measurable results.</p>
   <div class="cards">
-    <div class="card"><img src="images/facebook.png" alt="Facebook Ads"><p>Facebook Ads<br><small>Targeted Audience to reach your ideal audience</small></p></div>
+    <div class="card"><img src="images/facebook.png" alt="Facebook Ads"><p>Facebook Ads<br><small>Targeted campaigns to reach your ideal audience</small></p></div>
     <div class="card"><img src="images/instagram.png" alt="Instagram Growth"><p>Instagram Growth<br><small>Organic & paid promotions for real followers</small></p></div>
     <div class="card"><img src="images/tiktok.png" alt="TikTok Ads"><p>TikTok Ads<br><small>Engaging short video campaigns for conversions</small></p></div>
-    <div class="card"><img src="images/youtube.png" alt="YouTube Seo"><p>YouTube Seo<br><small>Video campaigns to boost visibility & leads</small></p></div>
+    <div class="card"><img src="images/youtube.png" alt="YouTube Ads"><p>YouTube Ads<br><small>Video campaigns to boost visibility & leads</small></p></div>
     <div class="card"><img src="images/shopify.png" alt="Shopify Store"><p>Shopify Store<br><small>Setup, optimize, and scale your online store</small></p></div>
     <div class="card"><img src="images/automation.png" alt="Automation"><p>Marketing Automation<br><small>Automate workflows & save time while increasing leads</small></p></div>
   </div>
@@ -76,7 +83,12 @@ footer { text-align:center; padding:25px; color:#777; border-top:1px solid #222;
 <div style="text-align:center;margin-top:20px;font-size:16px;color:#ccc;">
   <div id="email">📧 Email: <a href="mailto:metasparkagency0@gmail.com" style="color:#ffcc00;text-decoration:none;">metasparkagency0@gmail.com</a></div>
   <div id="phone">📞 Phone: <a href="tel:+923030607545" style="color:#ffcc00;text-decoration:none;">03030607545</a></div>
-  <a id="whatsapp" href="https://wa.me/923030607545">WhatsApp (15+ Messages Sent 🔥)</a>
+</div>
+
+<!-- WhatsApp Floating Button with Badge -->
+<div id="whatsapp-wrapper">
+  <a id="whatsapp" href="https://wa.me/923030607545">WhatsApp</a>
+  <div id="whatsapp-badge">30</div>
 </div>
 
 <footer>© 2026 MetaSpark Agency</footer>
@@ -98,25 +110,13 @@ counters.forEach(counter => {
   updateCount();
 });
 
-// Email / Phone / WhatsApp Animation
-function animateElement(el){
-  el.style.transition = "all 0.5s ease";
-  el.style.transform = "scale(1.2)";
-  el.style.color = "#ffcc00";
-  el.style.boxShadow = "0 12px 30px rgba(255,204,0,0.7)";
-  setTimeout(()=>{
-    el.style.transform = "scale(1)";
-    el.style.color = "#ccc";
-    el.style.boxShadow = "0 8px 25px rgba(0,0,0,0.5)";
-  },1000);
+// Animate Email/Phone sliding
+function slideElement(el, animationName){
+  el.style.position = "relative";
+  el.style.animation = animationName + " 4s ease-in-out infinite";
 }
-
-// Animate Email/Phone/WhatsApp every 2 min
-setInterval(()=>{
-  animateElement(document.getElementById("email"));
-  animateElement(document.getElementById("phone"));
-  animateElement(document.getElementById("whatsapp"));
-},120000);
+slideElement(document.getElementById("email"), "slideEmail");
+slideElement(document.getElementById("phone"), "slidePhone");
 
 // WhatsApp pulse every 10 sec
 setInterval(()=>{
