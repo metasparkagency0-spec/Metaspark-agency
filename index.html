@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,9 +31,9 @@ nav h1 { color:#ffcc00; font-size:22px; margin:0; font-weight:700; }
 #stats { text-align:center; margin:30px 0; font-size:18px; }
 /* CONTACT INFO */
 #email, #phone { font-size:16px; color:#ccc; margin-bottom:10px; text-align:center; position:relative; }
-/* EMAIL & PHONE SLIDE ANIMATION */
-@keyframes slideEmail { 0% {left:-100px;} 50% {left:100px;} 100% {left:-100px;} }
-@keyframes slidePhone { 0% {left:100px;} 50% {left:-100px;} 100% {left:100px;} }
+/* EMAIL & PHONE SLIDE IN */
+@keyframes slideInLeft { 0% {left:-200px; opacity:0;} 100% {left:0; opacity:1;} }
+@keyframes slideInRight { 0% {left:200px; opacity:0;} 100% {left:0; opacity:1;} }
 /* WhatsApp button */
 #whatsapp-wrapper { position:fixed; bottom:25px; right:25px; z-index:1000; }
 #whatsapp { background:#25D366; color:black; padding:16px 20px; border-radius:50px; text-decoration:none; font-weight:bold; box-shadow:0 8px 25px rgba(0,0,0,0.5); display:inline-block; position:relative; }
@@ -59,7 +58,7 @@ footer { text-align:center; padding:25px; color:#777; border-top:1px solid #222;
 <section class="hero">
   <h1>We Bring You Clients 🚀</h1>
   <p>
-    Meta Ads, Instagram Ads, TikTok Ads, Shopify Store Setup, YouTube Automation, YouTube SEO, YouTube Banner, YouTube Thumbnail, YouTube Logo, Social Media Management, Leads Generation, eBay Service
+    Facebook Complete Service, YouTube Complete Service, Instagram Complete Service, Social Media Management, Leads Generation, eBay Service, Shopify Complete Service, YouTube Automation
   </p>
   <a href="https://wa.me/923030607545?text=Hi%20I%20want%20clients" class="btn">Get Clients Now</a>
   <div id="stats">🔥 Leads Daily <span class="counter" data-target="200">0</span>+</div>
@@ -95,7 +94,7 @@ footer { text-align:center; padding:25px; color:#777; border-top:1px solid #222;
 
 <!-- JS ANIMATION -->
 <script>
-// Leads Counter Animation
+// Leads Counter
 const counters = document.querySelectorAll(".counter");
 counters.forEach(counter => {
   const updateCount = () => {
@@ -110,13 +109,11 @@ counters.forEach(counter => {
   updateCount();
 });
 
-// Animate Email/Phone sliding
-function slideElement(el, animationName){
-  el.style.position = "relative";
-  el.style.animation = animationName + " 4s ease-in-out infinite";
-}
-slideElement(document.getElementById("email"), "slideEmail");
-slideElement(document.getElementById("phone"), "slidePhone");
+// Email & Phone Slide-In once
+document.getElementById("email").style.position="relative";
+document.getElementById("email").style.animation="slideInLeft 2s forwards";
+document.getElementById("phone").style.position="relative";
+document.getElementById("phone").style.animation="slideInRight 2s forwards";
 
 // WhatsApp pulse every 10 sec
 setInterval(()=>{
