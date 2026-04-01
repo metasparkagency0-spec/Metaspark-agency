@@ -11,6 +11,14 @@ body { margin:0; font-family:'Inter', sans-serif; background:#0a0a0a; color:#fff
 nav { display:flex; justify-content:space-between; align-items:center; padding:15px 50px; background:#111; position:sticky; top:0; z-index:1000; }
 nav img { width:80px; }
 nav h1 { color:#ffcc00; font-size:22px; margin:0; font-weight:700; }
+/* MENU */
+nav ul { list-style:none; display:flex; gap:25px; margin:0; padding:0; align-items:center; }
+nav ul li { position:relative; }
+nav ul li a { color:#fff; text-decoration:none; font-weight:600; transition:0.3s; }
+nav ul li a:hover { color:#ffcc00; }
+nav ul li ul { position:absolute; top:35px; left:0; background:#111; padding:10px 0; border-radius:8px; display:none; flex-direction:column; min-width:200px; }
+nav ul li ul li { padding:5px 20px; }
+nav ul li ul li a { color:#ccc; }
 /* HERO */
 .hero { text-align:center; padding:120px 20px; background:linear-gradient(135deg,#ffcc00 0%,#ff9900 100%); color:#111; }
 .hero h1 { font-size:52px; font-weight:700; margin-bottom:20px; }
@@ -22,7 +30,7 @@ nav h1 { color:#ffcc00; font-size:22px; margin:0; font-weight:700; }
 .services h2 { font-size:40px; color:#ffcc00; margin-bottom:20px; }
 .services p { color:#ccc; font-size:16px; margin-bottom:30px; }
 .cards { display:flex; flex-wrap:wrap; justify-content:center; gap:25px; }
-.card { background:#111; padding:30px 20px; border-radius:15px; width:180px; text-align:center; cursor:pointer; }
+.card { background:#111; padding:30px 20px; border-radius:15px; width:180px; text-align:center; cursor:pointer; transition:0.3s; }
 .card img { width:60px; margin-bottom:15px; transition: transform 0.5s ease; }
 .card:hover img { transform:rotate(15deg) scale(1.1); }
 .card:hover { transform:translateY(-15px) scale(1.05); box-shadow:0 15px 30px rgba(255,204,0,0.4); }
@@ -41,7 +49,7 @@ nav h1 { color:#ffcc00; font-size:22px; margin:0; font-weight:700; }
 /* FOOTER */
 footer { text-align:center; padding:25px; color:#777; border-top:1px solid #222; }
 /* RESPONSIVE */
-@media(max-width:768px){ nav { flex-direction:column; gap:10px; text-align:center; } .cards { flex-direction:column; align-items:center; } .card { width:70%; } .hero h1 { font-size:36px; } .services h2 { font-size:28px; } }
+@media(max-width:768px){ nav { flex-direction:column; gap:10px; text-align:center; } nav ul { flex-direction:column; gap:10px; } .cards { flex-direction:column; align-items:center; } .card { width:70%; } .hero h1 { font-size:36px; } .services h2 { font-size:28px; } }
 </style>
 </head>
 <body>
@@ -52,24 +60,41 @@ footer { text-align:center; padding:25px; color:#777; border-top:1px solid #222;
     <img src="images/logo.png" alt="MetaSpark Logo">
     <h1>MetaSpark Agency</h1>
   </div>
+  <ul>
+    <li><a href="#hero">Home</a></li>
+    <li>
+      <a href="javascript:void(0)" id="services-toggle">Services ▼</a>
+      <ul id="services-dropdown">
+        <li><a href="#services">Facebook Complete Service</a></li>
+        <li><a href="#services">YouTube Complete Service</a></li>
+        <li><a href="#services">Instagram Complete Service</a></li>
+        <li><a href="#services">Social Media Management</a></li>
+        <li><a href="#services">Leads Generation</a></li>
+        <li><a href="#services">eBay Service</a></li>
+        <li><a href="#services">Shopify Complete Service</a></li>
+        <li><a href="#services">YouTube Automation</a></li>
+      </ul>
+    </li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
 </nav>
 
 <!-- HERO -->
-<section class="hero">
+<section id="hero" class="hero">
   <h1>We Bring You Clients 🚀</h1>
   <p>
-    Facebook Ads, YouTube(Banner, Logo, Thumbnail) , Instagram (Ads, Followers) , Social Media Management, Leads Generation, eBay Service, Shopify Complete Setup, YouTube Automation
+    Facebook Ads, YouTube(Banner, Logo, Thumbnail), Instagram (Ads, Followers), Social Media Management, Leads Generation, eBay Service, Shopify Complete Setup, YouTube Automation
   </p>
   <a href="https://wa.me/923030607545?text=Hi%20I%20want%20clients" class="btn">Get Clients Now</a>
   <div id="stats">🔥 Leads Daily <span class="counter" data-target="200">0</span>+</div>
 </section>
 
 <!-- SERVICES -->
-<section class="services">
+<section id="services" class="services">
   <h2>Our Services</h2>
   <p>We help you grow your business with targeted ads, organic growth, video campaigns, Shopify store setup, and YouTube automation. Each service is designed to deliver real clients and measurable results.</p>
   <div class="cards">
-    <div class="card"><img src="images/facebook.png" alt="Facebook Ads"><p>Facebook Ads<br><small>Targeted Audience to reach your goals </small></p></div>
+    <div class="card"><img src="images/facebook.png" alt="Facebook Ads"><p>Facebook Ads<br><small>Targeted Audience to reach your goals & Increase Sales </small></p></div>
     <div class="card"><img src="images/instagram.png" alt="Instagram Growth"><p>Instagram Growth<br><small>Organic & paid promotions for real followers</small></p></div>
     <div class="card"><img src="images/tiktok.png" alt="TikTok Ads"><p>TikTok Ads<br><small>Engaging short video campaigns for conversions</small></p></div>
     <div class="card"><img src="images/youtube.png" alt="YouTube SEO"><p>YouTube SEO<br><small>Grow YouTube Channel & Earn Money</small></p></div>
@@ -79,10 +104,10 @@ footer { text-align:center; padding:25px; color:#777; border-top:1px solid #222;
 </section>
 
 <!-- CONTACT INFO -->
-<div style="text-align:center;margin-top:20px;font-size:16px;color:#ccc;">
+<section id="contact" style="text-align:center;margin-top:20px;font-size:16px;color:#ccc;">
   <div id="email">📧 Email: <a href="mailto:metasparkagency0@gmail.com" style="color:#ffcc00;text-decoration:none;">metasparkagency0@gmail.com</a></div>
   <div id="phone">📞 Phone: <a href="tel:+923030607545" style="color:#ffcc00;text-decoration:none;">03030607545</a></div>
-</div>
+</section>
 
 <!-- WhatsApp Floating Button with Badge -->
 <div id="whatsapp-wrapper">
@@ -92,7 +117,6 @@ footer { text-align:center; padding:25px; color:#777; border-top:1px solid #222;
 
 <footer>© 2026 MetaSpark Agency</footer>
 
-<!-- JS ANIMATION -->
 <script>
 // Leads Counter
 const counters = document.querySelectorAll(".counter");
@@ -126,7 +150,16 @@ setInterval(()=>{
     btn.style.boxShadow = "0 8px 25px rgba(0,0,0,0.5)";
   },1000);
 },10000);
+
+// Services dropdown toggle
+const toggleBtn = document.getElementById("services-toggle");
+const dropdown = document.getElementById("services-dropdown");
+toggleBtn.addEventListener("click", function(e){
+  e.preventDefault();
+  dropdown.style.display = dropdown.style.display === "flex" ? "none" : "flex";
+  dropdown.style.flexDirection = "column";
+});
 </script>
 
 </body>
-  </html>
+              </html>
