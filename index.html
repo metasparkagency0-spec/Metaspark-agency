@@ -50,7 +50,7 @@ nav { position:fixed; top:15px; right:20px; z-index:1000; display:flex; flex-dir
 
 /* WhatsApp */
 #whatsapp-wrapper { position:fixed; bottom:25px; right:25px; z-index:1000; }
-#whatsapp { background:#25D366; color:black; padding:16px 20px; border-radius:50px; text-decoration:none; font-weight:bold; }
+#whatsapp { background:#25D366; color:black; padding:16px 20px; border-radius:50px; text-decoration:none; font-weight:bold; box-shadow:0 8px 25px rgba(0,0,0,0.5); }
 
 /* Footer */
 footer { text-align:center; padding:25px; color:#777; border-top:1px solid #222; }
@@ -59,11 +59,13 @@ footer { text-align:center; padding:25px; color:#777; border-top:1px solid #222;
 
 <body>
 
+<!-- Logo -->
 <div class="logo-name">
-  <div><img src="images/logo.png"></div>
+  <div><img src="images/logo.png" alt="logo"></div>
   <h1>MetaSpark Agency</h1>
 </div>
 
+<!-- Menu -->
 <nav>
   <div id="hamburger"><span></span><span></span><span></span></div>
   <div id="services-dropdown">
@@ -73,11 +75,13 @@ footer { text-align:center; padding:25px; color:#777; border-top:1px solid #222;
   </div>
 </nav>
 
+<!-- HERO -->
 <section class="hero">
   <h1>We Bring You Clients 🚀</h1>
-  <p>Grow your business with ads & automation</p>
+  <p>Facebook Ads, Instagram Growth, Shopify, YouTube Automation</p>
 </section>
 
+<!-- SERVICES -->
 <section id="services" class="services">
   <h2>Our Services</h2>
 
@@ -92,6 +96,7 @@ footer { text-align:center; padding:25px; color:#777; border-top:1px solid #222;
   </div>
 </section>
 
+<!-- WhatsApp -->
 <div id="whatsapp-wrapper">
   <a id="whatsapp" href="https://wa.me/923030607545">WhatsApp</a>
 </div>
@@ -99,4 +104,4 @@ footer { text-align:center; padding:25px; color:#777; border-top:1px solid #222;
 <footer>© 2026 MetaSpark Agency</footer>
 
 </body>
-                              </html>
+                        </html>
