@@ -8,32 +8,64 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
 <style>
-body { margin:0; font-family:'Inter', sans-serif; background:#0a0a0a; color:#fff; line-height:1.6; }
-
-/* ✅ HEADER (FIXED ISSUE SOLVED) */
-.header{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:15px 20px;
-  background:#111;
+body {
+  margin:0;
+  font-family:'Inter', sans-serif;
+  background:#0a0a0a;
+  color:#fff;
 }
 
-/* LOGO */
-.logo-name { display:flex; align-items:center; gap:15px; }
-.logo-name img { height:50px; }
-.logo-name h1 { color:#fff; font-size:20px; margin:0; }
+/* HEADER */
+.logo-name {
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:70px;
+  background:#111;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 20px;
+  z-index:1000;
+  box-shadow:0 5px 20px rgba(0,0,0,0.5);
+}
+
+.logo-name img {
+  height:45px;
+  filter: drop-shadow(0 0 10px #ffcc00);
+}
+
+.logo-name h1 {
+  font-size:18px;
+  margin:0;
+}
 
 /* MENU */
-nav { position:relative; }
-#hamburger { display:flex; flex-direction:column; gap:5px; cursor:pointer; }
-#hamburger span { width:30px; height:3px; background:#fff; }
+nav {
+  position:fixed;
+  top:20px;
+  right:20px;
+  z-index:1100;
+}
+
+#hamburger {
+  display:flex;
+  flex-direction:column;
+  gap:5px;
+  cursor:pointer;
+}
+
+#hamburger span {
+  width:28px;
+  height:3px;
+  background:#fff;
+}
 
 #services-dropdown {
   display:none;
-  position:absolute;
-  right:0;
   background:#111;
+  margin-top:10px;
   padding:10px;
   border-radius:8px;
 }
@@ -45,44 +77,68 @@ nav { position:relative; }
   padding:8px;
 }
 
+#services-dropdown a:hover {
+  color:#ffcc00;
+}
+
 /* HERO */
 .hero {
   text-align:center;
-  padding:80px 20px;
+  padding:140px 20px 80px;
   background:linear-gradient(135deg,#ffcc00,#ff9900);
-  color:#111;
+  color:#000;
 }
 
-.hero h1 { font-size:40px; }
+.hero h1 {
+  font-size:36px;
+}
 
-.btn {
-  background:#111;
-  color:#ffcc00;
+.hero .btn {
+  display:inline-block;
+  margin-top:20px;
   padding:12px 25px;
+  background:#000;
+  color:#ffcc00;
   border-radius:8px;
   text-decoration:none;
-  display:inline-block;
-  margin-top:15px;
 }
 
 /* SERVICES */
+.services {
+  padding:40px 20px;
+  text-align:center;
+}
+
 .cards {
   display:flex;
   flex-wrap:wrap;
   justify-content:center;
   gap:20px;
-  padding:40px;
 }
 
 .card {
   background:#111;
   padding:20px;
-  border-radius:10px;
   width:160px;
-  text-align:center;
+  border-radius:12px;
+  transition:0.3s;
 }
 
-.card img { width:100%; height:100px; object-fit:cover; }
+.card img {
+  width:100%;
+  height:100px;
+  object-fit:contain;
+}
+
+.card:hover {
+  transform:scale(1.05);
+}
+
+/* CONTACT */
+#email,#phone {
+  text-align:center;
+  margin:10px;
+}
 
 /* WHATSAPP */
 #whatsapp {
@@ -90,64 +146,100 @@ nav { position:relative; }
   bottom:20px;
   right:20px;
   background:#25D366;
-  padding:15px;
+  color:#000;
+  padding:15px 20px;
   border-radius:50px;
-  color:#fff;
   text-decoration:none;
 }
 
+#badge {
+  position:absolute;
+  top:-5px;
+  right:-5px;
+  background:red;
+  color:#fff;
+  width:20px;
+  height:20px;
+  border-radius:50%;
+  font-size:12px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+footer {
+  text-align:center;
+  padding:20px;
+  color:#777;
+}
 </style>
 </head>
 
 <body>
 
 <!-- HEADER -->
-<div class="header">
+<div class="logo-name">
+  <img src="images/logo.png">
+  <h1>MetaSpark Agency</h1>
+</div>
 
-  <div class="logo-name">
-    <img src="images/logo.png">
-    <h1>MetaSpark Agency</h1>
+<!-- MENU -->
+<nav>
+  <div id="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
   </div>
 
-  <nav>
-    <div id="hamburger">
-      <span></span><span></span><span></span>
-    </div>
-
-    <div id="services-dropdown">
-      <a href="#">Facebook</a>
-      <a href="#">Instagram</a>
-      <a href="#">TikTok</a>
-      <a href="#">Shopify</a>
-    </div>
-  </nav>
-
-</div>
+  <div id="services-dropdown">
+    <a href="#services">Facebook</a>
+    <a href="#services">Instagram</a>
+    <a href="#services">TikTok</a>
+    <a href="#services">YouTube</a>
+    <a href="#services">Shopify</a>
+    <a href="#services">eBay</a>
+  </div>
+</nav>
 
 <!-- HERO -->
 <section class="hero">
   <h1>We Bring You Clients 🚀</h1>
-  <p>Grow your business with ads & automation</p>
+  <p>Grow with Ads & Automation</p>
   <a href="https://wa.me/923030607545" class="btn">Get Clients</a>
 </section>
 
 <!-- SERVICES -->
-<div class="cards">
-  <div class="card"><img src="images/Facebook.png">Facebook Ads</div>
-  <div class="card"><img src="images/Instagram.png">Instagram</div>
-  <div class="card"><img src="images/TikTok.png">TikTok</div>
-  <div class="card"><img src="images/Shopify.png">Shopify</div>
-</div>
+<section id="services" class="services">
+  <h2>Our Services</h2>
+
+  <div class="cards">
+    <div class="card"><img src="images/Facebook.png"><p>Facebook Ads</p></div>
+    <div class="card"><img src="images/Instagram.png"><p>Instagram</p></div>
+    <div class="card"><img src="images/TikTok.png"><p>TikTok</p></div>
+    <div class="card"><img src="images/YouTube.png"><p>YouTube</p></div>
+    <div class="card"><img src="images/Shopify.png"><p>Shopify</p></div>
+    <div class="card"><img src="images/eBay.png"><p>eBay</p></div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<div id="email">📧 metasparkagency0@gmail.com</div>
+<div id="phone">📞 03030607545</div>
 
 <!-- WHATSAPP -->
-<a href="https://wa.me/923030607545" id="whatsapp">WhatsApp</a>
+<a id="whatsapp" href="https://wa.me/923030607545">
+  WhatsApp
+  <div id="badge">30</div>
+</a>
+
+<footer>© MetaSpark Agency</footer>
 
 <script>
 document.getElementById("hamburger").onclick = function(){
   let menu = document.getElementById("services-dropdown");
-  menu.style.display = menu.style.display === "block" ? "none" : "block";
-}
+  menu.style.display = (menu.style.display === "block") ? "none" : "block";
+};
 </script>
 
 </body>
-                          </html>
+  </html>
