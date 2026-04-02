@@ -3,89 +3,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MetaSpark | We Scale Brands</title>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <title>MetaSpark Agency | Verified Performance & Growth</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
     <style>
         :root {
-            --primary: #FFCC00;
-            --bg: #050505;
-            --card: #0c0c0c;
-            --text: #ffffff;
-            --muted: #888888;
+            --primary: #FFCC00; /* Yellow from your design */
+            --bg: #050505;      /* Deep Dark from your design */
+            --card: #121212;   /* Card Contrast */
+            --text-muted: #999;
+            --border: rgba(255, 255, 255, 0.05);
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; outline: none; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body { 
             font-family: 'Plus Jakarta Sans', sans-serif; 
-            background: var(--bg); color: var(--text); 
-            line-height: 1.5; overflow-x: hidden;
+            background-color: var(--bg); color: #fff; line-height: 1.6;
+            overflow-x: hidden; scroll-behavior: smooth;
         }
 
-        /* --- Elegant Header --- */
+        /* --- Custom Animations --- */
+        .reveal { opacity: 0; transform: translateY(30px); transition: 0.8s all ease; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+
+        /* --- Header --- */
         header {
-            padding: 20px 6%; display: flex; justify-content: space-between; align-items: center;
-            position: fixed; width: 100%; top: 0; z-index: 1000;
-            background: rgba(5,5,5,0.9); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255,255,255,0.05);
+            padding: 15px 6%; display: flex; justify-content: space-between;
+            align-items: center; position: fixed; width: 100%; top: 0;
+            z-index: 1000; background: rgba(5, 5, 5, 0.9); backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
         }
-        .logo { font-weight: 800; font-size: 1.1rem; letter-spacing: 1px; color: var(--primary); display: flex; align-items: center; gap: 8px; }
-        .logo img { width: 30px; filter: grayscale(1); }
-        .menu-toggle { color: var(--primary); cursor: pointer; font-size: 1.2rem; }
+        .logo { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 1.3rem; color: var(--primary); }
+        .logo img { width: 35px; height: 35px; }
 
-        /* --- Side Menu --- */
+        #menu-btn { cursor: pointer; color: var(--primary); font-size: 1.5rem; transition: 0.3s; }
+        #menu-btn:hover { transform: scale(1.1); }
+
+        /* --- Side Menu Fix --- */
         #side-menu {
-            position: fixed; top: 0; right: -100%; width: 100%; height: 100vh;
-            background: #000; z-index: 2000; transition: 0.6s cubic-bezier(0.85, 0, 0.15, 1);
-            display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 30px;
+            position: fixed; top: 0; right: -100%; width: 280px; height: 100vh;
+            background: #0d0d0d; padding: 100px 30px; display: flex; flex-direction: column;
+            gap: 20px; transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 2000; border-left: 1px solid var(--border);
         }
         #side-menu.active { right: 0; }
-        .close-icon { position: absolute; top: 30px; right: 30px; font-size: 2rem; color: var(--primary); cursor: pointer; }
-        #side-menu a { text-decoration: none; color: #fff; font-size: 1.8rem; font-weight: 700; transition: 0.3s; }
-        #side-menu a:hover { color: var(--primary); transform: scale(1.1); }
+        #close-btn { position: absolute; top: 30px; right: 30px; font-size: 2rem; color: var(--primary); cursor: pointer; }
+        #side-menu a { text-decoration: none; color: #fff; font-size: 1.1rem; display: flex; align-items: center; gap: 15px; transition: 0.3s; }
+        #side-menu a i { color: var(--primary); width: 20px; text-align: center; }
+        #side-menu a:hover { color: var(--primary); padding-left: 5px; }
 
-        /* --- Hero --- */
-        .hero { height: 90vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 0 10%; }
-        .hero span { color: var(--primary); font-weight: 700; letter-spacing: 3px; font-size: 0.75rem; text-transform: uppercase; margin-bottom: 15px; }
-        .hero h1 { font-size: clamp(40px, 8vw, 72px); font-weight: 800; line-height: 1; letter-spacing: -3px; margin-bottom: 25px; }
-        .hero p { color: var(--muted); font-size: 1.1rem; max-width: 500px; margin-bottom: 40px; }
-        .cta-btn { background: var(--primary); color: #000; padding: 18px 45px; border-radius: 100px; text-decoration: none; font-weight: 800; font-size: 0.9rem; transition: 0.4s; }
+        /* --- Hero Section (Truth-Able Start) --- */
+        .hero {
+            height: 100vh; display: flex; flex-direction: column; justify-content: center;
+            align-items: center; text-align: center; padding: 0 8%;
+        }
+        .truth-line { color: var(--primary); font-size: 0.8rem; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px; }
+        .hero h1 { font-size: clamp(35px, 8vw, 70px); font-weight: 800; line-height: 1.1; margin-bottom: 25px; }
+        .hero h1 span { color: var(--primary); }
+        .hero p { color: var(--text-muted); max-width: 650px; font-size: 1.15rem; margin-bottom: 40px; }
+        .btn-main { background: var(--primary); color: #000; padding: 18px 45px; border-radius: 12px; font-weight: 800; text-decoration: none; display: inline-block; transition: 0.3s; }
+        .btn-main:hover { transform: scale(1.05); }
 
-        /* --- Service Case Studies (Image First) --- */
-        .work-section { padding: 80px 6%; }
-        .work-grid { display: grid; grid-template-columns: 1fr; gap: 60px; max-width: 900px; margin: 0 auto; }
-        .work-card { background: var(--card); border-radius: 30px; overflow: hidden; border: 1px solid rgba(255,255,255,0.03); transition: 0.5s; }
-        .work-card:hover { transform: translateY(-10px); border-color: rgba(255,204,0,0.2); }
-        .img-holder { width: 100%; background: #000; display: flex; align-items: center; justify-content: center; padding: 20px; }
-        .img-holder img { width: 100%; border-radius: 15px; transition: 0.5s; }
-        
-        .work-info { padding: 40px; text-align: center; }
-        .work-info h3 { font-size: 1.8rem; font-weight: 800; margin-bottom: 10px; color: var(--primary); }
-        .work-info p { color: var(--muted); font-size: 1rem; max-width: 500px; margin: 0 auto 20px; }
-        
-        /* --- Human Touch Reviews --- */
-        .reviews { padding: 80px 6%; text-align: center; }
-        .rev-card { max-width: 600px; margin: 0 auto 40px; padding: 30px; border-bottom: 1px solid rgba(255,255,255,0.05); }
-        .rev-card h4 { font-size: 1.1rem; margin-top: 15px; color: var(--primary); }
-        .rev-card span { color: #444; font-size: 0.8rem; font-weight: 700; }
+        /* --- Services --- */
+        .section { padding: 100px 8%; }
+        .section-tag { color: var(--primary); text-transform: uppercase; font-size: 0.85rem; font-weight: 700; letter-spacing: 1px; margin-bottom: 10px; display: block; text-align: center; }
+        .section-h2 { font-size: 2.8rem; text-align: center; margin-bottom: 60px; font-weight: 800; }
+        .section-h2 span { color: var(--primary); }
 
-        /* --- Small Info Footer --- */
-        footer { padding: 60px 6%; text-align: center; background: #000; }
-        .f-text { font-size: 0.85rem; color: var(--muted); margin-bottom: 5px; }
-        .f-link { color: #fff; text-decoration: none; font-weight: 700; font-size: 0.9rem; transition: 0.3s; }
-        .f-link:hover { color: var(--primary); }
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .s-card { background: var(--card); border-radius: 20px; border: 1px solid var(--border); overflow: hidden; transition: 0.4s; }
+        .s-card:hover { transform: translateY(-10px); border-color: var(--primary); }
+        .img-holder { width: 100%; height: 250px; background: #000; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+        .img-holder img { max-width: 80%; max-height: 80%; object-fit: contain; }
+        .s-info { padding: 30px; }
+        .s-info h3 { font-size: 1.4rem; margin-bottom: 12px; color: var(--primary); }
+        .s-info p { color: var(--text-muted); font-size: 0.95rem; }
 
-        /* --- Animated Stats --- */
-        .stats-bar { display: flex; justify-content: center; gap: 50px; padding: 40px 0; border-top: 1px solid rgba(255,255,255,0.05); }
-        .stat-n { font-size: 2.5rem; font-weight: 800; color: var(--primary); display: block; }
-        .stat-t { font-size: 0.7rem; font-weight: 800; color: #444; letter-spacing: 1px; }
+        /* --- Client Video Section (NEW) --- */
+        .video-container { max-width: 1000px; margin: 0 auto; border-radius: 25px; overflow: hidden; border: 1px solid var(--border); position: relative; }
+        .video-container video { width: 100%; display: block; }
+        .video-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.5); cursor: pointer; transition: 0.3s; }
+        .video-overlay:hover { background: rgba(0,0,0,0.2); }
+        .play-btn { font-size: 3rem; color: var(--primary); }
 
-        /* --- Floating WhatsApp --- */
-        .wa-btn { position: fixed; bottom: 30px; right: 30px; background: #25D366; width: 55px; height: 55px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; color: #fff; text-decoration: none; z-index: 1000; box-shadow: 0 10px 20px rgba(0,0,0,0.4); animation: bounce 3s infinite; }
-        @keyframes bounce { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.1); } }
+        /* --- Impact/Counter Section --- */
+        .stats-section { padding: 100px 0; background: #080808; border-top: 1px solid var(--border); margin-top: 50px; }
+        .stats-grid { display: flex; justify-content: center; gap: 80px; flex-wrap: wrap; text-align: center; }
+        .stat-item h2 { font-size: 4rem; color: var(--primary); font-weight: 800; margin-bottom: 5px; }
+        .stat-item p { font-size: 1rem; color: var(--text-muted); font-weight: 600; letter-spacing: 1px; }
+
+        /* --- Footer --- */
+        footer { padding: 80px 8% 40px; background: #000; text-align: center; border-top: 1px solid var(--border); }
+        .f-link { color: var(--primary); text-decoration: none; font-size: 1.5rem; font-weight: 800; display: block; margin: 10px 0; }
 
         @media (max-width: 768px) {
-            .hero h1 { font-size: 48px; }
-            .work-info { padding: 30px 20px; }
+            .section { padding: 60px 6%; }
+            .section-h2 { font-size: 2rem; }
+            .stats-grid { gap: 40px; }
+            .stat-item h2 { font-size: 3rem; }
         }
     </style>
 </head>
@@ -93,110 +108,150 @@
 
     <header>
         <div class="logo">
-            <img src="images/logo.png" alt="M"> METASPARK
+            <img src="images/logo.png" alt="MetaSpark Logo">
+            <span>METASPARK</span>
         </div>
-        <div class="menu-toggle" id="open-m"><i class="fas fa-bars-staggered"></i></div>
+        <div id="menu-btn"><i class="fas fa-bars"></i></div>
     </header>
 
-    <div id="side-menu">
-        <i class="fas fa-times close-icon" id="close-m"></i>
-        <a href="#work">Our Proofs</a>
-        <a href="#leads">Generate Leads</a>
-        <a href="#work">eBay Expert</a>
-        <a href="#contact">Contact</a>
-    </div>
+    <nav id="side-menu">
+        <i class="fas fa-times" id="close-btn"></i>
+        <a href="#services"><i class="fab fa-facebook-f"></i> Facebook Ads</a>
+        <a href="#services"><i class="fab fa-instagram"></i> Instagram Growth</a>
+        <a href="#services"><i class="fab fa-tiktok"></i> TikTok Marketing</a>
+        <a href="#services"><i class="fab fa-youtube"></i> YouTube Automation</a>
+        <a href="#services"><i class="fas fa-robot"></i> AI Automation</a>
+        <a href="#contact"><i class="fas fa-paper-plane"></i> Contact Us</a>
+    </nav>
 
     <section class="hero">
-        <span>EST. 2024</span>
-        <h1>Quiet Power.<br>Real Results.</h1>
-        <p>Bina kisi shor ke, hum aapke brand ko globally scale karte hain. MetaSpark is about data, trust, and human connection.</p>
-        <a href="https://wa.me/923030607545" class="cta-btn">Start Your Growth</a>
+        <div class="truth-line reveal"> Verified Work & Real Results</div>
+        <h1 class="reveal">Built on <span>Transparency.</span><br> Driven by Performance.</h1>
+        <p class="reveal">Hum sirf marketing nahi karte, aapke business ko grow karte hain. From ads to automation, we deliver verified results through clean, honest strategy.</p>
+        <div class="reveal">
+            <a href="mailto:metasparkagency0@gmail.com" class="btn-main">Scale Your Brand Now</a>
+        </div>
     </section>
 
-    <section class="work-section" id="work">
-        <div class="work-grid">
-            
-            <div class="work-card">
-                <div class="img-holder"><img src="images/Facebook.png" alt="Results"></div>
-                <div class="work-info">
+    <section id="services" class="section">
+        <span class="section-tag reveal">Our Focus Vertical</span>
+        <h2 class="section-h2 reveal">Service Vertical</h2>
+        <div class="services-grid">
+            <div class="s-card reveal">
+                <div class="img-holder"><img src="images/Facebook.png" alt="FB Results"></div>
+                <div class="s-info">
                     <h3>Meta Ads Scaling</h3>
-                    <p>Hamari strategy sirf clicks nahi, balkay ROI par focus karti hai. Humne accounts ko 0 se $10k/month tak scale kiya hai.</p>
+                    <p>Hamari strategy sirf views nahi, ROAS (Return on Ad Spend) par focus karti hai. Hum accounts ko multiply karte hain.</p>
                 </div>
             </div>
-
-            <div class="work-card">
-                <div class="img-holder"><img src="images/eBay.png" alt="eBay Proof"></div>
-                <div class="work-info">
-                    <h3>eBay Management</h3>
-                    <p>Store creation se lekar daily sales tak, hum eBay ke har algorithm ko samajhte hain. Globally sell karein hamare sath.</p>
+            <div class="s-card reveal">
+                <div class="img-holder"><img src="images/YouTube.png" alt="YT Automation"></div>
+                <div class="s-info">
+                    <h3>YouTube Automation</h3>
+                    <p>Complete faceless channel management, script-to-upload workflow, aur verified monetization strategies.</p>
                 </div>
             </div>
-
-            <div class="work-card">
-                <div class="img-holder"><img src="images/Automation.png" alt="Leads"></div>
-                <div class="work-info">
-                    <h3>Premium Lead Gen</h3>
-                    <p>Hamara lead generation system aapki sales team ko har waqt busy rakhta hai. Target-oriented aur verified data leads.</p>
+            <div class="s-card reveal">
+                <div class="img-holder"><img src="images/Automation.png" alt="AI Automation"></div>
+                <div class="s-info">
+                    <h3>AI Systems</h3>
+                    <p>Smart automation flows, leads management, aur predictive data systems aapke business ke liye.</p>
                 </div>
             </div>
-
-             <div class="work-card">
-                <div class="img-holder"><img src="images/TikTok.png" alt="TikTok"></div>
-                <div class="work-info">
-                    <h3>TikTok Viral Growth</h3>
-                    <p>Viral content aur Spark ads ka perfect mix jo aapke brand ko रातों-रात (overnight) mashhoor kar deta hai.</p>
-                </div>
-            </div>
-
         </div>
     </section>
 
-    <section class="reviews">
-        <div class="rev-card">
-            <p>"MetaSpark ki team ne mera pura business model badal diya. Unka kaam karne ka tarika bohot hi human aur transparent hai."</p>
-            <h4>Zeeshan Raza</h4>
-            <span>VERIFIED PARTNER</span>
+    <section class="section reveal">
+        <span class="section-tag">Client Evidence</span>
+        <h2 class="section-h2">Client Proof</h2>
+        <div class="video-container">
+            <video id="clientVideo">
+                <source src="images/v.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="video-overlay" id="playOverlay">
+                <i class="fas fa-play play-btn"></i>
+            </div>
         </div>
-        <div class="rev-card">
-            <p>"eBay store manage karna mere liye mushkil tha, lekin inki wajah se aaj meri global sales ho rahi hain."</p>
-            <h4>Fahad Ali</h4>
-            <span>ENTREPRENEUR</span>
-        </div>
+        <p style="text-align: center; color: var(--text-muted); margin-top: 20px; font-size: 0.9rem;">Verified Growth of a Partner Brand managed by MetaSpark</p>
     </section>
 
-    <section class="stats-bar">
-        <div style="text-align: center;">
-            <span class="stat-n">500+</span>
-            <span class="stat-t">DAILY LEADS</span>
-        </div>
-        <div style="text-align: center;">
-            <span class="stat-n">50+</span>
-            <span class="stat-t">HAPPY CLIENTS</span>
+    <section id="results" class="stats-section reveal">
+        <h2 class="section-h2">Verified <span>Results</span></h2>
+        <div class="stats-grid">
+            <div class="stat-item">
+                <h2>200+</h2>
+                <p>DAILY LEADS</p>
+            </div>
+            <div class="stat-item">
+                <h2>50+</h2>
+                <p>HAPPY CLIENTS</p>
+            </div>
+            <div class="stat-item">
+                <h2>1.5K+</h2>
+                <p>ADS MANAGED</p>
+            </div>
         </div>
     </section>
 
     <footer id="contact">
-        <div class="f-text">Say hello at</div>
-        <a href="mailto:metasparkagency0@gmail.com" class="f-link">metasparkagency0@gmail.com</a>
-        <div class="f-text" style="margin-top: 20px;">Direct Raabta</div>
-        <a href="tel:+923030607545" class="f-link">+92 303 0607545</a>
-        <p style="color: #222; font-size: 0.7rem; margin-top: 50px;">© 2026 METASPARK AGENCY. BUILT FOR SCALE.</p>
+        <div class="reveal">
+            <h2 style="font-size: 2.5rem; margin-bottom: 25px;">Ready to Start?</h2>
+            <p style="color: #777; margin-bottom: 25px;">Direct Raabta Karein Humari Team Se</p>
+            <a href="mailto:metasparkagency0@gmail.com" class="f-link">metasparkagency0@gmail.com</a>
+            <a href="tel:+923030607545" class="f-link">+92 303 0607545</a>
+        </div>
+        <p style="color: #444; margin-top: 50px; font-size: 0.8rem;">&copy; 2026 MetaSpark Agency. Trusted Global Success.</p>
     </footer>
 
-    <a href="https://wa.me/923030607545" class="wa-btn"><i class="fab fa-whatsapp"></i></a>
-
     <script>
-        const openM = document.getElementById('open-m');
-        const closeM = document.getElementById('close-m');
-        const menu = document.getElementById('side-menu');
-
-        openM.onclick = () => menu.classList.add('active');
-        closeM.onclick = () => menu.classList.remove('active');
+        // Menu Toggle Logic
+        const menuBtn = document.getElementById('menu-btn');
+        const sideMenu = document.getElementById('side-menu');
+        const closeBtn = document.getElementById('close-btn');
         
-        // Auto close menu on click
-        document.querySelectorAll('#side-menu a').forEach(a => {
-            a.onclick = () => menu.classList.remove('active');
+        menuBtn.onclick = () => sideMenu.classList.add('active');
+        closeBtn.onclick = () => sideMenu.classList.remove('active');
+
+        // Close menu when clicking outside or on links
+        document.querySelectorAll('#side-menu a').forEach(link => {
+            link.onclick = () => sideMenu.classList.remove('active');
         });
+
+        // Video Logic (v.mp4)
+        const video = document.getElementById('clientVideo');
+        const playOverlay = document.getElementById('playOverlay');
+
+        playOverlay.onclick = () => {
+            if (video.paused) {
+                video.play();
+                playOverlay.style.opacity = "0";
+                playOverlay.style.pointerEvents = "none";
+            }
+        };
+
+        video.onclick = () => {
+             if (!video.paused) {
+                video.pause();
+                playOverlay.style.opacity = "1";
+                playOverlay.style.pointerEvents = "auto";
+            }
+        }
+
+        // Scroll Reveal Implementation
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 150;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+        window.addEventListener("scroll", reveal);
+        reveal(); // Trigger once on load
     </script>
 </body>
-            </html>
+    </html>
