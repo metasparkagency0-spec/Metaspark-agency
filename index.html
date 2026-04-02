@@ -8,9 +8,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
 <style>
-body { margin:0; font-family:'Inter', sans-serif; background:#0a0a0a; color:#fff; line-height:1.6; scroll-behavior:smooth; }
+body { margin:0; font-family:'Inter', sans-serif; background:#0a0a0a; color:#fff; }
 
-/* HEADER FIX */
+/* HEADER */
 .header {
   position:fixed;
   top:0;
@@ -19,66 +19,132 @@ body { margin:0; font-family:'Inter', sans-serif; background:#0a0a0a; color:#fff
   display:flex;
   justify-content:space-between;
   align-items:center;
-  padding:10px 20px;
-  background:rgba(0,0,0,0.9);
-  z-index:1000;
+  padding:12px 20px;
+  background:#000;
+  z-index:9999;
 }
 
 /* LOGO */
-.logo-name { display:flex; align-items:center; gap:15px; }
-.logo-name div { width:120px; height:60px; overflow:hidden; }
-.logo-name img { width:100%; height:100%; object-fit:contain; }
-.logo-name h1 { color:#ffcc00; font-size:22px; margin:0; }
+.logo-name { display:flex; align-items:center; gap:10px; }
+.logo-name img { width:50px; height:50px; object-fit:contain; }
+.logo-name h1 { color:#ffcc00; font-size:18px; margin:0; }
 
-/* MENU */
-nav { position:relative; }
-#hamburger { display:flex; flex-direction:column; gap:5px; cursor:pointer; }
-#hamburger span { width:30px; height:3px; background:#fff; }
-#services-dropdown { display:none; position:absolute; right:0; top:40px; background:#111; padding:10px; border-radius:8px; }
-#services-dropdown a { display:block; color:#fff; padding:8px; text-decoration:none; }
+/* MENU FIX */
+nav {
+  position:relative;
+  margin-right:15px; /* 👈 menu andar */
+}
+
+#hamburger {
+  display:flex;
+  flex-direction:column;
+  gap:5px;
+  cursor:pointer;
+}
+
+#hamburger span {
+  width:25px;
+  height:3px;
+  background:#fff;
+  border-radius:3px;
+}
+
+#services-dropdown {
+  display:none;
+  position:absolute;
+  right:0;
+  top:40px;
+  background:#111;
+  padding:10px;
+  border-radius:8px;
+}
+
+#services-dropdown a {
+  display:block;
+  color:#fff;
+  padding:8px;
+  text-decoration:none;
+}
 #services-dropdown a:hover { color:#ffcc00; }
 
 /* HERO */
-.hero { margin-top:90px; text-align:center; padding:120px 20px; background:linear-gradient(135deg,#ffcc00,#ff9900); color:#111; }
-.hero h1 { font-size:52px; animation:fadeInUp 1s forwards; }
-.hero p { animation:fadeInUp 1.5s forwards; }
-.btn { background:#111; color:#ffcc00; padding:15px 35px; border-radius:10px; text-decoration:none; }
+.hero {
+  margin-top:80px;
+  text-align:center;
+  padding:100px 20px;
+  background:linear-gradient(135deg,#ffcc00,#ff9900);
+  color:#111;
+}
+
+.btn {
+  background:#111;
+  color:#ffcc00;
+  padding:12px 25px;
+  border-radius:8px;
+  text-decoration:none;
+}
 
 /* SERVICES */
 .services { padding:60px 20px; text-align:center; }
 .services h2 { color:#ffcc00; }
-.cards { display:flex; flex-wrap:wrap; justify-content:center; gap:25px; }
-.card { background:#111; padding:20px; border-radius:15px; width:180px; text-align:center; }
-.card img { width:100%; height:120px; object-fit:cover; }
+
+.cards {
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:20px;
+}
+
+.card {
+  background:#111;
+  padding:20px;
+  border-radius:12px;
+  width:180px;
+  text-align:center;
+}
+
+.card img {
+  width:100%;
+  height:100px;
+  object-fit:contain;
+}
+
+.card h3 {
+  color:#ffcc00;
+  margin:10px 0 5px;
+}
+
+.card p {
+  font-size:13px;
+  color:#ccc;
+}
 
 /* STARS */
-.star { color: gold; animation: glow 1.5s infinite alternate; }
-@keyframes glow {
-  from { text-shadow: 0 0 5px gold; }
-  to { text-shadow: 0 0 20px gold; }
+.star { color: gold; }
+
+/* WHATSAPP FIX */
+#whatsapp-wrapper {
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  z-index:9999;
 }
 
-/* ANIMATION */
-@keyframes fadeInUp {
-  from { opacity:0; transform:translateY(20px); }
-  to { opacity:1; transform:translateY(0); }
+#whatsapp {
+  background:#25D366;
+  padding:12px 18px;
+  border-radius:30px;
+  color:black;
+  text-decoration:none;
 }
-
-/* COUNTER */
-#stats { margin-top:20px; font-size:18px; }
-
-/* WHATSAPP */
-#whatsapp-wrapper { position:fixed; bottom:25px; right:25px; }
-#whatsapp { background:#25D366; padding:15px; border-radius:50px; color:black; text-decoration:none; }
 
 /* FOOTER */
 footer { text-align:center; padding:20px; border-top:1px solid #222; }
 
-/* RESPONSIVE */
+/* MOBILE */
 @media(max-width:768px){
   .cards { flex-direction:column; align-items:center; }
   .card { width:70%; }
-  .hero h1 { font-size:36px; }
 }
 </style>
 </head>
@@ -88,7 +154,7 @@ footer { text-align:center; padding:20px; border-top:1px solid #222; }
 <!-- HEADER -->
 <div class="header">
   <div class="logo-name">
-    <div><img src="images/logo.png"></div>
+    <img src="images/logo.png">
     <h1>MetaSpark Agency</h1>
   </div>
 
@@ -96,7 +162,7 @@ footer { text-align:center; padding:20px; border-top:1px solid #222; }
     <div id="hamburger"><span></span><span></span><span></span></div>
 
     <div id="services-dropdown">
-      <a href="#services">Facebook</a>
+      <a href="#services">Facebook Ads</a>
       <a href="#services">YouTube</a>
       <a href="#services">Instagram</a>
       <a href="#services">Social Media Management</a>
@@ -105,7 +171,7 @@ footer { text-align:center; padding:20px; border-top:1px solid #222; }
       <a href="#services">Shopify Setup</a>
       <a href="#services">YouTube Automation</a>
       <a href="#services">SEO</a>
-      <a href="#services">Ai Ads</a>
+      <a href="#services">AI Ads</a>
     </div>
   </nav>
 </div>
@@ -114,8 +180,8 @@ footer { text-align:center; padding:20px; border-top:1px solid #222; }
 <section class="hero">
   <h1>We Bring You Clients 🚀</h1>
   <p>Facebook Ads, YouTube(Banner, Logo, Thumbnail), Instagram Ads, Social Media Management, Leads Generation, eBay Service, Shopify Setup, YouTube Automation</p>
-  <a href="https://wa.me/923030607545?text=Hi%20I%20want%20clients" class="btn">Get Clients Now</a>
-  <div id="stats">🔥 Leads Daily <span class="counter" data-target="400">0</span>+</div>
+  <a href="https://wa.me/923030607545" class="btn">Get Clients Now</a>
+  <p style="margin-top:15px;">🔥 Leads Daily 400+</p>
 </section>
 
 <!-- SERVICES -->
@@ -123,21 +189,57 @@ footer { text-align:center; padding:20px; border-top:1px solid #222; }
   <h2>Our Services</h2>
 
   <div class="cards">
-    <div class="card"><img src="images/Facebook.png"><p>Facebook Ads</p></div>
-    <div class="card"><img src="images/Instagram.png"><p>Instagram Ads</p></div>
-    <div class="card"><img src="images/TikTok.png"><p>TikTok Ads</p></div>
-    <div class="card"><img src="images/YouTube.png"><p>YouTube SEO</p></div>
-    <div class="card"><img src="images/Shopify.png"><p>Shopify Store</p></div>
-    <div class="card"><img src="images/Automation.png"><p>YouTube Automation</p></div>
-    <div class="card"><img src="images/eBay.png"><p>eBay Service</p></div>
+
+    <div class="card">
+      <img src="images/Facebook.png">
+      <h3>Facebook Ads</h3>
+      <p>Targeted audience ads</p>
+    </div>
+
+    <div class="card">
+      <img src="images/Instagram.png">
+      <h3>Instagram Ads</h3>
+      <p>Organic & paid growth</p>
+    </div>
+
+    <div class="card">
+      <img src="images/TikTok.png">
+      <h3>TikTok Ads</h3>
+      <p>Viral campaigns</p>
+    </div>
+
+    <div class="card">
+      <img src="images/YouTube.png">
+      <h3>YouTube SEO</h3>
+      <p>Channel growth</p>
+    </div>
+
+    <div class="card">
+      <img src="images/Shopify.png">
+      <h3>Shopify</h3>
+      <p>Store setup</p>
+    </div>
+
+    <div class="card">
+      <img src="images/Automation.png">
+      <h3>YouTube Automation</h3>
+      <p>Passive income system</p>
+    </div>
+
+    <div class="card">
+      <img src="images/ebay.png">
+      <h3>eBay Service</h3>
+      <p>Account & selling setup</p>
+    </div>
+
   </div>
 </section>
 
-<!-- ⭐ REVIEWS -->
+<!-- REVIEWS -->
 <section style="text-align:center; padding:40px; background:#111;">
   <h2 style="color:#ffcc00;">Client Reviews</h2>
-  <p>"Best agency! Got real clients within 3 days." <span class="star">⭐⭐⭐⭐</span></p>
-  <p>"Highly recommended for Facebook & TikTok Ads." <span class="star">⭐⭐⭐</span></p>
+  <p>"Best agency!" ⭐⭐⭐⭐⭐</p>
+  <p>"Highly recommended!" ⭐⭐⭐⭐⭐</p>
 </section>
 
 <!-- CONTACT -->
@@ -154,29 +256,13 @@ footer { text-align:center; padding:20px; border-top:1px solid #222; }
 <footer>© 2026 MetaSpark Agency</footer>
 
 <script>
-// Hamburger
 const hamburger = document.getElementById("hamburger");
 const dropdown = document.getElementById("services-dropdown");
+
 hamburger.onclick = () => {
   dropdown.style.display =
     dropdown.style.display === "block" ? "none" : "block";
 };
-
-// Counter
-document.querySelectorAll(".counter").forEach(counter => {
-  const update = () => {
-    const target = +counter.getAttribute("data-target");
-    const count = +counter.innerText;
-    const inc = target / 100;
-    if(count < target){
-      counter.innerText = Math.ceil(count + inc);
-      setTimeout(update, 20);
-    } else {
-      counter.innerText = target;
-    }
-  };
-  update();
-});
 </script>
 
 </body>
