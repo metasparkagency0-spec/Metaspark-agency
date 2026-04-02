@@ -8,15 +8,10 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
 <style>
-body {
-  margin:0;
-  font-family:'Inter', sans-serif;
-  background:#0a0a0a;
-  color:#fff;
-}
+body { margin:0; font-family:'Inter', sans-serif; background:#0a0a0a; color:#fff; line-height:1.6; scroll-behavior:smooth; }
 
-/* HEADER */
-.logo-name {
+/* 🔥 FIXED HEADER */
+.header {
   position:fixed;
   top:0;
   left:0;
@@ -27,26 +22,32 @@ body {
   align-items:center;
   justify-content:space-between;
   padding:0 20px;
-  z-index:1000;
-  box-shadow:0 5px 20px rgba(0,0,0,0.5);
+  z-index:2000;
+  box-shadow:0 5px 20px rgba(0,0,0,0.6);
+}
+
+/* LOGO */
+.logo-name {
+  display:flex;
+  align-items:center;
+  gap:10px;
 }
 
 .logo-name img {
   height:45px;
+  object-fit:contain;
   filter: drop-shadow(0 0 10px #ffcc00);
 }
 
 .logo-name h1 {
+  color:#fff;
   font-size:18px;
   margin:0;
 }
 
 /* MENU */
 nav {
-  position:fixed;
-  top:20px;
-  right:20px;
-  z-index:1100;
+  position:relative;
 }
 
 #hamburger {
@@ -60,158 +61,110 @@ nav {
   width:28px;
   height:3px;
   background:#fff;
+  border-radius:2px;
 }
 
 #services-dropdown {
   display:none;
+  position:absolute;
+  right:0;
+  top:40px;
   background:#111;
-  margin-top:10px;
   padding:10px;
   border-radius:8px;
+  min-width:220px;
 }
 
 #services-dropdown a {
-  display:block;
   color:#fff;
   text-decoration:none;
-  padding:8px;
+  padding:8px 12px;
+  display:block;
 }
 
 #services-dropdown a:hover {
+  background:#222;
   color:#ffcc00;
 }
 
-/* HERO */
-.hero {
-  text-align:center;
-  padding:140px 20px 80px;
-  background:linear-gradient(135deg,#ffcc00,#ff9900);
-  color:#000;
+/* HERO FIX */
+.hero { 
+  text-align:center; 
+  padding:150px 20px 120px; 
+  background:linear-gradient(135deg,#ffcc00 0%,#ff9900 100%); 
+  color:#111; 
 }
 
-.hero h1 {
-  font-size:36px;
-}
+/* باقی code SAME */
+.hero h1 { font-size:52px; margin-bottom:20px; opacity:0; transform:translateY(-30px); animation:fadeInUp 1s forwards; }
+.hero p { font-size:16px; margin-bottom:30px; opacity:0; transform:translateY(-20px); animation:fadeInUp 1s 0.5s forwards; }
+.hero .btn { background:#111; color:#ffcc00; padding:15px 35px; border-radius:10px; text-decoration:none; opacity:0; animation:fadeInUp 1s 1s forwards; }
 
-.hero .btn {
-  display:inline-block;
-  margin-top:20px;
-  padding:12px 25px;
-  background:#000;
-  color:#ffcc00;
-  border-radius:8px;
-  text-decoration:none;
-}
+.services { padding:60px 20px; text-align:center; }
+.services h2 { font-size:40px; color:#ffcc00; opacity:0; transform:translateY(20px); }
+.services p { color:#ccc; opacity:0; transform:translateY(20px); }
 
-/* SERVICES */
-.services {
-  padding:40px 20px;
-  text-align:center;
-}
+.cards { display:flex; flex-wrap:wrap; justify-content:center; gap:25px; }
+.card { background:#111; padding:30px 20px; border-radius:15px; width:180px; text-align:center; opacity:0; transform:translateY(20px); }
+.card img { width:100%; height:120px; object-fit:cover; }
 
-.cards {
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
-  gap:20px;
-}
+#email, #phone { text-align:center; }
 
-.card {
-  background:#111;
-  padding:20px;
-  width:160px;
-  border-radius:12px;
-  transition:0.3s;
-}
+@keyframes fadeInUp { from{opacity:0; transform:translateY(20px);} to{opacity:1; transform:translateY(0);} }
 
-.card img {
-  width:100%;
-  height:100px;
-  object-fit:contain;
-}
+/* WhatsApp */
+#whatsapp-wrapper { position:fixed; bottom:25px; right:25px; }
+#whatsapp { background:#25D366; color:black; padding:16px 20px; border-radius:50px; text-decoration:none; position:relative; }
+#whatsapp-badge { position:absolute; top:-8px; right:-8px; background:red; color:white; width:24px; height:24px; border-radius:50%; display:flex; align-items:center; justify-content:center; }
 
-.card:hover {
-  transform:scale(1.05);
-}
+section { opacity:0; transform:translateY(20px); transition:1s; }
+section.visible { opacity:1; transform:translateY(0); }
 
-/* CONTACT */
-#email,#phone {
-  text-align:center;
-  margin:10px;
-}
+footer { text-align:center; padding:25px; color:#777; }
 
-/* WHATSAPP */
-#whatsapp {
-  position:fixed;
-  bottom:20px;
-  right:20px;
-  background:#25D366;
-  color:#000;
-  padding:15px 20px;
-  border-radius:50px;
-  text-decoration:none;
-}
-
-#badge {
-  position:absolute;
-  top:-5px;
-  right:-5px;
-  background:red;
-  color:#fff;
-  width:20px;
-  height:20px;
-  border-radius:50%;
-  font-size:12px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
-
-footer {
-  text-align:center;
-  padding:20px;
-  color:#777;
-}
+@media(max-width:768px){ .cards{flex-direction:column;} }
 </style>
 </head>
 
 <body>
 
-<!-- HEADER -->
-<div class="logo-name">
-  <img src="images/logo.png">
-  <h1>MetaSpark Agency</h1>
+<!-- ✅ HEADER -->
+<div class="header">
+
+  <div class="logo-name">
+    <img src="images/logo.png">
+    <h1>MetaSpark Agency</h1>
+  </div>
+
+  <nav>
+    <div id="hamburger">
+      <span></span><span></span><span></span>
+    </div>
+
+    <div id="services-dropdown">
+      <a href="#services">Facebook Complete Service</a>
+      <a href="#services">YouTube Complete Service</a>
+      <a href="#services">Instagram Complete Service</a>
+      <a href="#services">Social Media Management</a>
+      <a href="#services">Leads Generation</a>
+      <a href="#services">eBay Service</a>
+      <a href="#services">Shopify Complete Service</a>
+      <a href="#services">YouTube Automation</a>
+    </div>
+  </nav>
+
 </div>
-
-<!-- MENU -->
-<nav>
-  <div id="hamburger">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
-
-  <div id="services-dropdown">
-    <a href="#services">Facebook</a>
-    <a href="#services">Instagram</a>
-    <a href="#services">TikTok</a>
-    <a href="#services">YouTube</a>
-    <a href="#services">Shopify</a>
-    <a href="#services">eBay</a>
-  </div>
-</nav>
 
 <!-- HERO -->
 <section class="hero">
   <h1>We Bring You Clients 🚀</h1>
-  <p>Grow with Ads & Automation</p>
-  <a href="https://wa.me/923030607545" class="btn">Get Clients</a>
+  <p>Facebook Ads, YouTube, Instagram, Shopify, eBay, Automation</p>
+  <a href="https://wa.me/923030607545" class="btn">Get Clients Now</a>
 </section>
 
 <!-- SERVICES -->
 <section id="services" class="services">
   <h2>Our Services</h2>
-
   <div class="cards">
     <div class="card"><img src="images/Facebook.png"><p>Facebook Ads</p></div>
     <div class="card"><img src="images/Instagram.png"><p>Instagram</p></div>
@@ -226,19 +179,27 @@ footer {
 <div id="email">📧 metasparkagency0@gmail.com</div>
 <div id="phone">📞 03030607545</div>
 
-<!-- WHATSAPP -->
-<a id="whatsapp" href="https://wa.me/923030607545">
-  WhatsApp
-  <div id="badge">30</div>
-</a>
+<!-- WhatsApp -->
+<div id="whatsapp-wrapper">
+  <a id="whatsapp" href="https://wa.me/923030607545">WhatsApp</a>
+  <div id="whatsapp-badge">30</div>
+</div>
 
-<footer>© MetaSpark Agency</footer>
+<footer>© 2026 MetaSpark Agency</footer>
 
 <script>
 document.getElementById("hamburger").onclick = function(){
   let menu = document.getElementById("services-dropdown");
   menu.style.display = (menu.style.display === "block") ? "none" : "block";
 };
+
+const sections = document.querySelectorAll("section");
+const observer = new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){ entry.target.classList.add("visible"); }
+  });
+});
+sections.forEach(sec=>observer.observe(sec));
 </script>
 
 </body>
