@@ -3,136 +3,139 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MetaSpark Agency | Premium Marketing</title>
+    <title>MetaSpark Agency | Elite Marketing</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
     <style>
         :root {
-            --primary: #ffcc00; /* Yellow */
-            --bg: #0a0a0a;
-            --glass: rgba(255, 255, 255, 0.03);
-            --border: rgba(255, 255, 255, 0.1);
-            --card-hover: rgba(255, 204, 0, 0.05);
+            --primary: #ffcc00;
+            --bg: #050505;
+            --glass: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --accent-gradient: linear-gradient(135deg, #ffcc00 0%, #ff9900 100%);
         }
 
+        * { box-sizing: border-box; }
         body { 
             margin: 0; font-family: 'Inter', sans-serif; background: var(--bg); color: #fff; 
             line-height: 1.6; overflow-x: hidden; scroll-behavior: smooth;
         }
 
-        /* --- Header --- */
+        /* --- Header (Ab Scroll ke sath upar chala jaye ga) --- */
         header {
             display: flex; justify-content: space-between; align-items: center;
-            padding: 15px 5%; position: fixed; width: 90%; top: 0; z-index: 1000;
-            background: rgba(10, 10, 10, 0.9); backdrop-filter: blur(15px);
-            border-bottom: 1px solid var(--border);
+            padding: 25px 5%; position: absolute; /* Fixed se Absolute kar diya */
+            width: 100%; top: 0; z-index: 1000;
+            background: transparent; 
         }
 
         .logo-box { display: flex; align-items: center; gap: 10px; }
-        .logo-box img { width: 45px; height: 45px; object-fit: contain; }
-        .logo-box span { font-weight: 800; font-size: 1.2rem; letter-spacing: 1px; color: var(--primary); }
+        .logo-box img { width: 45px; height: 45px; object-fit: contain; filter: drop-shadow(0 0 5px var(--primary)); }
+        .logo-box span { font-weight: 800; font-size: 1.3rem; letter-spacing: 2px; color: var(--primary); }
 
-        /* --- Hamburger Menu --- */
-        #menu-toggle { cursor: pointer; display: flex; flex-direction: column; gap: 5px; z-index: 1100; }
-        #menu-toggle span { width: 30px; height: 3px; background: var(--primary); border-radius: 5px; transition: 0.3s; }
+        #menu-toggle { cursor: pointer; display: flex; flex-direction: column; gap: 6px; }
+        #menu-toggle span { width: 30px; height: 3px; background: var(--primary); border-radius: 5px; transition: 0.4s; }
 
+        /* Navigation Menu remains fixed to cover screen when opened */
         #nav-menu {
-            position: fixed; top: 0; right: -100%; width: 280px; height: 100vh;
-            background: #111; padding: 100px 30px; display: flex; flex-direction: column;
-            gap: 15px; transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1); border-left: 1px solid var(--border);
+            position: fixed; top: 0; right: -100%; width: 300px; height: 100vh;
+            background: rgba(10, 10, 10, 0.98); padding: 100px 30px; display: flex; flex-direction: column;
+            gap: 20px; transition: 0.6s cubic-bezier(0.19, 1, 0.22, 1); border-left: 1px solid var(--glass-border);
+            z-index: 2000;
         }
         #nav-menu.active { right: 0; }
-        #nav-menu a { color: #ccc; text-decoration: none; font-size: 1rem; font-weight: 600; transition: 0.3s; }
-        #nav-menu a:hover { color: var(--primary); padding-left: 10px; }
+        #nav-menu a { color: #fff; text-decoration: none; font-size: 1.1rem; font-weight: 600; transition: 0.3s; opacity: 0.7; }
+        #nav-menu a:hover { color: var(--primary); opacity: 1; padding-left: 10px; }
 
-        /* --- Global Sections --- */
-        .section-padding { padding: 80px 5%; text-align: center; }
-        .section-title { font-size: clamp(28px, 5vw, 42px); color: var(--primary); margin-bottom: 40px; font-weight: 800; }
-        .section-subtitle { color: #888; max-width: 600px; margin: 0 auto 50px; }
+        /* --- Reveal Animation --- */
+        .reveal { opacity: 0; transform: translateY(40px); transition: 1s all ease; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
 
         /* --- Hero --- */
         .hero {
-            padding: 160px 20px 80px; text-align: center;
-            background: radial-gradient(circle at top, #1a1a10 0%, #0a0a0a 100%);
+            height: 100vh; display: flex; flex-direction: column; justify-content: center;
+            align-items: center; text-align: center; padding: 0 5%;
+            background: radial-gradient(circle at 50% 30%, #1a1a00 0%, #050505 70%);
         }
-        .hero h1 { font-size: clamp(35px, 6vw, 65px); margin-bottom: 20px; font-weight: 800; }
-        .hero p { color: #aaa; max-width: 650px; margin: 0 auto 40px; }
-        .btn-main { background:var(--primary); color:#000; padding:15px 35px; border-radius:50px; font-weight:800; text-decoration:none; box-shadow: 0 10px 20px rgba(255, 204, 0, 0.3); transition: 0.3s; }
-        .btn-main:hover { transform: translateY(-3px); box-shadow: 0 15px 30px rgba(255, 204, 0, 0.5); }
+        .hero h1 { font-size: clamp(40px, 8vw, 75px); margin-bottom: 20px; font-weight: 800; line-height: 1.1; }
+        .hero span { color: var(--primary); text-shadow: 0 0 20px rgba(255, 204, 0, 0.3); }
+        .hero p { color: #aaa; max-width: 700px; font-size: 1.1rem; margin-bottom: 40px; }
+        .btn-main { 
+            background: var(--accent-gradient); color:#000; padding: 18px 45px; 
+            border-radius: 50px; font-weight: 800; text-decoration: none; 
+            box-shadow: 0 10px 30px rgba(255, 204, 0, 0.4); transition: 0.4s; 
+        }
+        .btn-main:hover { transform: scale(1.05); box-shadow: 0 15px 40px rgba(255, 204, 0, 0.6); }
 
         /* --- Services --- */
+        .section-padding { padding: 100px 5%; text-align: center; }
+        .section-title { font-size: clamp(30px, 5vw, 45px); color: var(--primary); margin-bottom: 50px; font-weight: 800; }
+
         .services-grid {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px; padding: 50px 5%;
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
         }
         .card {
-            background: var(--glass); border: 1px solid var(--border);
-            padding: 30px; border-radius: 24px; text-align: center; transition: 0.4s;
-            backdrop-filter: blur(5px);
+            background: var(--glass); border: 1px solid var(--glass-border);
+            padding: 40px 30px; border-radius: 30px; transition: 0.5s;
+            backdrop-filter: blur(10px);
         }
-        .card:hover { transform: translateY(-10px); border-color: var(--primary); background: var(--card-hover); }
-        .card img { width: 70px; height: 70px; margin-bottom: 20px; object-fit: contain; }
-        .card h3 { margin: 10px 0; color: #fff; }
-        .card p { font-size: 0.9rem; color: #888; }
+        .card:hover { 
+            background: rgba(255, 204, 0, 0.08); 
+            border-color: var(--primary); 
+            transform: translateY(-15px) scale(1.02); 
+        }
+        .card img { width: 80px; height: 80px; margin-bottom: 25px; object-fit: contain; }
+        .card h3 { font-size: 1.5rem; margin-bottom: 15px; }
 
-        /* --- Reviews Section --- */
-        .reviews-section { background: var(--glass); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
-        .reviews-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; max-width: 1100px; margin: 0 auto; }
+        /* --- Reviews --- */
+        .reviews-section { background: rgba(255,255,255,0.02); }
+        .reviews-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
         .review-card {
-            background: #111; border: 1px solid var(--border); padding: 30px; border-radius: 20px;
-            width: 280px; text-align: left; position: relative;
+            background: #111; border: 1px solid var(--glass-border); padding: 30px; border-radius: 20px;
+            width: 320px; text-align: left; position: relative;
         }
-        .review-card i.quote { position: absolute; top: 15px; right: 20px; font-size: 2rem; color: var(--primary); opacity: 0.3; }
-        .review-card p { color: #ccc; font-style: italic; margin-bottom: 20px; }
-        .client-meta { display: flex; align-items: center; gap: 10px; }
-        .client-avatar { width: 40px; height: 40px; background: #222; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--primary); font-weight: 800; }
-        .review-stars { color: var(--primary); font-size: 0.8rem; margin-top: 5px; }
+        .review-card i.quote { position: absolute; top: 15px; right: 20px; font-size: 2.5rem; color: var(--primary); opacity: 0.1; }
+        .client-meta { display: flex; align-items: center; gap: 12px; margin-top: 20px; }
+        .client-avatar { width: 45px; height: 45px; background: #222; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--primary); font-weight: 800; border: 1px solid var(--primary); }
 
-        /* --- Impact/Counter Section --- */
-        .impact-grid { display: flex; justify-content: center; flex-wrap: wrap; gap: 30px; margin-top: 50px; }
-        .impact-item { background: var(--glass); padding: 30px; border-radius: 20px; min-width: 220px; border: 1px solid var(--border); }
-        .impact-item h2 { font-size: 3rem; color: var(--primary); margin: 0; font-weight: 800; }
-        .impact-item p { color: #888; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px; margin-top: 10px; }
+        /* --- Impact --- */
+        .impact-item { 
+            background: var(--glass); padding: 40px; border-radius: 25px; 
+            min-width: 250px; border: 1px solid var(--glass-border);
+        }
+        .impact-item h2 { font-size: 3.5rem; color: var(--primary); margin: 0; }
 
-        /* --- Modern Contact --- */
-        .contact-info { padding: 80px 5%; text-align: center; }
-        .contact-methods { display: flex; justify-content: center; flex-wrap: wrap; gap: 30px; margin-top: 50px; }
-        .contact-box { background: var(--glass); border: 1px solid var(--border); padding: 30px; border-radius: 20px; width: 300px; transition: 0.3s; }
-        .contact-box:hover { border-color: var(--primary); }
-        .contact-box i { font-size: 2rem; color: var(--primary); margin-bottom: 15px; }
-        .contact-box h4 { margin: 10px 0; color: #fff; }
-        .contact-link { color: var(--primary); text-decoration: none; font-weight: 700; font-size: 1.1rem; display: block; word-wrap: break-word; }
+        /* --- Contact --- */
+        .contact-box { 
+            background: var(--glass); border: 1px solid var(--glass-border); 
+            padding: 40px; border-radius: 25px; width: 350px; 
+        }
+        .contact-link { color: var(--primary) !important; font-size: 1.2rem; font-weight: 800; text-decoration: none; }
 
         /* --- WhatsApp --- */
         #wa-btn {
             position: fixed; bottom: 30px; right: 30px; background: #25D366;
-            width: 60px; height: 60px; border-radius: 50%; display: flex;
+            width: 65px; height: 65px; border-radius: 50%; display: flex;
             align-items: center; justify-content: center; color: white;
-            font-size: 30px; text-decoration: none; z-index: 1000;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.4); animation: pulse 2s infinite;
+            font-size: 35px; text-decoration: none; z-index: 1000;
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.5); animation: pulse 2s infinite;
         }
 
         @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
-            70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { transform: scale(1.1); box-shadow: 0 0 0 20px rgba(37, 211, 102, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
         }
 
-        footer { text-align: center; padding: 40px; color: #555; border-top: 1px solid var(--border); font-size: 0.85rem; }
-
-        @media (max-width: 600px) {
-            .hero h1 { font-size: 36px; }
-            #nav-menu { width: 85%; }
-            .review-card { width: 100%; }
-            .impact-grid { flex-direction: column; }
-        }
+        footer { padding: 60px 20px; text-align: center; border-top: 1px solid var(--glass-border); color: #666; }
     </style>
 </head>
 <body>
 
     <header>
         <div class="logo-box">
-            <img src="images/logo.png" alt="MetaSpark Logo">
+            <img src="images/logo.png" alt="MetaSpark">
             <span>METASPARK</span>
         </div>
         <div id="menu-toggle">
@@ -141,138 +144,109 @@
     </header>
 
     <nav id="nav-menu">
-        <a href="#services">Digital Marketing</a>
-        <a href="#services">TikTok Ads</a>
+        <a href="#services">Facebook Ads</a>
+        <a href="#services">TikTok Marketing</a>
         <a href="#services">YouTube Automation</a>
-        <a href="#services">Shopify Experts</a>
+        <a href="#services">Shopify Solutions</a>
         <a href="#services">Social Media Management</a>
-        <a href="#services">AI Generated Ads</a>
-        <a href="#services">E-commerce Automation</a>
-        <a href="#services">Search Engine Optimization</a>
-        <a href="https://wa.me/923030607545">Contact Us</a>
+        <a href="#services">AI Ads Production</a>
+        <a href="#services">E-com Automation</a>
+        <a href="#services">SEO Masterclass</a>
+        <a href="#services">Graphic Design</a>
+        <a href="https://wa.me/923030607545">Get Started</a>
     </nav>
 
     <section class="hero">
-        <h1>We Bring You Clients 🚀</h1>
-        <p>Premium Digital Marketing Solutions to Scale Your Business Globally. From ads to automation, we deliver results.</p>
-        <a href="https://wa.me/923030607545" class="btn-main">Scale Your Brand Now</a>
+        <h1 class="reveal">Scale Your Brand <br><span>To The Moon</span> 🚀</h1>
+        <p class="reveal">Elite Marketing Strategies for Facebook, TikTok, and YouTube. We don't just find leads; we build empires.</p>
+        <div class="reveal">
+            <a href="https://wa.me/923030607545" class="btn-main">Launch Your Growth</a>
+        </div>
     </section>
 
     <section id="services" class="section-padding">
-        <h2 class="section-title">Premium Services</h2>
-        <p class="section-subtitle">We don't just run ads; we generate revenue with smart, tailored solutions.</p>
+        <h2 class="section-title reveal">Premium Solutions</h2>
         <div class="services-grid">
-            <div class="card">
+            <div class="card reveal">
                 <img src="images/Facebook.png" alt="Facebook">
-                <h3>Facebook Ads</h3>
-                <p>Targeted campaigns on Meta platforms to reach ideal customers and maximize sales.</p>
+                <h3>Meta Ads</h3>
+                <p>Laser-targeted campaigns to dominate Facebook & Instagram feeds.</p>
             </div>
-            <div class="card">
-                <img src="images/Instagram.png" alt="Instagram">
-                <h3>Instagram Growth</h3>
-                <p>Strategic organic and paid promotions to build a loyal and active brand following.</p>
-            </div>
-            <div class="card">
+            <div class="card reveal">
                 <img src="images/TikTok.png" alt="TikTok">
-                <h3>TikTok Marketing</h3>
-                <p>Viral short-form video content and ad strategies for rapid brand awareness.</p>
+                <h3>TikTok Viral</h3>
+                <p>Explosive growth through trend-setting short-form content and ads.</p>
             </div>
-            <div class="card">
+            <div class="card reveal">
                 <img src="images/YouTube.png" alt="YouTube">
-                <h3>YouTube SEO</h3>
-                <p>Video optimization and channel management to rank higher and grow subscribers.</p>
+                <h3>YT Automation</h3>
+                <p>Sit back while we build and manage your faceless cash-cow channels.</p>
             </div>
-            <div class="card">
+            <div class="card reveal">
                 <img src="images/Shopify.png" alt="Shopify">
-                <h3>Shopify Expert</h3>
-                <p>Complete e-commerce store setup, design, and conversion optimization.</p>
+                <h3>Shopify Elite</h3>
+                <p>High-conversion stores built for speed and professional branding.</p>
             </div>
-            <div class="card">
+            <div class="card reveal">
                 <img src="images/Automation.png" alt="Automation">
-                <h3>Automation</h3>
-                <p>Complete faceless channel and workflow systems for automated growth.</p>
+                <h3>Full Automation</h3>
+                <p>Scale your business with AI-driven systems and 24/7 workflows.</p>
             </div>
-            <div class="card">
+            <div class="card reveal">
                 <img src="images/eBay.png" alt="eBay">
-                <h3>eBay Services</h3>
-                <p>Acoount management and expert suspension solutions (MC011, MC999).</p>
+                <h3>eBay Expert</h3>
+                <p>Account scaling and rapid suspension recovery (MC011/MC999).</p>
             </div>
         </div>
     </section>
 
-    <section id="reviews" class="section-padding reviews-section">
-        <h2 class="section-title">Client Reviews</h2>
-        <p class="section-subtitle">What business owners say about partnering with MetaSpark.</p>
-        <div class="reviews-container">
-            <div class="card review-card">
+    <section class="section-padding reviews-section">
+        <h2 class="section-title reveal">Client Reviews</h2>
+        <div class="reviews-container reveal">
+            <div class="review-card">
                 <i class="fas fa-quote-right quote"></i>
-                <p>"Best agency! Got real clients within 3 days. Sales increased by 150% in the first month."</p>
+                <p>"Best agency! Got real clients within 3 days. My ROAS jumped from 2x to 6x instantly."</p>
                 <div class="client-meta">
                     <div class="client-avatar">RK</div>
-                    <div>
-                        <strong>Rana Kamran</strong><br>
-                        <span>E-com Store Owner</span>
-                        <div class="review-stars">★★★★★</div>
-                    </div>
+                    <div><strong>Rana Kamran</strong><br><small>E-com Entrepreneur</small></div>
                 </div>
             </div>
-            <div class="card review-card">
+            <div class="review-card">
                 <i class="fas fa-quote-right quote"></i>
-                <p>"The TikTok ads were a game changer. We went from zero leads to 50+ a day very quickly."</p>
+                <p>"Highly recommended for TikTok Ads. Professional team and very fast communication."</p>
                 <div class="client-meta">
                     <div class="client-avatar">AM</div>
-                    <div>
-                        <strong>Aisha Khan</strong><br>
-                        <span>Real Estate Agent</span>
-                        <div class="review-stars">★★★★★</div>
-                    </div>
-                </div>
-            </div>
-            <div class="card review-card">
-                <i class="fas fa-quote-right quote"></i>
-                <p>"Professional team for YouTube Automation. My faceless channel is growing steady."</p>
-                <div class="client-meta">
-                    <div class="client-avatar">SN</div>
-                    <div>
-                        <strong>Siddiq Nasir</strong><br>
-                        <span>Content Creator</span>
-                        <div class="review-stars">★★★★☆</div>
-                    </div>
+                    <div><strong>Aisha Khan</strong><br><small>Real Estate Lead</small></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="impact" class="section-padding">
-        <h2 class="section-title">Our Impact</h2>
-        <div class="impact-grid">
+    <section class="section-padding">
+        <h2 class="section-title reveal">Global Impact</h2>
+        <div class="impact-grid reveal" style="display: flex; justify-content: center; flex-wrap: wrap; gap: 30px;">
             <div class="impact-item">
                 <h2 class="counter" data-target="200">0</h2>
-                <p>DAILY LEADS</p>
+                <p>Daily Leads Generated</p>
             </div>
             <div class="impact-item">
                 <h2 class="counter" data-target="100">0</h2>
-                <p>HAPPY CLIENTS</p>
-            </div>
-            <div class="impact-item">
-                <h2 class="counter" data-target="1500">0</h2>
-                <p>ADS MANAGED</p>
+                <p>Happy Global Clients</p>
             </div>
         </div>
     </section>
 
-    <section id="contact" class="contact-info">
-        <h2 class="section-title">Ready to Start?</h2>
-        <p>Contact our experts today to book a free consultation.</p>
-        <div class="contact-methods">
-            <div class="contact-box card">
-                <i class="fas fa-envelope"></i>
-                <h4>Email Us</h4>
+    <section class="section-padding">
+        <h2 class="section-title reveal">Secure Your Slot</h2>
+        <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 30px;" class="reveal">
+            <div class="contact-box">
+                <i class="fas fa-envelope" style="font-size: 2rem; color: var(--primary); margin-bottom: 20px;"></i>
+                <h4>Drop an Email</h4>
                 <a href="mailto:metasparkagency0@gmail.com" class="contact-link">metasparkagency0@gmail.com</a>
             </div>
-            <div class="contact-box card">
-                <i class="fas fa-phone-alt"></i>
-                <h4>Call or WhatsApp</h4>
+            <div class="contact-box">
+                <i class="fas fa-phone-alt" style="font-size: 2rem; color: var(--primary); margin-bottom: 20px;"></i>
+                <h4>Direct WhatsApp</h4>
                 <a href="tel:+923030607545" class="contact-link">03030607545</a>
             </div>
         </div>
@@ -281,22 +255,35 @@
     <a href="https://wa.me/923030607545" id="wa-btn"><i class="fab fa-whatsapp"></i></a>
 
     <footer>
-        <p>&copy; 2026 MetaSpark Agency. All Rights Reserved.</p>
-        <p style="font-size:0.7rem;">Digital Growth Partner</p>
+        <p>&copy; 2026 MetaSpark Agency. Engineered for Success.</p>
     </footer>
 
     <script>
-        // Hamburger Toggle
+        // Scroll Reveal Logic
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 150;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+        window.addEventListener("scroll", reveal);
+        reveal();
+
+        // Menu Toggle
         const menuToggle = document.getElementById('menu-toggle');
         const navMenu = document.getElementById('nav-menu');
-
         menuToggle.onclick = () => {
             navMenu.classList.toggle('active');
             const spans = menuToggle.getElementsByTagName('span');
             if(navMenu.classList.contains('active')) {
-                spans[0].style.transform = "rotate(45deg) translateY(11px)";
+                spans[0].style.transform = "rotate(45deg) translateY(12px)";
                 spans[1].style.opacity = "0";
-                spans[2].style.transform = "rotate(-45deg) translateY(-11px)";
+                spans[2].style.transform = "rotate(-45deg) translateY(-12px)";
             } else {
                 spans[0].style.transform = "none";
                 spans[1].style.opacity = "1";
@@ -304,44 +291,27 @@
             }
         };
 
-        // Close menu on link click
-        document.querySelectorAll('#nav-menu a').forEach(link => {
-            link.onclick = () => {
-                navMenu.classList.remove('active');
-                const spans = menuToggle.getElementsByTagName('span');
-                spans[0].style.transform = "none";
-                spans[1].style.opacity = "1";
-                spans[2].style.transform = "none";
-            }
-        });
-
-        // LIVE COUNTER LOGIC
+        // Counting Logic
         const counters = document.querySelectorAll('.counter');
-        const speed = 100; // Lower number is faster
-
-        counters.forEach(counter => {
-            const updateCount = () => {
-                const target = +counter.getAttribute('data-target');
-                const count = +counter.innerText;
-                const inc = target / speed;
-
-                if (count < target) {
-                    counter.innerText = Math.ceil(count + inc);
-                    setTimeout(updateCount, 20); // Frequency
-                } else {
-                    counter.innerText = target + "+";
-                }
-            };
-            
-            // Trigger animation only when visible
-            const observer = new IntersectionObserver(entries => {
-                if(entries[0].isIntersecting) {
-                    updateCount();
-                    observer.unobserve(counter); // Only animate once
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting) {
+                    const target = +entry.target.getAttribute('data-target');
+                    let count = 0;
+                    const update = () => {
+                        const inc = target / 60;
+                        if(count < target) {
+                            count += inc;
+                            entry.target.innerText = Math.ceil(count);
+                            setTimeout(update, 20);
+                        } else { entry.target.innerText = target + "+"; }
+                    };
+                    update();
+                    observer.unobserve(entry.target);
                 }
             });
-            observer.observe(counter);
-        });
+        }, { threshold: 0.5 });
+        counters.forEach(c => observer.observe(c));
     </script>
 </body>
-    </html>
+        </html>
