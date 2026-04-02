@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MetaSpark Agency | Elite Marketing</title>
+    <title>MetaSpark Agency | Real Results & Growth</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
     <style>
@@ -12,123 +12,96 @@
             --bg: #050505;
             --glass: rgba(255, 255, 255, 0.05);
             --glass-border: rgba(255, 255, 255, 0.1);
-            --accent-gradient: linear-gradient(135deg, #ffcc00 0%, #ff9900 100%);
         }
 
-        * { box-sizing: border-box; }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
         body { 
-            margin: 0; font-family: 'Inter', sans-serif; background: var(--bg); color: #fff; 
+            font-family: 'Inter', sans-serif; background: var(--bg); color: #fff; 
             line-height: 1.6; overflow-x: hidden; scroll-behavior: smooth;
         }
 
-        /* --- Header (Ab Scroll ke sath upar chala jaye ga) --- */
+        /* --- Static Header --- */
         header {
             display: flex; justify-content: space-between; align-items: center;
-            padding: 25px 5%; position: absolute; /* Fixed se Absolute kar diya */
-            width: 100%; top: 0; z-index: 1000;
-            background: transparent; 
+            padding: 25px 5%; position: absolute; width: 100%; top: 0; z-index: 1000;
         }
-
         .logo-box { display: flex; align-items: center; gap: 10px; }
-        .logo-box img { width: 45px; height: 45px; object-fit: contain; filter: drop-shadow(0 0 5px var(--primary)); }
-        .logo-box span { font-weight: 800; font-size: 1.3rem; letter-spacing: 2px; color: var(--primary); }
+        .logo-box img { width: 45px; height: 45px; object-fit: contain; }
+        .logo-box span { font-weight: 800; font-size: 1.3rem; color: var(--primary); }
 
-        #menu-toggle { cursor: pointer; display: flex; flex-direction: column; gap: 6px; }
-        #menu-toggle span { width: 30px; height: 3px; background: var(--primary); border-radius: 5px; transition: 0.4s; }
+        #menu-toggle { cursor: pointer; color: var(--primary); font-size: 1.5rem; }
 
-        /* Navigation Menu remains fixed to cover screen when opened */
+        /* --- Fullscreen Menu --- */
         #nav-menu {
-            position: fixed; top: 0; right: -100%; width: 300px; height: 100vh;
-            background: rgba(10, 10, 10, 0.98); padding: 100px 30px; display: flex; flex-direction: column;
-            gap: 20px; transition: 0.6s cubic-bezier(0.19, 1, 0.22, 1); border-left: 1px solid var(--glass-border);
-            z-index: 2000;
+            position: fixed; top: 0; right: -100%; width: 100%; height: 100vh;
+            background: rgba(0,0,0,0.95); backdrop-filter: blur(15px);
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+            gap: 20px; transition: 0.5s ease-in-out; z-index: 2000;
         }
         #nav-menu.active { right: 0; }
-        #nav-menu a { color: #fff; text-decoration: none; font-size: 1.1rem; font-weight: 600; transition: 0.3s; opacity: 0.7; }
-        #nav-menu a:hover { color: var(--primary); opacity: 1; padding-left: 10px; }
+        #close-menu { position: absolute; top: 30px; right: 30px; font-size: 2rem; color: var(--primary); cursor: pointer; }
+        #nav-menu a { color: #fff; text-decoration: none; font-size: 1.5rem; font-weight: 700; transition: 0.3s; }
+        #nav-menu a:hover { color: var(--primary); }
 
-        /* --- Reveal Animation --- */
-        .reveal { opacity: 0; transform: translateY(40px); transition: 1s all ease; }
-        .reveal.active { opacity: 1; transform: translateY(0); }
-
-        /* --- Hero --- */
+        /* --- Hero Section --- */
         .hero {
             height: 100vh; display: flex; flex-direction: column; justify-content: center;
             align-items: center; text-align: center; padding: 0 5%;
-            background: radial-gradient(circle at 50% 30%, #1a1a00 0%, #050505 70%);
+            background: radial-gradient(circle at center, #1a1a00 0%, #050505 80%);
         }
-        .hero h1 { font-size: clamp(40px, 8vw, 75px); margin-bottom: 20px; font-weight: 800; line-height: 1.1; }
-        .hero span { color: var(--primary); text-shadow: 0 0 20px rgba(255, 204, 0, 0.3); }
-        .hero p { color: #aaa; max-width: 700px; font-size: 1.1rem; margin-bottom: 40px; }
-        .btn-main { 
-            background: var(--accent-gradient); color:#000; padding: 18px 45px; 
-            border-radius: 50px; font-weight: 800; text-decoration: none; 
-            box-shadow: 0 10px 30px rgba(255, 204, 0, 0.4); transition: 0.4s; 
-        }
-        .btn-main:hover { transform: scale(1.05); box-shadow: 0 15px 40px rgba(255, 204, 0, 0.6); }
+        .hero h1 { font-size: clamp(35px, 7vw, 60px); font-weight: 800; margin-bottom: 15px; }
+        .hero h1 span { color: var(--primary); }
+        .hero p { color: #ccc; max-width: 600px; margin-bottom: 30px; font-size: 1.1rem; }
+        .btn-main { background: var(--primary); color: #000; padding: 15px 40px; border-radius: 50px; font-weight: 800; text-decoration: none; display: inline-block; transition: 0.3s; }
+        .btn-main:hover { transform: scale(1.05); box-shadow: 0 0 20px var(--primary); }
 
-        /* --- Services --- */
-        .section-padding { padding: 100px 5%; text-align: center; }
-        .section-title { font-size: clamp(30px, 5vw, 45px); color: var(--primary); margin-bottom: 50px; font-weight: 800; }
+        /* --- Sections --- */
+        .section { padding: 80px 5%; text-align: center; }
+        .title { font-size: 2.5rem; color: var(--primary); margin-bottom: 10px; }
+        .subtitle { color: #888; margin-bottom: 50px; }
 
-        .services-grid {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+        /* --- Proof Gallery (THE REAL STUFF) --- */
+        .proof-container {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px; margin-top: 30px;
         }
-        .card {
+        .proof-card {
             background: var(--glass); border: 1px solid var(--glass-border);
-            padding: 40px 30px; border-radius: 30px; transition: 0.5s;
-            backdrop-filter: blur(10px);
+            border-radius: 15px; overflow: hidden; padding: 15px;
         }
-        .card:hover { 
-            background: rgba(255, 204, 0, 0.08); 
-            border-color: var(--primary); 
-            transform: translateY(-15px) scale(1.02); 
+        .proof-card img { 
+            width: 100%; border-radius: 10px; margin-bottom: 15px; 
+            filter: grayscale(30%); transition: 0.3s;
         }
-        .card img { width: 80px; height: 80px; margin-bottom: 25px; object-fit: contain; }
-        .card h3 { font-size: 1.5rem; margin-bottom: 15px; }
+        .proof-card:hover img { filter: grayscale(0%); }
+        .proof-label { font-size: 0.9rem; font-weight: 700; color: var(--primary); display: block; margin-bottom: 5px; }
 
-        /* --- Reviews --- */
-        .reviews-section { background: rgba(255,255,255,0.02); }
-        .reviews-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
-        .review-card {
-            background: #111; border: 1px solid var(--glass-border); padding: 30px; border-radius: 20px;
-            width: 320px; text-align: left; position: relative;
+        /* --- Founder Message --- */
+        .founder-box {
+            background: linear-gradient(rgba(255,204,0,0.1), transparent);
+            padding: 50px 10%; border-radius: 30px; border: 1px solid var(--glass-border);
+            margin: 40px 0; text-align: left;
         }
-        .review-card i.quote { position: absolute; top: 15px; right: 20px; font-size: 2.5rem; color: var(--primary); opacity: 0.1; }
-        .client-meta { display: flex; align-items: center; gap: 12px; margin-top: 20px; }
-        .client-avatar { width: 45px; height: 45px; background: #222; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--primary); font-weight: 800; border: 1px solid var(--primary); }
+        .founder-box h3 { color: var(--primary); margin-bottom: 15px; }
 
-        /* --- Impact --- */
-        .impact-item { 
-            background: var(--glass); padding: 40px; border-radius: 25px; 
-            min-width: 250px; border: 1px solid var(--glass-border);
-        }
-        .impact-item h2 { font-size: 3.5rem; color: var(--primary); margin: 0; }
+        /* --- Impact Stats --- */
+        .stats-grid { display: flex; justify-content: center; flex-wrap: wrap; gap: 30px; }
+        .stat-item { background: #111; padding: 30px; border-radius: 20px; min-width: 200px; border-bottom: 4px solid var(--primary); }
+        .stat-item h2 { font-size: 3rem; margin-bottom: 5px; }
 
         /* --- Contact --- */
-        .contact-box { 
-            background: var(--glass); border: 1px solid var(--glass-border); 
-            padding: 40px; border-radius: 25px; width: 350px; 
-        }
-        .contact-link { color: var(--primary) !important; font-size: 1.2rem; font-weight: 800; text-decoration: none; }
+        .contact-box { color: var(--primary); font-weight: 800; font-size: 1.2rem; text-decoration: none; display: block; margin: 10px 0; }
 
-        /* --- WhatsApp --- */
-        #wa-btn {
+        #wa-float {
             position: fixed; bottom: 30px; right: 30px; background: #25D366;
-            width: 65px; height: 65px; border-radius: 50%; display: flex;
-            align-items: center; justify-content: center; color: white;
-            font-size: 35px; text-decoration: none; z-index: 1000;
-            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.5); animation: pulse 2s infinite;
+            width: 60px; height: 60px; border-radius: 50%; display: flex;
+            align-items: center; justify-content: center; font-size: 30px; color: white; z-index: 3000;
         }
 
-        @keyframes pulse {
-            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
-            70% { transform: scale(1.1); box-shadow: 0 0 0 20px rgba(37, 211, 102, 0); }
-            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
-        }
+        footer { padding: 40px; border-top: 1px solid var(--glass-border); text-align: center; color: #555; }
 
-        footer { padding: 60px 20px; text-align: center; border-top: 1px solid var(--glass-border); color: #666; }
+        .reveal { opacity: 0; transform: translateY(30px); transition: 0.8s; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
     </style>
 </head>
 <body>
@@ -138,135 +111,107 @@
             <img src="images/logo.png" alt="MetaSpark">
             <span>METASPARK</span>
         </div>
-        <div id="menu-toggle">
-            <span></span><span></span><span></span>
-        </div>
+        <div id="menu-toggle"><i class="fas fa-bars"></i></div>
     </header>
 
     <nav id="nav-menu">
-        <a href="#services">Facebook Ads</a>
-        <a href="#services">TikTok Marketing</a>
-        <a href="#services">YouTube Automation</a>
-        <a href="#services">Shopify Solutions</a>
-        <a href="#services">Social Media Management</a>
-        <a href="#services">AI Ads Production</a>
-        <a href="#services">E-com Automation</a>
-        <a href="#services">SEO Masterclass</a>
-        <a href="#services">Graphic Design</a>
-        <a href="https://wa.me/923030607545">Get Started</a>
+        <div id="close-menu"><i class="fas fa-times"></i></div>
+        <a href="#services">Services</a>
+        <a href="#proof">Work Proofs</a>
+        <a href="#results">Real Results</a>
+        <a href="https://wa.me/923030607545">Contact Now</a>
     </nav>
 
     <section class="hero">
-        <h1 class="reveal">Scale Your Brand <br><span>To The Moon</span> 🚀</h1>
-        <p class="reveal">Elite Marketing Strategies for Facebook, TikTok, and YouTube. We don't just find leads; we build empires.</p>
-        <div class="reveal">
-            <a href="https://wa.me/923030607545" class="btn-main">Launch Your Growth</a>
-        </div>
+        <h1>Stop Wasting Money. <br>Start <span>Scaling.</span> 🚀</h1>
+        <p>Hum sirf baatein nahi karte, results dikhate hain. Real Ads, Real Monetization, and Real Growth for your business.</p>
+        <a href="https://wa.me/923030607545" class="btn-main">Get Free Strategy Call</a>
     </section>
 
-    <section id="services" class="section-padding">
-        <h2 class="section-title reveal">Premium Solutions</h2>
-        <div class="services-grid">
-            <div class="card reveal">
-                <img src="images/Facebook.png" alt="Facebook">
-                <h3>Meta Ads</h3>
-                <p>Laser-targeted campaigns to dominate Facebook & Instagram feeds.</p>
+    <section id="proof" class="section">
+        <h2 class="title">Our Work Proofs</h2>
+        <p class="subtitle">Evidence of our successful campaigns and designs</p>
+        
+        <div class="proof-container">
+            <div class="proof-card reveal">
+                <span class="proof-label">YouTube Monetization</span>
+                <img src="images/YouTube.png" alt="Monetization Proof">
+                <p>Channels monetized and earning in 30-45 days.</p>
             </div>
-            <div class="card reveal">
-                <img src="images/TikTok.png" alt="TikTok">
-                <h3>TikTok Viral</h3>
-                <p>Explosive growth through trend-setting short-form content and ads.</p>
+            <div class="proof-card reveal">
+                <span class="proof-label">Facebook Ads Manager</span>
+                <img src="images/Facebook.png" alt="Ads Proof">
+                <p>Generating 200+ leads daily with low cost per result.</p>
             </div>
-            <div class="card reveal">
-                <img src="images/YouTube.png" alt="YouTube">
-                <h3>YT Automation</h3>
-                <p>Sit back while we build and manage your faceless cash-cow channels.</p>
-            </div>
-            <div class="card reveal">
-                <img src="images/Shopify.png" alt="Shopify">
-                <h3>Shopify Elite</h3>
-                <p>High-conversion stores built for speed and professional branding.</p>
-            </div>
-            <div class="card reveal">
-                <img src="images/Automation.png" alt="Automation">
-                <h3>Full Automation</h3>
-                <p>Scale your business with AI-driven systems and 24/7 workflows.</p>
-            </div>
-            <div class="card reveal">
-                <img src="images/eBay.png" alt="eBay">
-                <h3>eBay Expert</h3>
-                <p>Account scaling and rapid suspension recovery (MC011/MC999).</p>
+            <div class="proof-card reveal">
+                <span class="proof-label">Premium Branding</span>
+                <img src="images/logo.png" alt="Design Proof">
+                <p>Professional Logos & Thumbnails that grab attention.</p>
             </div>
         </div>
     </section>
 
-    <section class="section-padding reviews-section">
-        <h2 class="section-title reveal">Client Reviews</h2>
-        <div class="reviews-container reveal">
-            <div class="review-card">
-                <i class="fas fa-quote-right quote"></i>
-                <p>"Best agency! Got real clients within 3 days. My ROAS jumped from 2x to 6x instantly."</p>
-                <div class="client-meta">
-                    <div class="client-avatar">RK</div>
-                    <div><strong>Rana Kamran</strong><br><small>E-com Entrepreneur</small></div>
-                </div>
-            </div>
-            <div class="review-card">
-                <i class="fas fa-quote-right quote"></i>
-                <p>"Highly recommended for TikTok Ads. Professional team and very fast communication."</p>
-                <div class="client-meta">
-                    <div class="client-avatar">AM</div>
-                    <div><strong>Aisha Khan</strong><br><small>Real Estate Lead</small></div>
-                </div>
-            </div>
+    <section class="section">
+        <div class="founder-box reveal">
+            <h3>Why Work With Me?</h3>
+            <p>"Market mein bohot se log AI use kar ke fake promises karte hain. Main yahan apne experience aur mehnat se kaam karta hon. Mera maqsad sirf paisa kamana nahi, aapke business ko grow karna hai taake hum dono kamyab hon. Gareeb ho ya ameer, har client ko premium service milti hai."</p>
+            <br>
+            <strong>- Founder, MetaSpark Agency</strong>
         </div>
     </section>
 
-    <section class="section-padding">
-        <h2 class="section-title reveal">Global Impact</h2>
-        <div class="impact-grid reveal" style="display: flex; justify-content: center; flex-wrap: wrap; gap: 30px;">
-            <div class="impact-item">
+    <section id="results" class="section reveal">
+        <h2 class="title">Live Impact</h2>
+        <div class="stats-grid">
+            <div class="stat-item">
+                <h2 class="counter" data-target="150">0</h2>
+                <p>Ad Campaigns Live</p>
+            </div>
+            <div class="stat-item">
                 <h2 class="counter" data-target="200">0</h2>
-                <p>Daily Leads Generated</p>
+                <p>Daily Leads</p>
             </div>
-            <div class="impact-item">
+            <div class="stat-item">
                 <h2 class="counter" data-target="100">0</h2>
-                <p>Happy Global Clients</p>
+                <p>Satisfied Clients</p>
             </div>
         </div>
     </section>
 
-    <section class="section-padding">
-        <h2 class="section-title reveal">Secure Your Slot</h2>
-        <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 30px;" class="reveal">
-            <div class="contact-box">
-                <i class="fas fa-envelope" style="font-size: 2rem; color: var(--primary); margin-bottom: 20px;"></i>
-                <h4>Drop an Email</h4>
-                <a href="mailto:metasparkagency0@gmail.com" class="contact-link">metasparkagency0@gmail.com</a>
-            </div>
-            <div class="contact-box">
-                <i class="fas fa-phone-alt" style="font-size: 2rem; color: var(--primary); margin-bottom: 20px;"></i>
-                <h4>Direct WhatsApp</h4>
-                <a href="tel:+923030607545" class="contact-link">03030607545</a>
-            </div>
+    <section class="section reveal">
+        <h2 class="title">Direct Contact</h2>
+        <p>No Bots. Talk to a Real Expert.</p>
+        <div style="margin-top:30px;">
+            <a href="mailto:metasparkagency0@gmail.com" class="contact-box">📧 metasparkagency0@gmail.com</a>
+            <a href="tel:+923030607545" class="contact-box">📞 03030607545</a>
         </div>
     </section>
 
-    <a href="https://wa.me/923030607545" id="wa-btn"><i class="fab fa-whatsapp"></i></a>
+    <a href="https://wa.me/923030607545" id="wa-float"><i class="fab fa-whatsapp"></i></a>
 
     <footer>
-        <p>&copy; 2026 MetaSpark Agency. Engineered for Success.</p>
+        <p>&copy; 2026 MetaSpark Agency | Honest Work, Real Results.</p>
     </footer>
 
     <script>
-        // Scroll Reveal Logic
+        // Menu Controls
+        const menuToggle = document.getElementById('menu-toggle');
+        const closeMenu = document.getElementById('close-menu');
+        const navMenu = document.getElementById('nav-menu');
+
+        menuToggle.onclick = () => navMenu.classList.add('active');
+        closeMenu.onclick = () => navMenu.classList.remove('active');
+        document.querySelectorAll('#nav-menu a').forEach(link => {
+            link.onclick = () => navMenu.classList.remove('active');
+        });
+
+        // Reveal on scroll
         function reveal() {
             var reveals = document.querySelectorAll(".reveal");
             for (var i = 0; i < reveals.length; i++) {
                 var windowHeight = window.innerHeight;
                 var elementTop = reveals[i].getBoundingClientRect().top;
-                var elementVisible = 150;
-                if (elementTop < windowHeight - elementVisible) {
+                if (elementTop < windowHeight - 100) {
                     reveals[i].classList.add("active");
                 }
             }
@@ -274,32 +219,15 @@
         window.addEventListener("scroll", reveal);
         reveal();
 
-        // Menu Toggle
-        const menuToggle = document.getElementById('menu-toggle');
-        const navMenu = document.getElementById('nav-menu');
-        menuToggle.onclick = () => {
-            navMenu.classList.toggle('active');
-            const spans = menuToggle.getElementsByTagName('span');
-            if(navMenu.classList.contains('active')) {
-                spans[0].style.transform = "rotate(45deg) translateY(12px)";
-                spans[1].style.opacity = "0";
-                spans[2].style.transform = "rotate(-45deg) translateY(-12px)";
-            } else {
-                spans[0].style.transform = "none";
-                spans[1].style.opacity = "1";
-                spans[2].style.transform = "none";
-            }
-        };
-
-        // Counting Logic
+        // Counter logic
         const counters = document.querySelectorAll('.counter');
-        const observer = new IntersectionObserver(entries => {
+        const obs = new IntersectionObserver(entries => {
             entries.forEach(entry => {
                 if(entry.isIntersecting) {
-                    const target = +entry.target.getAttribute('data-target');
+                    const target = +entry.target.dataset.target;
                     let count = 0;
                     const update = () => {
-                        const inc = target / 60;
+                        const inc = target / 50;
                         if(count < target) {
                             count += inc;
                             entry.target.innerText = Math.ceil(count);
@@ -307,11 +235,11 @@
                         } else { entry.target.innerText = target + "+"; }
                     };
                     update();
-                    observer.unobserve(entry.target);
+                    obs.unobserve(entry.target);
                 }
             });
         }, { threshold: 0.5 });
-        counters.forEach(c => observer.observe(c));
+        counters.forEach(c => obs.observe(c));
     </script>
 </body>
-        </html>
+    </html>
