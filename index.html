@@ -3,15 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MetaSpark Agency | Official</title>
+    <title>MetaSpark Agency | Premium Marketing</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
     <style>
         :root {
-            --primary: #ffcc00;
+            --primary: #ffcc00; /* Yellow */
             --bg: #0a0a0a;
             --glass: rgba(255, 255, 255, 0.03);
             --border: rgba(255, 255, 255, 0.1);
+            --card-hover: rgba(255, 204, 0, 0.05);
         }
 
         body { 
@@ -23,12 +24,12 @@
         header {
             display: flex; justify-content: space-between; align-items: center;
             padding: 15px 5%; position: fixed; width: 90%; top: 0; z-index: 1000;
-            background: rgba(10, 10, 10, 0.8); backdrop-filter: blur(15px);
+            background: rgba(10, 10, 10, 0.9); backdrop-filter: blur(15px);
             border-bottom: 1px solid var(--border);
         }
 
         .logo-box { display: flex; align-items: center; gap: 10px; }
-        .logo-box img { width: 50px; height: 50px; object-fit: contain; }
+        .logo-box img { width: 45px; height: 45px; object-fit: contain; }
         .logo-box span { font-weight: 800; font-size: 1.2rem; letter-spacing: 1px; color: var(--primary); }
 
         /* --- Hamburger Menu --- */
@@ -44,34 +45,63 @@
         #nav-menu a { color: #ccc; text-decoration: none; font-size: 1rem; font-weight: 600; transition: 0.3s; }
         #nav-menu a:hover { color: var(--primary); padding-left: 10px; }
 
+        /* --- Global Sections --- */
+        .section-padding { padding: 80px 5%; text-align: center; }
+        .section-title { font-size: clamp(28px, 5vw, 42px); color: var(--primary); margin-bottom: 40px; font-weight: 800; }
+        .section-subtitle { color: #888; max-width: 600px; margin: 0 auto 50px; }
+
         /* --- Hero --- */
         .hero {
-            padding: 180px 20px 100px; text-align: center;
+            padding: 160px 20px 80px; text-align: center;
             background: radial-gradient(circle at top, #1a1a10 0%, #0a0a0a 100%);
         }
-        .hero h1 { font-size: clamp(35px, 6vw, 65px); margin-bottom: 20px; }
-        .hero p { color: #aaa; max-width: 600px; margin: 0 auto 30px; }
+        .hero h1 { font-size: clamp(35px, 6vw, 65px); margin-bottom: 20px; font-weight: 800; }
+        .hero p { color: #aaa; max-width: 650px; margin: 0 auto 40px; }
+        .btn-main { background:var(--primary); color:#000; padding:15px 35px; border-radius:50px; font-weight:800; text-decoration:none; box-shadow: 0 10px 20px rgba(255, 204, 0, 0.3); transition: 0.3s; }
+        .btn-main:hover { transform: translateY(-3px); box-shadow: 0 15px 30px rgba(255, 204, 0, 0.5); }
 
         /* --- Services --- */
         .services-grid {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 25px; padding: 50px 5%;
         }
         .card {
             background: var(--glass); border: 1px solid var(--border);
-            padding: 30px; border-radius: 20px; text-align: center; transition: 0.4s;
+            padding: 30px; border-radius: 24px; text-align: center; transition: 0.4s;
+            backdrop-filter: blur(5px);
         }
-        .card:hover { transform: translateY(-10px); border-color: var(--primary); background: rgba(255, 204, 0, 0.05); }
+        .card:hover { transform: translateY(-10px); border-color: var(--primary); background: var(--card-hover); }
         .card img { width: 70px; height: 70px; margin-bottom: 20px; object-fit: contain; }
-        .card h3 { margin: 10px 0; color: var(--primary); }
+        .card h3 { margin: 10px 0; color: #fff; }
         .card p { font-size: 0.9rem; color: #888; }
 
-        /* --- Contact Bar --- */
-        .contact-info {
-            background: #111; padding: 40px 20px; text-align: center;
-            border-top: 1px solid var(--border);
+        /* --- Reviews Section --- */
+        .reviews-section { background: var(--glass); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+        .reviews-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; max-width: 1100px; margin: 0 auto; }
+        .review-card {
+            background: #111; border: 1px solid var(--border); padding: 30px; border-radius: 20px;
+            width: 280px; text-align: left; position: relative;
         }
-        .contact-info a { color: var(--primary); text-decoration: none; font-weight: 600; margin: 0 15px; }
+        .review-card i.quote { position: absolute; top: 15px; right: 20px; font-size: 2rem; color: var(--primary); opacity: 0.3; }
+        .review-card p { color: #ccc; font-style: italic; margin-bottom: 20px; }
+        .client-meta { display: flex; align-items: center; gap: 10px; }
+        .client-avatar { width: 40px; height: 40px; background: #222; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--primary); font-weight: 800; }
+        .review-stars { color: var(--primary); font-size: 0.8rem; margin-top: 5px; }
+
+        /* --- Impact/Counter Section --- */
+        .impact-grid { display: flex; justify-content: center; flex-wrap: wrap; gap: 30px; margin-top: 50px; }
+        .impact-item { background: var(--glass); padding: 30px; border-radius: 20px; min-width: 220px; border: 1px solid var(--border); }
+        .impact-item h2 { font-size: 3rem; color: var(--primary); margin: 0; font-weight: 800; }
+        .impact-item p { color: #888; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px; margin-top: 10px; }
+
+        /* --- Modern Contact --- */
+        .contact-info { padding: 80px 5%; text-align: center; }
+        .contact-methods { display: flex; justify-content: center; flex-wrap: wrap; gap: 30px; margin-top: 50px; }
+        .contact-box { background: var(--glass); border: 1px solid var(--border); padding: 30px; border-radius: 20px; width: 300px; transition: 0.3s; }
+        .contact-box:hover { border-color: var(--primary); }
+        .contact-box i { font-size: 2rem; color: var(--primary); margin-bottom: 15px; }
+        .contact-box h4 { margin: 10px 0; color: #fff; }
+        .contact-link { color: var(--primary); text-decoration: none; font-weight: 700; font-size: 1.1rem; display: block; word-wrap: break-word; }
 
         /* --- WhatsApp --- */
         #wa-btn {
@@ -79,14 +109,22 @@
             width: 60px; height: 60px; border-radius: 50%; display: flex;
             align-items: center; justify-content: center; color: white;
             font-size: 30px; text-decoration: none; z-index: 1000;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.4); animation: pulse 2s infinite;
         }
 
-        footer { text-align: center; padding: 30px; color: #555; font-size: 0.8rem; }
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+
+        footer { text-align: center; padding: 40px; color: #555; border-top: 1px solid var(--border); font-size: 0.85rem; }
 
         @media (max-width: 600px) {
-            .hero h1 { font-size: 32px; }
-            .nav-menu { width: 80%; }
+            .hero h1 { font-size: 36px; }
+            #nav-menu { width: 85%; }
+            .review-card { width: 100%; }
+            .impact-grid { flex-direction: column; }
         }
     </style>
 </head>
@@ -94,7 +132,7 @@
 
     <header>
         <div class="logo-box">
-            <img src="logo.png" alt="MetaSpark Logo">
+            <img src="images/logo.png" alt="MetaSpark Logo">
             <span>METASPARK</span>
         </div>
         <div id="menu-toggle">
@@ -103,81 +141,157 @@
     </header>
 
     <nav id="nav-menu">
-        <a href="#services">Facebook</a>
-        <a href="#services">TikTok</a>
-        <a href="#services">YouTube</a>
-        <a href="#services">Shopify</a>
+        <a href="#services">Digital Marketing</a>
+        <a href="#services">TikTok Ads</a>
+        <a href="#services">YouTube Automation</a>
+        <a href="#services">Shopify Experts</a>
         <a href="#services">Social Media Management</a>
-        <a href="#services">Ai Ads</a>
-        <a href="#services">Automation</a>
-        <a href="#services">SEO</a>
-        <a href="#services">Banner</a>
-        <a href="#services">Logo</a>
-        <a href="#services">Thumbnail</a>
+        <a href="#services">AI Generated Ads</a>
+        <a href="#services">E-commerce Automation</a>
+        <a href="#services">Search Engine Optimization</a>
+        <a href="https://wa.me/923030607545">Contact Us</a>
     </nav>
 
     <section class="hero">
         <h1>We Bring You Clients 🚀</h1>
-        <p>Premium Digital Marketing Solutions to Scale Your Business Globally.</p>
-        <a href="https://wa.me/923030607545" style="background:var(--primary); color:#000; padding:15px 35px; border-radius:50px; font-weight:800; text-decoration:none;">Boost Growth Now</a>
+        <p>Premium Digital Marketing Solutions to Scale Your Business Globally. From ads to automation, we deliver results.</p>
+        <a href="https://wa.me/923030607545" class="btn-main">Scale Your Brand Now</a>
     </section>
 
-    <section id="services" class="services-grid">
-        <div class="card">
-            <img src="Facebook.png" alt="Facebook">
-            <h3>Facebook Ads</h3>
-            <p>Targeted ad campaigns to reach your ideal customers and maximize sales.</p>
-        </div>
-        <div class="card">
-            <img src="Instagram.png" alt="Instagram">
-            <h3>Instagram Growth</h3>
-            <p>Organic and paid promotions to build a loyal brand following.</p>
-        </div>
-        <div class="card">
-            <img src="TikTok.png" alt="TikTok">
-            <h3>TikTok Marketing</h3>
-            <p>Viral short-form video content and ads for rapid brand awareness.</p>
-        </div>
-        <div class="card">
-            <img src="YouTube.png" alt="YouTube">
-            <h3>YouTube SEO</h3>
-            <p>Optimizing your videos to rank higher and grow your channel audience.</p>
-        </div>
-        <div class="card">
-            <img src="Shopify.png" alt="Shopify">
-            <h3>Shopify Setup</h3>
-            <p>Complete e-commerce store design and conversion optimization.</p>
-        </div>
-        <div class="card">
-            <img src="Automation.png" alt="Automation">
-            <h3>Automation</h3>
-            <p>Smart faceless systems for YouTube and Social Media workflow.</p>
-        </div>
-        <div class="card">
-            <img src="eBay.png" alt="eBay">
-            <h3>eBay Services</h3>
-            <p>Account management and suspension solutions (MC011, MC999).</p>
+    <section id="services" class="section-padding">
+        <h2 class="section-title">Premium Services</h2>
+        <p class="section-subtitle">We don't just run ads; we generate revenue with smart, tailored solutions.</p>
+        <div class="services-grid">
+            <div class="card">
+                <img src="images/Facebook.png" alt="Facebook">
+                <h3>Facebook Ads</h3>
+                <p>Targeted campaigns on Meta platforms to reach ideal customers and maximize sales.</p>
+            </div>
+            <div class="card">
+                <img src="images/Instagram.png" alt="Instagram">
+                <h3>Instagram Growth</h3>
+                <p>Strategic organic and paid promotions to build a loyal and active brand following.</p>
+            </div>
+            <div class="card">
+                <img src="images/TikTok.png" alt="TikTok">
+                <h3>TikTok Marketing</h3>
+                <p>Viral short-form video content and ad strategies for rapid brand awareness.</p>
+            </div>
+            <div class="card">
+                <img src="images/YouTube.png" alt="YouTube">
+                <h3>YouTube SEO</h3>
+                <p>Video optimization and channel management to rank higher and grow subscribers.</p>
+            </div>
+            <div class="card">
+                <img src="images/Shopify.png" alt="Shopify">
+                <h3>Shopify Expert</h3>
+                <p>Complete e-commerce store setup, design, and conversion optimization.</p>
+            </div>
+            <div class="card">
+                <img src="images/Automation.png" alt="Automation">
+                <h3>Automation</h3>
+                <p>Complete faceless channel and workflow systems for automated growth.</p>
+            </div>
+            <div class="card">
+                <img src="images/eBay.png" alt="eBay">
+                <h3>eBay Services</h3>
+                <p>Acoount management and expert suspension solutions (MC011, MC999).</p>
+            </div>
         </div>
     </section>
 
-    <section class="contact-info">
-        <h2>Ready to Start?</h2>
-        <p>Contact our experts today.</p><br>
-        <a href="mailto:metasparkagency0@gmail.com"><i class="fas fa-envelope"></i> metasparkagency0@gmail.com</a>
-        <a href="tel:+923030607545"><i class="fas fa-phone"></i> 03030607545</a>
+    <section id="reviews" class="section-padding reviews-section">
+        <h2 class="section-title">Client Reviews</h2>
+        <p class="section-subtitle">What business owners say about partnering with MetaSpark.</p>
+        <div class="reviews-container">
+            <div class="card review-card">
+                <i class="fas fa-quote-right quote"></i>
+                <p>"Best agency! Got real clients within 3 days. Sales increased by 150% in the first month."</p>
+                <div class="client-meta">
+                    <div class="client-avatar">RK</div>
+                    <div>
+                        <strong>Rana Kamran</strong><br>
+                        <span>E-com Store Owner</span>
+                        <div class="review-stars">★★★★★</div>
+                    </div>
+                </div>
+            </div>
+            <div class="card review-card">
+                <i class="fas fa-quote-right quote"></i>
+                <p>"The TikTok ads were a game changer. We went from zero leads to 50+ a day very quickly."</p>
+                <div class="client-meta">
+                    <div class="client-avatar">AM</div>
+                    <div>
+                        <strong>Aisha Khan</strong><br>
+                        <span>Real Estate Agent</span>
+                        <div class="review-stars">★★★★★</div>
+                    </div>
+                </div>
+            </div>
+            <div class="card review-card">
+                <i class="fas fa-quote-right quote"></i>
+                <p>"Professional team for YouTube Automation. My faceless channel is growing steady."</p>
+                <div class="client-meta">
+                    <div class="client-avatar">SN</div>
+                    <div>
+                        <strong>Siddiq Nasir</strong><br>
+                        <span>Content Creator</span>
+                        <div class="review-stars">★★★★☆</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="impact" class="section-padding">
+        <h2 class="section-title">Our Impact</h2>
+        <div class="impact-grid">
+            <div class="impact-item">
+                <h2 class="counter" data-target="200">0</h2>
+                <p>DAILY LEADS</p>
+            </div>
+            <div class="impact-item">
+                <h2 class="counter" data-target="100">0</h2>
+                <p>HAPPY CLIENTS</p>
+            </div>
+            <div class="impact-item">
+                <h2 class="counter" data-target="1500">0</h2>
+                <p>ADS MANAGED</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-info">
+        <h2 class="section-title">Ready to Start?</h2>
+        <p>Contact our experts today to book a free consultation.</p>
+        <div class="contact-methods">
+            <div class="contact-box card">
+                <i class="fas fa-envelope"></i>
+                <h4>Email Us</h4>
+                <a href="mailto:metasparkagency0@gmail.com" class="contact-link">metasparkagency0@gmail.com</a>
+            </div>
+            <div class="contact-box card">
+                <i class="fas fa-phone-alt"></i>
+                <h4>Call or WhatsApp</h4>
+                <a href="tel:+923030607545" class="contact-link">03030607545</a>
+            </div>
+        </div>
     </section>
 
     <a href="https://wa.me/923030607545" id="wa-btn"><i class="fab fa-whatsapp"></i></a>
 
-    <footer>© 2026 MetaSpark Agency. All Rights Reserved.</footer>
+    <footer>
+        <p>&copy; 2026 MetaSpark Agency. All Rights Reserved.</p>
+        <p style="font-size:0.7rem;">Digital Growth Partner</p>
+    </footer>
 
     <script>
+        // Hamburger Toggle
         const menuToggle = document.getElementById('menu-toggle');
         const navMenu = document.getElementById('nav-menu');
 
         menuToggle.onclick = () => {
             navMenu.classList.toggle('active');
-            // Basic animation for burger lines
             const spans = menuToggle.getElementsByTagName('span');
             if(navMenu.classList.contains('active')) {
                 spans[0].style.transform = "rotate(45deg) translateY(11px)";
@@ -200,6 +314,34 @@
                 spans[2].style.transform = "none";
             }
         });
+
+        // LIVE COUNTER LOGIC
+        const counters = document.querySelectorAll('.counter');
+        const speed = 100; // Lower number is faster
+
+        counters.forEach(counter => {
+            const updateCount = () => {
+                const target = +counter.getAttribute('data-target');
+                const count = +counter.innerText;
+                const inc = target / speed;
+
+                if (count < target) {
+                    counter.innerText = Math.ceil(count + inc);
+                    setTimeout(updateCount, 20); // Frequency
+                } else {
+                    counter.innerText = target + "+";
+                }
+            };
+            
+            // Trigger animation only when visible
+            const observer = new IntersectionObserver(entries => {
+                if(entries[0].isIntersecting) {
+                    updateCount();
+                    observer.unobserve(counter); // Only animate once
+                }
+            });
+            observer.observe(counter);
+        });
     </script>
 </body>
-            </html>
+    </html>
