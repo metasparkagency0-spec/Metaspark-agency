@@ -3,220 +3,236 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MetaSpark Agency | Verified Digital Excellence</title>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <title>MetaSpark Agency | We Build Your Legacy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
     <style>
         :root {
-            --primary: #FFCC00;
-            --bg: #050505;
-            --card-bg: #0d0d0d;
-            --text: #ffffff;
-            --muted: #888;
-            --border: rgba(255, 255, 255, 0.05);
+            --gold: #FFCC00;
+            --black: #050505;
+            --surface: #0e0e0e;
+            --text-main: #FFFFFF;
+            --text-dim: #A1A1AA;
+            --border: rgba(255, 255, 255, 0.06);
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-font-smoothing: antialiased; }
+        
         body { 
             font-family: 'Plus Jakarta Sans', sans-serif; 
-            background: var(--bg); color: var(--text); 
-            line-height: 1.6; overflow-x: hidden; scroll-behavior: smooth;
+            background-color: var(--black); 
+            color: var(--text-main); 
+            line-height: 1.7; 
+            overflow-x: hidden;
         }
 
-        /* --- Header & Side Menu --- */
+        /* --- Custom Scrollbar --- */
+        ::-webkit-scrollbar { width: 5px; }
+        ::-webkit-scrollbar-track { background: #000; }
+        ::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 10px; }
+
+        /* --- Navigation & Menu --- */
         header {
-            padding: 15px 6%; display: flex; justify-content: space-between; align-items: center;
+            padding: 20px 6%; display: flex; justify-content: space-between; align-items: center;
             position: fixed; width: 100%; top: 0; z-index: 1000;
-            background: rgba(5, 5, 5, 0.9); backdrop-filter: blur(15px); border-bottom: 1px solid var(--border);
+            background: rgba(5, 5, 5, 0.85); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border);
         }
-        .logo { font-weight: 800; font-size: 1.2rem; color: var(--primary); display: flex; align-items: center; gap: 8px; }
-        .logo img { width: 30px; border-radius: 4px; }
-        #menu-btn { cursor: pointer; color: var(--primary); font-size: 1.4rem; }
+        .agency-name { font-weight: 800; font-size: 1.1rem; color: var(--gold); letter-spacing: -0.5px; display: flex; align-items: center; gap: 10px; }
+        .agency-name img { width: 28px; height: 28px; border-radius: 4px; }
+        
+        .nav-trigger { cursor: pointer; background: none; border: none; color: var(--gold); font-size: 1.5rem; transition: 0.3s; }
 
-        #side-menu {
-            position: fixed; top: 0; right: -100%; width: 300px; height: 100vh;
-            background: #000; z-index: 2000; transition: 0.5s cubic-bezier(0.8, 0, 0.2, 1);
-            padding: 80px 30px; border-left: 1px solid var(--border); overflow-y: auto;
+        #full-menu {
+            position: fixed; top: 0; right: -100%; width: 100%; max-width: 350px; height: 100vh;
+            background: #000; z-index: 2000; transition: 0.6s cubic-bezier(0.85, 0, 0.15, 1);
+            padding: 100px 40px; border-left: 1px solid var(--border); box-shadow: -20px 0 50px rgba(0,0,0,0.5);
+            overflow-y: auto;
         }
-        #side-menu.active { right: 0; }
-        #close-btn { position: absolute; top: 25px; right: 25px; font-size: 2rem; color: var(--primary); cursor: pointer; }
-        #side-menu a { text-decoration: none; color: #fff; font-size: 0.95rem; display: flex; align-items: center; gap: 15px; margin-bottom: 18px; transition: 0.3s; }
-        #side-menu a:hover { color: var(--primary); transform: translateX(8px); }
+        #full-menu.active { right: 0; }
+        .close-menu { position: absolute; top: 30px; right: 30px; font-size: 2.2rem; color: var(--gold); cursor: pointer; }
+        .menu-links a { text-decoration: none; color: #fff; font-size: 1.1rem; font-weight: 600; display: flex; align-items: center; gap: 15px; margin-bottom: 25px; transition: 0.3s; }
+        .menu-links a i { width: 25px; color: var(--gold); font-size: 1.2rem; }
+        .menu-links a:hover { color: var(--gold); transform: translateX(10px); }
 
         /* --- Hero --- */
-        .hero { height: 70vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 0 8%; }
-        .hero h1 { font-size: clamp(32px, 7vw, 65px); font-weight: 800; line-height: 1.1; margin-bottom: 20px; letter-spacing: -2px; }
-        .hero h1 span { color: var(--primary); }
-        .hero p { color: var(--muted); max-width: 600px; font-size: 1rem; margin-bottom: 30px; }
+        .hero { height: 90vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 0 8%; }
+        .hero h1 { font-size: clamp(38px, 9vw, 85px); font-weight: 800; letter-spacing: -4px; line-height: 0.95; margin-bottom: 30px; }
+        .hero h1 span { color: var(--gold); }
+        .hero p { color: var(--text-dim); max-width: 600px; font-size: 1.1rem; margin-bottom: 40px; font-weight: 400; }
 
-        /* --- Global Services (40+ Slots) --- */
-        .section-title { text-align: center; font-size: 2.2rem; margin-bottom: 50px; font-weight: 800; }
-        .grid-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; padding: 0 6%; }
+        /* --- Marketing Content Section --- */
+        .content-section { padding: 100px 8%; }
+        .grid-master { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 50px; }
         
-        .service-card { background: var(--card-bg); border-radius: 20px; border: 1px solid var(--border); overflow: hidden; transition: 0.4s; }
-        .service-card:hover { transform: translateY(-10px); border-color: var(--primary); }
-        .service-card img { width: 100%; height: 240px; object-fit: cover; border-bottom: 1px solid var(--border); }
-        .service-content { padding: 25px; }
-        .service-content h3 { font-size: 1.3rem; color: var(--primary); margin-bottom: 10px; }
-        .service-content p { color: var(--muted); font-size: 0.85rem; line-height: 1.5; }
+        .m-card { position: relative; transition: 0.5s; }
+        .m-card:hover { transform: translateY(-10px); }
+        
+        .img-wrap { width: 100%; border-radius: 20px; overflow: hidden; border: 1px solid var(--border); background: #000; margin-bottom: 25px; }
+        .img-wrap img { width: 100%; height: auto; display: block; filter: grayscale(20%); transition: 0.5s; }
+        .m-card:hover img { filter: grayscale(0%); transform: scale(1.03); }
 
-        /* --- Client Reviews --- */
-        .reviews { padding: 80px 6%; background: #080808; margin-top: 50px; }
-        .review-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
-        .review-box { max-width: 380px; background: #111; padding: 30px; border-radius: 15px; border: 1px solid var(--border); position: relative; }
-        .review-box p { font-style: italic; color: #ccc; font-size: 0.9rem; margin-bottom: 20px; }
-        .client-info h4 { color: var(--primary); font-size: 1rem; }
-        .client-info span { font-size: 0.75rem; color: #555; font-weight: 700; }
+        .m-info h3 { font-size: 1.6rem; font-weight: 800; color: var(--gold); margin-bottom: 15px; letter-spacing: -0.5px; }
+        .m-info p { color: var(--text-dim); font-size: 1rem; line-height: 1.8; text-align: justify; }
 
-        /* --- WhatsApp Animated --- */
-        .wa-float { 
-            position: fixed; bottom: 25px; right: 25px; background: #25D366; 
-            width: 55px; height: 55px; border-radius: 50%; display: flex; 
-            align-items: center; justify-content: center; font-size: 1.8rem; 
-            color: #fff; z-index: 3000; box-shadow: 0 8px 20px rgba(0,0,0,0.4);
-            animation: pulse-wa 2s infinite; text-decoration: none;
+        /* --- Human Reviews --- */
+        .review-strip { padding: 80px 0; background: #080808; overflow: hidden; white-space: nowrap; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+        .review-box { display: inline-block; padding: 20px 40px; border-right: 1px solid var(--border); }
+        .review-box p { font-style: italic; font-weight: 500; color: #fff; margin-bottom: 10px; }
+        .review-box b { color: var(--gold); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; }
+
+        /* --- WhatsApp Pulse --- */
+        .wa-chat { 
+            position: fixed; bottom: 35px; right: 35px; background: #25D366; 
+            width: 65px; height: 65px; border-radius: 50%; display: flex; 
+            align-items: center; justify-content: center; font-size: 2.2rem; 
+            color: #fff; z-index: 3000; text-decoration: none;
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4);
+            animation: pulse-ring 2s infinite;
         }
-        @keyframes pulse-wa {
+        @keyframes pulse-ring {
             0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
-            70% { transform: scale(1.05); box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+            70% { transform: scale(1.1); box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
             100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
         }
 
-        /* --- Footer (Small Mobile Text) --- */
-        footer { padding: 60px 6% 30px; background: #000; text-align: center; border-top: 1px solid var(--border); }
-        .f-contact-head { font-size: 0.9rem; color: var(--primary); font-weight: 800; letter-spacing: 2px; margin-bottom: 15px; }
-        .f-small-text { font-size: 0.8rem; color: var(--muted); text-decoration: none; display: block; margin: 4px 0; transition: 0.3s; }
-        .f-small-text:hover { color: #fff; }
-        .footer-copy { font-size: 0.65rem; color: #333; margin-top: 40px; letter-spacing: 1px; }
+        /* --- Footer (Small Text for Mobile) --- */
+        footer { padding: 80px 8% 40px; border-top: 1px solid var(--border); text-align: center; }
+        .f-contact { margin-bottom: 40px; }
+        .f-contact a { display: block; color: var(--text-dim); text-decoration: none; font-size: 0.85rem; margin-bottom: 8px; transition: 0.3s; font-weight: 500; }
+        .f-contact a:hover { color: var(--gold); }
+        .copy-text { font-size: 0.65rem; color: #333; letter-spacing: 2px; text-transform: uppercase; margin-top: 50px; }
 
-        @media (max-width: 600px) {
-            .f-small-text { font-size: 0.75rem; }
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 55px; letter-spacing: -2px; }
+            #full-menu { width: 85%; }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="logo"><img src="images/logo.png" alt="M"> METASPARK AGENCY</div>
-        <div id="menu-btn"><i class="fas fa-bars-staggered"></i></div>
+        <div class="agency-name">
+            <img src="images/logo.png" alt="M"> METASPARK AGENCY
+        </div>
+        <button class="nav-trigger" id="openMenu">
+            <i class="fas fa-bars-staggered"></i>
+        </button>
     </header>
 
-    <nav id="side-menu">
-        <div id="close-btn"><i class="fas fa-times"></i></div>
-        <a href="#ebay"><i class="fab fa-ebay"></i> eBay Store Setup</a>
-        <a href="#meta"><i class="fab fa-facebook"></i> Meta Ads Scaling</a>
-        <a href="#tiktok"><i class="fab fa-tiktok"></i> TikTok Organic Ads</a>
-        <a href="#yt"><i class="fab fa-youtube"></i> YouTube Automation</a>
-        <a href="#shopify"><i class="fas fa-shopping-bag"></i> Shopify Growth</a>
-        <a href="#leads"><i class="fas fa-bullseye"></i> Lead Generation</a>
-        <a href="#seo"><i class="fas fa-search"></i> Google SEO</a>
-        <a href="#ai"><i class="fas fa-robot"></i> AI Chatbot Flows</a>
-        <a href="#email"><i class="fas fa-envelope"></i> Cold Emailing</a>
-        <a href="#video"><i class="fas fa-video"></i> Video Production</a>
-        <a href="#content"><i class="fas fa-pen-nib"></i> Content Strategy</a>
-        <a href="#amazon"><i class="fab fa-amazon"></i> Amazon FBA</a>
-        <a href="#design"><i class="fas fa-palette"></i> Graphic Design</a>
-        <a href="#snap"><i class="fab fa-snapchat"></i> Snapchat Ads</a>
-        <a href="#google"><i class="fab fa-google"></i> Google PPC</a>
+    <nav id="full-menu">
+        <div class="close-menu" id="closeMenu">
+            <i class="fas fa-times"></i>
+        </div>
+        <div class="menu-links">
+            <a href="#meta"><i class="fab fa-facebook"></i> Meta Ads Expert</a>
+            <a href="#ebay"><i class="fab fa-ebay"></i> eBay Management</a>
+            <a href="#tiktok"><i class="fab fa-tiktok"></i> TikTok Marketing</a>
+            <a href="#yt"><i class="fab fa-youtube"></i> YouTube Automation</a>
+            <a href="#shopify"><i class="fas fa-shopping-bag"></i> Shopify Stores</a>
+            <a href="#leads"><i class="fas fa-bullseye"></i> Lead Generation</a>
+            <a href="#seo"><i class="fas fa-magnifying-glass"></i> Google SEO</a>
+            <a href="#ai"><i class="fas fa-robot"></i> AI Integration</a>
+            <a href="#contact"><i class="fas fa-phone-flip"></i> Direct Raabta</a>
+        </div>
     </nav>
 
     <section class="hero">
-        <h1>Scale Your <span>Legacy.</span></h1>
-        <p>Premium digital marketing solutions with 40+ specialized services. We combine verified data with elite creative strategies.</p>
-        <a href="https://wa.me/923030607545" style="background:var(--primary); color:#000; padding:15px 35px; border-radius:8px; font-weight:800; text-decoration:none;">Book Strategy Call</a>
+        <h1>Human Touch.<br><span>Digital Scale.</span></h1>
+        <p>Bina kisi fake waade ke, hum aapke business ko sahi strategy aur verified data ke sath duniya bhar mein phailate hain. Asli marketing, asli results.</p>
+        <a href="https://wa.me/923030607545" style="background:var(--gold); color:#000; padding:18px 45px; border-radius:100px; font-weight:800; text-decoration:none; font-size:0.9rem;">Start Your Journey</a>
     </section>
 
-    <div class="section-title">Verified <span>Agency Proofs</span></div>
-    <section class="grid-container">
-        
-        <div class="service-card" id="ebay">
-            <img src="images/eBay.png" alt="eBay">
-            <div class="service-content">
-                <h3>eBay Expert Management</h3>
-                <p>A-Z store management, listing optimization, aur top-rated seller status ki guarantee hamare expert team ke sath.</p>
+    <section class="content-section">
+        <div class="grid-master">
+            
+            <div class="m-card" id="meta">
+                <div class="img-wrap"><img src="images/Facebook.png" alt="Meta Proof"></div>
+                <div class="m-info">
+                    <h3>Meta Ads Strategy</h3>
+                    <p>Marketing halway se hat kar, hum pixels aur data conversion par kaam karte hain. Humne dekha hai ke log ads par click tabhi karte hain jab unhe brand se connection feel ho. Hamari Facebook aur Instagram strategy aapke brand ko sirf dikhati nahi, balkay bechti hai.</p>
+                </div>
             </div>
-        </div>
 
-        <div class="service-card" id="meta">
-            <img src="images/Facebook.png" alt="Meta">
-            <div class="service-content">
-                <h3>Meta Ads Mastery</h3>
-                <p>High-conversion ads jo aapke budget ko waste nahi karte balkay direct sales aur leads generate karte hain.</p>
+            <div class="m-card" id="ebay">
+                <div class="img-wrap"><img src="images/eBay.png" alt="eBay Proof"></div>
+                <div class="m-info">
+                    <h3>eBay Global Operations</h3>
+                    <p>E-commerce ek psychology hai. Hum aapke eBay store ko aisi settings aur optimized listings ke sath manage karte hain ke global buyers ka trust barhta hai. Inventory sourcing se lekar customer feedback tak, hum har step par "Handmade" attention dete hain.</p>
+                </div>
             </div>
-        </div>
 
-        <div class="service-card" id="tiktok">
-            <img src="images/TikTok.png" alt="TikTok">
-            <div class="service-content">
-                <h3>TikTok Brand Growth</h3>
-                <p>Short-form content aur viral ads jo gen-z aur millennials ko aapka fan bana denge. Certified results.</p>
+            <div class="m-card" id="leads">
+                <div class="img-wrap"><img src="images/Automation.png" alt="Leads Proof"></div>
+                <div class="m-info">
+                    <h3>Qualified Lead Gen</h3>
+                    <p>Marketing ka matlab sirf traffic nahi, balkay "Potential Money" hai. Hum verified aur high-intent leads generate karte hain jo conversion ke liye 90% ready hoti hain. Hamari automated pipelines aapki sales team ko har waqt busy rakhti hain.</p>
+                </div>
             </div>
-        </div>
 
-        <div class="service-card" id="yt">
-            <img src="images/YouTube.png" alt="YouTube">
-            <div class="service-content">
-                <h3>YouTube Automation</h3>
-                <p>Passive income streams build karein faceless channels ke zariye. Script se lekar monetization tak sab hamara kaam.</p>
+            <div class="m-card" id="tiktok">
+                <div class="img-wrap"><img src="images/TikTok.png" alt="TikTok"></div>
+                <div class="m-info">
+                    <h3>TikTok Organic Growth</h3>
+                    <p>Aaj ke digital daur mein video hi sab kuch hai. Hum aapke brand ke liye viral TikTok campaigns aur organic growth maps design karte hain jo algorithms ko bypass kar ke direct target audience ke feed par pohanchte hain.</p>
+                </div>
             </div>
-        </div>
 
-        <div class="service-card" id="shopify">
-            <img src="images/Shopify.png" alt="Shopify">
-            <div class="service-content">
-                <h3>Shopify Store Scaling</h3>
-                <p>Elegant design aur fast-loading stores jo customers ko conversion par majboor kar dete hain.</p>
-            </div>
-        </div>
-
-        <div class="service-card" id="leads">
-            <img src="images/Automation.png" alt="Leads">
-            <div class="service-content">
-                <h3>B2B Lead Generation</h3>
-                <p>High-quality verified leads jo aapke sales pipeline ko kabhi khali nahi hone dengi. Data-driven leads.</p>
-            </div>
-        </div>
-
-        </section>
-
-    <section class="reviews">
-        <h2 class="section-title" style="margin-bottom: 40px;">Client <span>Voices</span></h2>
-        <div class="review-grid">
-            <div class="review-box">
-                <p>"MetaSpark Agency ne mere business ko wahan pohanchaya jahan main 2 saal se koshish kar raha tha. Highly professional!"</p>
-                <div class="client-info"><h4>Zeeshan Raza</h4><span>VERIFIED CLIENT</span></div>
-            </div>
-            <div class="review-box">
-                <p>"Their eBay management is flawless. My store health is perfect and sales are increasing every week."</p>
-                <div class="client-info"><h4>Fahad Ali</h4><span>GLOBAL ENTREPRENEUR</span></div>
-            </div>
         </div>
     </section>
 
-    <footer>
-        <div class="f-contact-head">GET IN TOUCH</div>
-        <a href="mailto:metasparkagency0@gmail.com" class="f-small-text">metasparkagency0@gmail.com</a>
-        <a href="tel:+923030607545" class="f-small-text">+92 303 0607545</a>
-        
-        <p class="footer-copy">© 2026 METASPARK AGENCY | ALL RIGHTS RESERVED</p>
+    <div class="review-strip">
+        <div class="review-box">
+            <p>"MetaSpark ne mere store ko 2 mahine mein top-rated seller banaya."</p>
+            <b>Zeeshan Raza - Verified</b>
+        </div>
+        <div class="review-box">
+            <p>"Ads ka ROAS pehli baar itna high aya hai. Outstanding work!"</p>
+            <b>Fahad Ali - Partner</b>
+        </div>
+        <div class="review-box">
+            <p>"Best leads system in Pakistan. Highly recommended."</p>
+            <b>Arsalan Khan - Client</b>
+        </div>
+    </div>
+
+    <footer id="contact">
+        <div class="f-contact">
+            <span style="color:var(--gold); font-weight:800; display:block; margin-bottom:15px; font-size:0.9rem; letter-spacing:1px;">CONTACT US</span>
+            <a href="mailto:metasparkagency0@gmail.com">metasparkagency0@gmail.com</a>
+            <a href="tel:+923030607545">+92 303 0607545</a>
+        </div>
+        <p class="copy-text">© 2026 METASPARK AGENCY | THE GOLD STANDARD</p>
     </footer>
 
-    <a href="https://wa.me/923030607545" class="wa-float">
+    <a href="https://wa.me/923030607545" class="wa-chat">
         <i class="fab fa-whatsapp"></i>
     </a>
 
     <script>
-        const menuBtn = document.getElementById('menu-btn');
-        const sideMenu = document.getElementById('side-menu');
-        const closeBtn = document.getElementById('close-btn');
+        const openBtn = document.getElementById('openMenu');
+        const closeBtn = document.getElementById('closeMenu');
+        const menu = document.getElementById('full-menu');
 
-        menuBtn.onclick = () => sideMenu.classList.add('active');
-        closeBtn.onclick = () => sideMenu.classList.remove('active');
+        openBtn.onclick = () => menu.classList.add('active');
+        closeBtn.onclick = () => menu.classList.remove('active');
 
-        // Close menu on link click
-        document.querySelectorAll('#side-menu a').forEach(link => {
-            link.onclick = () => sideMenu.classList.remove('active');
+        // Auto close on link click
+        document.querySelectorAll('.menu-links a').forEach(link => {
+            link.onclick = () => menu.classList.remove('active');
         });
+
+        // Smooth reveal on scroll
+        const reveal = () => {
+            const cards = document.querySelectorAll('.m-card');
+            cards.forEach(card => {
+                const top = card.getBoundingClientRect().top;
+                if(top < window.innerHeight - 100) {
+                    card.style.opacity = "1";
+                    card.style.transform = "translateY(0)";
+                }
+            });
+        };
+        window.addEventListener('scroll', reveal);
     </script>
 </body>
-                    </html>
+                </html>
