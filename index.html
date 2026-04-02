@@ -40,177 +40,63 @@ nav { position:fixed; top:15px; right:20px; z-index:1000; display:flex; flex-dir
 .card:hover { transform:translateY(-15px) scale(1.05); box-shadow:0 15px 30px rgba(255,204,0,0.4); }
 .card p { font-weight:600; color:#ccc; font-size:14px; }
 
-/* RESULTS / LEADS */
+/* RESULTS */
 #stats { text-align:center; margin:30px 0; font-size:18px; }
 
-/* CONTACT INFO */
+/* CONTACT */
 #email, #phone { font-size:16px; color:#ccc; margin-bottom:10px; text-align:center; position:relative; }
-@keyframes slideInLeft { 0% {left:-200px; opacity:0;} 100% {left:0; opacity:1;} }
-@keyframes slideInRight { 0% {left:200px; opacity:0;} 100% {left:0; opacity:1;} }
 
-/* FadeIn Up */
 @keyframes fadeInUp { 0% {opacity:0; transform:translateY(20px);} 100% {opacity:1; transform:translateY(0);} }
 
-/* WhatsApp button */
+/* WhatsApp */
 #whatsapp-wrapper { position:fixed; bottom:25px; right:25px; z-index:1000; }
-#whatsapp { background:#25D366; color:black; padding:16px 20px; border-radius:50px; text-decoration:none; font-weight:bold; box-shadow:0 8px 25px rgba(0,0,0,0.5); display:inline-block; position:relative; }
-#whatsapp-badge { position:absolute; top:-8px; right:-8px; background:red; color:white; width:24px; height:24px; font-size:14px; font-weight:bold; border-radius:50%; display:flex; align-items:center; justify-content:center; }
+#whatsapp { background:#25D366; color:black; padding:16px 20px; border-radius:50px; text-decoration:none; font-weight:bold; }
 
-/* EXTRA SECTIONS */
-section { opacity:0; transform:translateY(20px); transition:1s; }
-section.visible { opacity:1; transform:translateY(0); }
-
-/* FOOTER */
+/* Footer */
 footer { text-align:center; padding:25px; color:#777; border-top:1px solid #222; }
-
-/* RESPONSIVE */
-@media(max-width:768px){ 
-  .cards { flex-direction:column; align-items:center; } 
-  .card { width:70%; } 
-  .hero h1 { font-size:36px; } 
-  .services h2 { font-size:28px; } 
-}
 </style>
 </head>
+
 <body>
 
-<!-- Logo + Name -->
 <div class="logo-name">
-  <div><img src="images/logo.png" alt="MetaSpark Logo"></div>
+  <div><img src="images/logo.png"></div>
   <h1>MetaSpark Agency</h1>
 </div>
 
-<!-- Hamburger Menu -->
 <nav>
   <div id="hamburger"><span></span><span></span><span></span></div>
   <div id="services-dropdown">
     <a href="#services">Facebook</a>
     <a href="#services">YouTube</a>
     <a href="#services">Instagram</a>
-    <a href="#services">Social Media Management</a>
-    <a href="#services">Leads Generation</a>
-    <a href="#services">eBay</a>
-    <a href="#services">Shopify Setup</a>
-    <a href="#services">YouTube Automation</a>
   </div>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
   <h1>We Bring You Clients 🚀</h1>
-  <p>Facebook Ads, YouTube(Banner, Logo, Thumbnail), Instagram Ads (Organic & Non-Organic Followers), Social Media Management, Leads Generation, eBay Service, Shopify Complete Setup, YouTube Automation</p>
-  <a href="https://wa.me/923030607545?text=Hi%20I%20want%20clients" class="btn">Get Clients Now</a>
-  <div id="stats">🔥 Leads Daily <span class="counter" data-target="500">0</span>+</div>
+  <p>Grow your business with ads & automation</p>
 </section>
 
-<!-- SERVICES -->
 <section id="services" class="services">
   <h2>Our Services</h2>
-  <p>We help you grow your business with targeted ads, organic growth, video campaigns, Shopify store setup, and YouTube automation.</p>
+
   <div class="cards">
-    <div class="card"><img src="images/Facebook.png" alt="Facebook"><p>Facebook Ads<br><small>Targeted Audience</small></p></div>
-    <div class="card"><img src="images/Instagram.png" alt="Instagram"><p>Instagram Growth<br><small>Organic & Paid Promotions</small></p></div>
-    <div class="card"><img src="images/TikTok.png" alt="TikTok"><p>TikTok Ads<br><small>Engaging Short Video Campaigns</small></p></div>
-    <div class="card"><img src="images/YouTube.png" alt="YouTube"><p>YouTube SEO<br><small>Grow Channel & Earn Money</small></p></div>
-    <div class="card"><img src="images/Shopify.png" alt="Shopify"><p>Shopify Store<br><small>Setup & Optimize Online Store</small></p></div>
-    <div class="card"><img src="images/Automation.png" alt="Automation"><p>YouTube Automation<br><small>Faceless YouTube Channel</small></p></div>
-    <div class="card"><img src="images/eBay.png" alt="eBay"><p>eBay Service<br><small>MC011, MC999, MC081, MC099</small></p></div>
+    <div class="card"><img src="images/Facebook.png"><p>Facebook Ads</p></div>
+    <div class="card"><img src="images/Instagram.png"><p>Instagram</p></div>
+    <div class="card"><img src="images/TikTok.png"><p>TikTok</p></div>
+    <div class="card"><img src="images/YouTube.png"><p>YouTube</p></div>
+    <div class="card"><img src="images/Shopify.png"><p>Shopify</p></div>
+    <div class="card"><img src="images/Automation.png"><p>Automation</p></div>
+    <div class="card"><img src="images/eBay.png"><p>eBay</p></div>
   </div>
 </section>
 
-<!-- RESULTS -->
-<section style="text-align:center; padding:40px;">
-  <h2 style="color:#ffcc00;">Our Results</h2>
-  <p>✔ 500+ Leads Daily</p>
-  <p>✔ 100+ Happy Clients</p>
-  <p>✔ 1+ Years Experience</p>
-</section>
-
-<!-- TESTIMONIALS -->
-<section style="text-align:center; padding:40px; background:#111;">
-  <h2 style="color:#ffcc00;">Client Reviews</h2>
-  <p>"Best agency! Got real clients within 3 days." ⭐⭐⭐⭐⭐</p>
-  <p>"Highly recommended for Facebook & TikTok Ads." ⭐⭐⭐⭐⭐</p>
-</section>
-
-<!-- CTA -->
-<div style="text-align:center; margin:20px 0;">
-  <a href="https://wa.me/923030607545" style="background:#ffcc00; color:black; padding:12px 25px; border-radius:8px; text-decoration:none; font-weight:bold; animation:pulse 2s infinite;">
-     Start Your Business Growth Now 🚀
-  </a>
-</div>
-
-<!-- Why Choose Us -->
-<section style="text-align:center; padding:40px;">
-  <h2 style="color:#ffcc00;">Why Choose Us?</h2>
-  <p>✔ Fast Results</p>
-  <p>✔ Real Clients (No Fake Leads)</p>
-  <p>✔ Affordable Pricing</p>
-  <p>✔ 24/7 Support</p>
-</section>
-
-<!-- Urgency Line -->
-<p style="color:red; text-align:center; font-weight:bold;">⚠ Limited Slots Available – Book Now Before It's Full!</p>
-
-<!-- CONTACT -->
-<section style="text-align:center;margin-top:20px;font-size:16px;color:#ccc;">
-  <div id="email">📧 Email: <a href="mailto:metasparkagency0@gmail.com" style="color:#ffcc00;text-decoration:none;">metasparkagency0@gmail.com</a></div>
-  <div id="phone">📞 Phone: <a href="tel:+923030607545" style="color:#ffcc00;text-decoration:none;">03030607545</a></div>
-</section>
-
-<!-- WhatsApp -->
 <div id="whatsapp-wrapper">
   <a id="whatsapp" href="https://wa.me/923030607545">WhatsApp</a>
-  <div id="whatsapp-badge">30</div>
 </div>
 
 <footer>© 2026 MetaSpark Agency</footer>
 
-<script>
-// Counter
-document.querySelectorAll(".counter").forEach(counter => {
-  const updateCount = () => {
-    const target = +counter.getAttribute('data-target');
-    const count = +counter.innerText;
-    const increment = target/100;
-    if(count<target){ counter.innerText=Math.ceil(count+increment); setTimeout(updateCount,20);}
-    else{ counter.innerText=target; }
-  }
-  updateCount();
-});
-
-// Slide animation
-document.getElementById("email").style.position="relative";
-document.getElementById("email").style.animation="slideInLeft 2s forwards";
-document.getElementById("phone").style.position="relative";
-document.getElementById("phone").style.animation="slideInRight 2s forwards";
-
-// WhatsApp pulse
-setInterval(()=>{
-  const btn = document.getElementById("whatsapp");
-  btn.style.transition="all 0.5s ease";
-  btn.style.transform="scale(1.2)";
-  btn.style.boxShadow="0 12px 30px rgba(37,211,102,0.7)";
-  setTimeout(()=>{ btn.style.transform="scale(1)"; btn.style.boxShadow="0 8px 25px rgba(0,0,0,0.5)"; },1000);
-},10000);
-
-// Hamburger toggle
-const hamburger = document.getElementById("hamburger");
-const dropdown = document.getElementById("services-dropdown");
-hamburger.addEventListener("click", ()=>{
-  dropdown.style.display = dropdown.style.display === "flex" ? "none" : "flex";
-  dropdown.style.flexDirection = "column";
-});
-
-// Fade-in on scroll
-const sections = document.querySelectorAll("section");
-const observer = new IntersectionObserver(entries=>{
-  entries.forEach(entry=>{
-    if(entry.isIntersecting){ entry.target.classList.add("visible"); }
-  });
-}, {threshold:0.2});
-sections.forEach(sec=>observer.observe(sec));
-</script>
-
 </body>
-  </html>
+                              </html>
