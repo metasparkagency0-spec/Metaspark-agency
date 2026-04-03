@@ -232,6 +232,176 @@
                 }
             });
         });
+        <style>
+    .leads-section {
+        padding: 100px 8%;
+        background: linear-gradient(180deg, #050505 0%, #0a0a0a 100%);
+        border-top: 1px solid rgba(255, 204, 0, 0.1);
+    }
+
+    .leads-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 50px;
+        align-items: center;
+    }
+
+    .leads-text h2 {
+        font-size: 3rem;
+        font-weight: 800;
+        line-height: 1.1;
+        margin-bottom: 25px;
+        letter-spacing: -2px;
+    }
+
+    .leads-text h2 span { color: #FFCC00; }
+
+    .leads-text p {
+        color: #94a3b8;
+        font-size: 1.1rem;
+        margin-bottom: 30px;
+        text-align: justify;
+    }
+
+    .leads-features {
+        list-style: none;
+    }
+
+    .leads-features li {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin-bottom: 15px;
+        font-weight: 600;
+        color: #fff;
+    }
+
+    .leads-features i { color: #FFCC00; font-size: 1.2rem; }
+
+    /* Custom Form for Lead Generation */
+    .leads-form {
+        background: #111;
+        padding: 40px;
+        border-radius: 30px;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    }
+
+    .input-group { margin-bottom: 20px; }
+
+    .input-group input, .input-group select {
+        width: 100%;
+        padding: 15px;
+        background: #000;
+        border: 1px solid #222;
+        border-radius: 12px;
+        color: #fff;
+        font-family: inherit;
+        transition: 0.3s;
+    }
+
+    .input-group input:focus { border-color: #FFCC00; outline: none; }
+
+    .submit-btn {
+        width: 100%;
+        padding: 18px;
+        background: #FFCC00;
+        color: #000;
+        border: none;
+        border-radius: 12px;
+        font-weight: 800;
+        cursor: pointer;
+        transition: 0.4s;
+    }
+
+    .submit-btn:hover { transform: scale(1.02); background: #fff; }
+
+    /* SOCIAL ICONS AT END */
+    .social-footer {
+        text-align: center;
+        padding: 50px 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .social-icons {
+        display: flex;
+        justify-content: center;
+        gap: 25px;
+        margin-bottom: 20px;
+    }
+
+    .social-icons a {
+        width: 50px;
+        height: 50px;
+        background: #111;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        text-decoration: none;
+        font-size: 1.3rem;
+        transition: 0.4s;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .social-icons a:hover {
+        background: #FFCC00;
+        color: #000;
+        transform: translateY(-5px);
+    }
+
+    @media (max-width: 768px) {
+        .leads-text h2 { font-size: 2.2rem; }
+    }
+</style>
+
+<section class="leads-section" id="leads-gen">
+    <div class="leads-container">
+        <div class="leads-text">
+            <h2>Get High-Intent <span>Leads Today.</span></h2>
+            <p>
+                **MetaSpark Agency** specialized lead generation systems use advanced data mining and behavioral tracking to find customers who are ready to buy. Hum sirf numbers nahi dete, hum conversion dete hain. Hamara handmade funnel aapki sales team ko qualified appointments se bhar dega.
+            </p>
+            <ul class="leads-features">
+                <li><i class="fas fa-check-circle"></i> B2B & B2C Verified Data</li>
+                <li><i class="fas fa-check-circle"></i> Appointment Setting Systems</li>
+                <li><i class="fas fa-check-circle"></i> Cold Outreach Automation</li>
+            </ul>
+        </div>
+
+        <div class="leads-form">
+            <h3 style="margin-bottom: 25px; text-align: center;">Request Free Audit</h3>
+            <form action="#">
+                <div class="input-group">
+                    <input type="text" placeholder="Full Name" required>
+                </div>
+                <div class="input-group">
+                    <input type="email" placeholder="Business Email" required>
+                </div>
+                <div class="input-group">
+                    <select required>
+                        <option value="" disabled selected>Select Service</option>
+                        <option value="meta">Meta Ads Leads</option>
+                        <option value="tiktok">TikTok Ads Leads</option>
+                        <option value="b2b">B2B Data Mining</option>
+                    </select>
+                </div>
+                <button type="submit" class="submit-btn">GET DATA NOW</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="social-footer">
+        <div style="margin-bottom: 20px; font-weight: 700; color: #444; letter-spacing: 2px;">FOLLOW METASPARK AGENCY</div>
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-tiktok"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+    </div>
+</section>
     </script>
 </body>
             </html>
