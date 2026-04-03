@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MetaSpark Agency | Official</title>
+    <title>MetaSpark Agency | Digital Excellence</title>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
     <style>
@@ -19,7 +19,7 @@
         * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
         body { font-family: 'Plus Jakarta Sans', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
 
-        /* --- STICKY HEADER --- */
+        /* --- HEADER --- */
         header {
             position: fixed; top: 0; width: 100%; z-index: 1000;
             background: rgba(0, 0, 0, 0.95); backdrop-filter: blur(12px);
@@ -30,24 +30,32 @@
         .logo img { width: 32px; border-radius: 6px; }
 
         /* --- HERO --- */
-        .hero { padding: 160px 8% 80px; text-align: center; }
+        .hero { padding: 160px 8% 60px; text-align: center; }
         .hero h1 { font-size: clamp(28px, 5vw, 48px); font-weight: 800; line-height: 1.2; margin-bottom: 20px; }
         .hero h1 span { color: var(--gold); }
-        .hero p { color: var(--dim); font-size: 1.4rem; max-width: 800px; margin: 0 auto 40px; }
+        .hero p { color: var(--dim); font-size: 1.3rem; max-width: 850px; margin: 0 auto 40px; }
 
         /* --- SERVICES GRID --- */
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; padding: 40px 8%; }
         .card { background: var(--surface); border-radius: 20px; overflow: hidden; border: 1px solid rgba(255,255,255,0.05); transition: 0.4s; }
+        .card:hover { border-color: var(--gold); transform: translateY(-8px); }
         .card-img { width: 100%; height: 240px; overflow: hidden; }
         .card-img img { width: 100%; height: 100%; object-fit: cover; }
         .card-content { padding: 25px; }
         .card-content h3 { font-size: 1.5rem; color: var(--gold); margin-bottom: 12px; font-weight: 800; }
 
-        /* --- COUNTER --- */
+        /* --- COUNTER SECTION --- */
         .counter-section { padding: 60px 8%; background: #050505; text-align: center; }
         .counter-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 30px; }
         .counter-item h2 { font-size: 3rem; font-weight: 800; color: #fff; }
         .counter-item p { color: var(--orange); font-weight: 700; text-transform: uppercase; font-size: 0.9rem; }
+
+        /* --- REVIEWS & RATINGS --- */
+        .reviews-section { padding: 80px 8%; text-align: center; }
+        .review-card { background: #0a0a0a; padding: 40px; border-radius: 25px; max-width: 700px; margin: 0 auto 30px; border: 1px solid #111; }
+        .stars { color: var(--gold); margin-bottom: 15px; font-size: 1.2rem; }
+        .review-text { font-style: italic; color: #ccc; font-size: 1.1rem; }
+        .client-name { display: block; margin-top: 20px; font-weight: 800; color: var(--gold); }
 
         /* --- LEADS FORM --- */
         .leads-container { padding: 80px 8%; background: #fff; color: #000; }
@@ -57,23 +65,19 @@
         .leads-form input, .leads-form select { width: 100%; padding: 15px; margin-bottom: 15px; border: 1px solid #ddd; border-radius: 8px; }
         .leads-form button { width: 100%; padding: 18px; background: var(--orange); color: #fff; border: none; font-weight: 800; border-radius: 8px; cursor: pointer; }
 
-        /* --- SOCIAL FOOTER --- */
-        footer { padding: 60px 8%; text-align: center; border-top: 1px solid #111; background: #000; }
+        /* --- FOOTER --- */
+        footer { padding: 60px 8%; text-align: center; background: #000; border-top: 1px solid #111; }
         .social-icons { display: flex; justify-content: center; gap: 20px; margin-bottom: 30px; }
-        .social-icons a { 
-            width: 55px; height: 55px; background: #111; border-radius: 50%; 
-            display: flex; align-items: center; justify-content: center; 
-            color: #fff; font-size: 1.5rem; transition: 0.4s; border: 1px solid #222;
-            text-decoration: none;
-        }
-        .social-icons a.fb:hover { background: #1877F2; transform: translateY(-5px); }
-        .social-icons a.tt:hover { background: #000; border-color: #ff0050; transform: translateY(-5px); }
-        .social-icons a.ig:hover { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #bc1888); transform: translateY(-5px); }
-        .social-icons a.yt:hover { background: #FF0000; transform: translateY(-5px); }
+        .social-icons a { width: 55px; height: 55px; background: #111; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 1.5rem; transition: 0.4s; text-decoration: none; border: 1px solid #222; }
+        
+        .social-icons a.fb:hover { background: #1877F2; }
+        .social-icons a.tt:hover { background: #000; border-color: #ff0050; }
+        .social-icons a.ig:hover { background: linear-gradient(45deg, #f09433, #dc2743, #bc1888); }
+        .social-icons a.yt:hover { background: #FF0000; }
 
-        .wa-float { position: fixed; bottom: 30px; right: 30px; background: #25D366; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 2rem; z-index: 1000; text-decoration: none; }
+        .wa-float { position: fixed; bottom: 30px; right: 30px; background: #25D366; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 2.2rem; z-index: 1000; text-decoration: none; box-shadow: 0 10px 20px rgba(0,0,0,0.3); }
 
-        @media (max-width: 768px) { .leads-box { grid-template-columns: 1fr; } }
+        @media (max-width: 768px) { .leads-box { grid-template-columns: 1fr; } .leads-text h2 { font-size: 2.2rem; } }
     </style>
 </head>
 <body>
@@ -85,7 +89,7 @@
 
     <section class="hero">
         <h1>We make sure customers find you <span>Everywhere.</span></h1>
-        <p><b>MetaSpark Agency</b> leads your brand to global growth through high-performance marketing and automation.</p>
+        <p><b>MetaSpark Agency</b> is your partner in global digital dominance. Hamara system aapke brand ko har platform par number #1 banata hai.</p>
     </section>
 
     <div class="grid">
@@ -93,14 +97,28 @@
             <div class="card-img"><img src="images/Automation.png" alt="YouTube Automation"></div>
             <div class="card-content">
                 <h3>YouTube Automation</h3>
-                <p>Hum aapke channel ko autopilot par grow karte hain. SEO se lekar monetization tak, sab MetaSpark Agency manage karti hai.</p>
+                <p>Complete channel management on autopilot. Hum content se lekar monetization tak sab handle karte hain.</p>
             </div>
         </div>
         <div class="card">
             <div class="card-img"><img src="images/Facebook.png" alt="Meta Ads"></div>
             <div class="card-content">
                 <h3>Meta Advertising</h3>
-                <p>Facebook aur Instagram ads ke zariye hum aapka ROAS maximize karte hain aur sales generate karte hain.</p>
+                <p>Facebook aur Instagram par high-converting ads chala kar aapka business scale karte hain.</p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-img"><img src="images/eBay.png" alt="eBay Management"></div>
+            <div class="card-content">
+                <h3>eBay Management</h3>
+                <p>International market mein dominance ke liye eBay store management aur product hunting ki complete service.</p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-img"><img src="images/Instagram.png" alt="SMM"></div>
+            <div class="card-content">
+                <h3>Social Media Management</h3>
+                <p>Aapke social handles ko professionally manage karna aur organic growth ensure karna hamari zimmedari hai.</p>
             </div>
         </div>
     </div>
@@ -113,11 +131,22 @@
         </div>
     </section>
 
+    <section class="reviews-section">
+        <h2 style="margin-bottom: 40px; font-weight: 800; font-size: 2.5rem;">Client Success <span>Stories</span></h2>
+        <div class="review-card">
+            <div class="stars">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+            <p class="review-text">"MetaSpark Agency ne hamare store ki sales ko 4x kar diya. Unki team bohot professional hai aur results waqai amazing hain!"</p>
+            <span class="client-name">Zeeshan Raza - CEO, TechRetail</span>
+        </div>
+    </section>
+
     <section class="leads-container" id="leads">
         <div class="leads-box">
             <div class="leads-text">
                 <h2>How can we help you <span>get found?</span></h2>
-                <p>Fill out the form and our experts will contact you shortly.</p>
+                <p>Ready to scale? Form fill karein aur hamare experts aap se rabta karenge.</p>
             </div>
             <div class="leads-form">
                 <form action="#">
@@ -126,7 +155,8 @@
                     <select>
                         <option>YouTube Automation</option>
                         <option>Meta Ads Management</option>
-                        <option>Shopify Setup</option>
+                        <option>eBay / Shopify Management</option>
+                        <option>Social Media Management</option>
                     </select>
                     <button type="submit">Get started</button>
                 </form>
@@ -138,11 +168,11 @@
         <div class="social-icons">
             <a href="https://www.facebook.com/metasparkagency0" target="_blank" class="fb"><i class="fab fa-facebook-f"></i></a>
             <a href="https://www.tiktok.com/@metasparkagency0?_r=1&_t=ZS-95E8BoedbNQ" target="_blank" class="tt"><i class="fab fa-tiktok"></i></a>
-            <a href="#" class="ig"><i class="fab fa-instagram"></i></a>
-            <a href="#" class="yt"><i class="fab fa-youtube"></i></a>
+            <a href="https://www.instagram.com/metasparkagency_?igsh=MXAzdzc4Ynh6NGlwbw==" target="_blank" class="ig"><i class="fab fa-instagram"></i></a>
+            <a href="#" target="_blank" class="yt"><i class="fab fa-youtube"></i></a>
         </div>
-        <p style="color: var(--gold); font-weight: 800;">METASPARK AGENCY</p>
-        <p style="color: #444; font-size: 0.7rem; margin-top: 10px;">© 2026 PERFORMANCE MARKETING EXPERTS</p>
+        <p style="color: var(--gold); font-weight: 800; letter-spacing: 1px;">METASPARK AGENCY</p>
+        <p style="color: #444; font-size: 0.75rem; margin-top: 15px;">© 2026 PERFORMANCE MARKETING LEADERS</p>
     </footer>
 
     <a href="https://wa.me/923030607545" target="_blank" class="wa-float">
@@ -150,4 +180,4 @@
     </a>
 
 </body>
-        </html>
+            </html>
